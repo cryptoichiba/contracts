@@ -11,15 +11,15 @@ contract IFinancieInternalWallet is IOwned{
     function getBalanceOfToken(address _tokenAddress, uint32 _userId) public view returns(uint256);
     function getBalanceOfConsumableCurrencyToken(uint32 _userId) public view returns(uint256);
     function getBalanceOfWithdrawableCurrencyToken(uint32 _userId) public view returns(uint256);
-    function getBalanceOfPendingRevenueCurrencyToken(uint32 _userId) public view returns(uint256);
+    function getBalanceOfPendingRevenueCurrencyToken(uint32 _userId, uint32 _pendingRevenueType) public view returns(uint256);
     function depositTokens(uint32 _userId, uint256 _amount, address _tokenAddress);
     function depositConsumableCurrencyTokens(uint32 _userId, uint256 _amount);
     function depositWithdrawableCurrencyTokens(uint32 _userId, uint256 _amount);
-    function depositPendingRevenueCurrencyTokens(uint32 _userId, uint256 _amount);
+    function depositPendingRevenueCurrencyTokens(uint32 _userId, uint256 _amount, uint32 _pendingRevenueType);
     function convertWithdrawableToConsumableCurrencyTokens(uint32 _userId, uint256 _amount);
     function withdrawTokens(uint32 _userId, uint256 _amount, address _tokenAddress);
     function withdrawCurrencyTokens(uint32 _userId, uint256 _amount);
-    function withdrawPendingRevenueCurrencyTokens(uint32 _userId, uint256 _amount);
+    function withdrawPendingRevenueCurrencyTokens(uint32 _userId, uint256 _amount, uint32 _pendingRevenueType);
     function delegateBuyCards(uint32 _userId, uint256 _amount, uint256 _minReturn, address _tokenAddress, address _bancorAddress);
     function delegateSellCards(uint32 _userId, uint256 _amount, uint256 _minReturn, address _tokenAddress, address _bancorAddress);
     function delegateBidCards(uint32 _userId, uint256 _amount, address _auctionAddress);

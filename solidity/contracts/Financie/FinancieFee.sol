@@ -21,12 +21,21 @@ contract FinancieFee is Utils {
     // Receiver wallet address for team fee
     address public team_wallet;
 
-    bool public pendingRevenue;
+    /*
+     * Enums
+     */
+    enum RevenueType {
+        Auction,
+        ExchangeFee,
+        GoodsSales
+    }
+    RevenueType public pendingRevenueType;
 
     // Currency token for payment
     IERC20Token payment_currenty_token;
 
     IFinancieInternalWallet internalWallet;
+
 
     /**
     *   @dev setFee
@@ -43,7 +52,7 @@ contract FinancieFee is Utils {
         address _team_wallet,
         address _payment_currency_token,
         address _internalWallet,
-        bool    _pendingRevenue
+        RevenueType _pendingRevenueType
     ) internal {
         heroFee = _heroFee;
         teamFee = _teamFee;
@@ -51,7 +60,7 @@ contract FinancieFee is Utils {
         team_wallet = _team_wallet;
         payment_currenty_token = IERC20Token(_payment_currency_token);
         internalWallet = IFinancieInternalWallet(_internalWallet);
-        pendingRevenue = _pendingRevenue;
+        pendingRevenueType = _pendingRevenueType;
     }
 
     /**
@@ -68,11 +77,7 @@ contract FinancieFee is Utils {
                 payment_currenty_token.approve(address(internalWallet), 0);
             }
             payment_currenty_token.approve(address(internalWallet), _heroFee);
-            if ( pendingRevenue ) {
-                internalWallet.depositPendingRevenueCurrencyTokens(hero_id, _heroFee);
-            } else {
-                internalWallet.depositWithdrawableCurrencyTokens(hero_id, _heroFee);
-            }
+            internalWallet.depositPendingRevenueCurrencyTokens(hero_id, _heroFee, uint32(pendingRevenueType));
         }
         assert(payment_currenty_token.transfer(team_wallet, _teamFee));
 

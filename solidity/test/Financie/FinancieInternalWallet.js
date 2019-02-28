@@ -25,6 +25,8 @@ const FinancieInternalWallet = artifacts.require('FinancieInternalWallet.sol');
 const weight10Percent = 100000;
 const gasPrice = 22000000000;
 const gasPriceBad = 22000000001;
+const TypeAuction = 0;
+const ExchangeFee = 1;
 
 contract('FinancieInternalWallet', (accounts) => {
     let internalWallet;
@@ -329,16 +331,16 @@ contract('FinancieInternalWallet', (accounts) => {
         let currencyBeforeWithdrawal = await currencyToken.balanceOf(internalBank.address);
         console.log('[FinancieInternalWallet]currencyBeforeWithdrawal(internalBank) ' + currencyBeforeWithdrawal.toFixed());
 
-        currencyBeforeWithdrawal = await internalWallet.getBalanceOfPendingRevenueCurrencyToken(hero_id);
+        currencyBeforeWithdrawal = await internalWallet.getBalanceOfPendingRevenueCurrencyToken(hero_id, TypeAuction);
         console.log('[FinancieInternalWallet]currencyBeforeWithdrawal(hero_id) ' + currencyBeforeWithdrawal.toFixed());
 
         let balance = currencyBeforeWithdrawal.sub(transactionFee);
-        await internalWallet.withdrawPendingRevenueCurrencyTokens(hero_id, balance);
+        await internalWallet.withdrawPendingRevenueCurrencyTokens(hero_id, balance, TypeAuction);
 
         let currencyAfterWithdrawal = await currencyToken.balanceOf(internalBank.address);
         console.log('[FinancieInternalWallet]currencyAfterWithdrawal(internalBank) ' + currencyAfterWithdrawal.toFixed());
 
-        currencyAfterWithdrawal = await internalWallet.getBalanceOfPendingRevenueCurrencyToken(hero_id);
+        currencyAfterWithdrawal = await internalWallet.getBalanceOfPendingRevenueCurrencyToken(hero_id, TypeAuction);
         console.log('[FinancieInternalWallet]currencyAfterWithdrawal(hero_id) ' + currencyAfterWithdrawal.toFixed());
         assert.equal(0, currencyAfterWithdrawal.toFixed());
     });
@@ -414,11 +416,11 @@ contract('FinancieInternalWallet', (accounts) => {
         let balance = currencyBeforeWithdrawal.sub(transactionFee);
         await internalWallet.withdrawCurrencyTokens(user_id, balance);
 
-        currencyBeforeWithdrawal = await internalWallet.getBalanceOfWithdrawableCurrencyToken(hero_id);
+        currencyBeforeWithdrawal = await internalWallet.getBalanceOfPendingRevenueCurrencyToken(hero_id, ExchangeFee);
         console.log('[FinancieInternalWallet]currencyBeforeWithdrawal(hero_id) ' + currencyBeforeWithdrawal.toFixed());
 
         balance = currencyBeforeWithdrawal.sub(transactionFee)
-        await internalWallet.withdrawCurrencyTokens(hero_id, balance);
+        await internalWallet.withdrawPendingRevenueCurrencyTokens(hero_id, balance, ExchangeFee);
 
         let currencyAfterWithdrawal = await currencyToken.balanceOf(internalBank.address);
         console.log('[FinancieInternalWallet]currencyAfterWithdrawal(internalBank) ' + currencyAfterWithdrawal.toFixed());
