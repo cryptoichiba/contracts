@@ -9,7 +9,7 @@ contract FinancieInternalBank is IFinancieInternalBank, Utils, Owned {
     IERC20Token paymentCurrencyToken;
     mapping (uint32 => uint256) balanceOfConsumableCurrencyTokens;
     mapping (uint32 => uint256) balanceOfWithdrawableCurrencyTokens;
-    mapping (uint32 => uint256) balanceOfPendingRevenueCurrencyTokens;
+    mapping (uint32 => mapping(uint32 => uint256)) balanceOfPendingRevenueCurrencyTokens;
     mapping (address => mapping (uint32 => uint256)) balanceOfTokens;
     mapping (address => mapping (uint32 => bool)) holderOfTokens;
     mapping (address => mapping (uint32 => uint256)) bidsOfAuctions;
@@ -83,19 +83,19 @@ contract FinancieInternalBank is IFinancieInternalBank, Utils, Owned {
         return balanceOfWithdrawableCurrencyTokens[_userId];
     }
 
-    function setBalanceOfPendingRevenueCurrencyToken(uint32 _userId, uint256 _amount)
+    function setBalanceOfPendingRevenueCurrencyToken(uint32 _userId, uint256 _amount, uint32 _revenueType)
         public
         ownerOnly
     {
-        balanceOfPendingRevenueCurrencyTokens[_userId] = _amount;
+        balanceOfPendingRevenueCurrencyTokens[_revenueType][_userId] = _amount;
     }
 
-    function getBalanceOfPendingRevenueCurrencyToken(uint32 _userId)
+    function getBalanceOfPendingRevenueCurrencyToken(uint32 _userId, uint32 _revenueType)
         public
         view
         returns(uint256)
     {
-        return balanceOfPendingRevenueCurrencyTokens[_userId];
+        return balanceOfPendingRevenueCurrencyTokens[_revenueType][_userId];
     }
 
     function setHolderOfToken(address _tokenAddress, uint32 _userId, bool _flg)

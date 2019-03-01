@@ -52,7 +52,15 @@ contract FinancieBancorConverter is IFinancieBancorConverter, BancorConverter, F
     {
         currencyToken = _currencyToken;
 
-        setFee(_heroFee, _teamFee, _hero_id, _team_wallet, _currencyToken, _internalWallet, false);
+        setFee(
+          _heroFee,
+          _teamFee,
+          _hero_id,
+          _team_wallet,
+          _currencyToken,
+          _internalWallet,
+          FinancieFee.RevenueType.ExchangeFee
+        );
     }
 
     function getVersion() public pure returns (uint256) {
