@@ -174,14 +174,4 @@ module.exports = function(deployer, _network, _accounts) {
                 return contractRegistry.registerAddress(bancorNetworkId, BancorNetwork.address);
             }
         })
-        .then(() => {
-            if ( process.env.FINANCIE_TICKET_STORE_CONTRACT_ADDRESS === undefined ) {
-                return deployer.deploy(FinancieTicketStore,
-                    process.env.FINANCIE_NOTIFIER_CONTRACT_ADDRESS === undefined ? FinancieNotifier.address : process.env.FINANCIE_NOTIFIER_CONTRACT_ADDRESS,
-                    process.env.FINANCIE_MANAGED_CONTRACTS_CONTRACT_ADDRESS === undefined ? FinancieManagedContracts.address : process.env.FINANCIE_MANAGED_CONTRACTS_CONTRACT_ADDRESS,
-                    process.env.FINANCIE_PLATFORM_TOKEN_CONTRACT_ADDRESS === undefined ? FinanciePlatformToken.address : process.env.FINANCIE_PLATFORM_TOKEN_CONTRACT_ADDRESS,
-                    process.env.FINANCIE_CURRENCY_TOKEN_CONTRACT_ADDRESS === undefined ? SmartToken.address : process.env.FINANCIE_CURRENCY_TOKEN_CONTRACT_ADDRESS
-                );
-            }
-        })
 };
