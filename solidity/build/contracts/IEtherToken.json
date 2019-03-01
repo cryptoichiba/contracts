@@ -1,0 +1,837 @@
+{
+  "contractName": "IEtherToken",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_spender",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawTokens",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "deposit",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawTo",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\nimport './IERC20Token.sol';\nimport '../../utility/interfaces/ITokenHolder.sol';\n\n/*\n    Ether Token interface\n*/\ncontract IEtherToken is ITokenHolder, IERC20Token {\n    function deposit() public payable;\n    function withdraw(uint256 _amount) public;\n    function withdrawTo(address _to, uint256 _amount) public;\n}\n",
+  "sourcePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IEtherToken.sol",
+  "ast": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IEtherToken.sol",
+    "exportedSymbols": {
+      "IEtherToken": [
+        16343
+      ]
+    },
+    "id": 16344,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16321,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:57"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IERC20Token.sol",
+        "file": "./IERC20Token.sol",
+        "id": 16322,
+        "nodeType": "ImportDirective",
+        "scope": 16344,
+        "sourceUnit": 16320,
+        "src": "25:27:57",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/ITokenHolder.sol",
+        "file": "../../utility/interfaces/ITokenHolder.sol",
+        "id": 16323,
+        "nodeType": "ImportDirective",
+        "scope": 16344,
+        "sourceUnit": 17322,
+        "src": "53:51:57",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 16324,
+              "name": "ITokenHolder",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 17321,
+              "src": "162:12:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ITokenHolder_$17321",
+                "typeString": "contract ITokenHolder"
+              }
+            },
+            "id": 16325,
+            "nodeType": "InheritanceSpecifier",
+            "src": "162:12:57"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 16326,
+              "name": "IERC20Token",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16319,
+              "src": "176:11:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                "typeString": "contract IERC20Token"
+              }
+            },
+            "id": 16327,
+            "nodeType": "InheritanceSpecifier",
+            "src": "176:11:57"
+          }
+        ],
+        "contractDependencies": [
+          16319,
+          17305,
+          17321
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 16343,
+        "linearizedBaseContracts": [
+          16343,
+          16319,
+          17321,
+          17305
+        ],
+        "name": "IEtherToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16330,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "deposit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16328,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "210:2:57"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 16329,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "227:0:57"
+            },
+            "scope": 16343,
+            "src": "194:34:57",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16335,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "withdraw",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16333,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16332,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16335,
+                  "src": "251:15:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16331,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "251:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "250:17:57"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16334,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "274:0:57"
+            },
+            "scope": 16343,
+            "src": "233:42:57",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16342,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "withdrawTo",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16337,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16342,
+                  "src": "300:11:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16336,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "300:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16339,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16342,
+                  "src": "313:15:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16338,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "313:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "299:30:57"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16341,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "336:0:57"
+            },
+            "scope": 16343,
+            "src": "280:57:57",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 16344,
+        "src": "138:201:57"
+      }
+    ],
+    "src": "0:340:57"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IEtherToken.sol",
+    "exportedSymbols": {
+      "IEtherToken": [
+        16343
+      ]
+    },
+    "id": 16344,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16321,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:57"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IERC20Token.sol",
+        "file": "./IERC20Token.sol",
+        "id": 16322,
+        "nodeType": "ImportDirective",
+        "scope": 16344,
+        "sourceUnit": 16320,
+        "src": "25:27:57",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/ITokenHolder.sol",
+        "file": "../../utility/interfaces/ITokenHolder.sol",
+        "id": 16323,
+        "nodeType": "ImportDirective",
+        "scope": 16344,
+        "sourceUnit": 17322,
+        "src": "53:51:57",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 16324,
+              "name": "ITokenHolder",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 17321,
+              "src": "162:12:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ITokenHolder_$17321",
+                "typeString": "contract ITokenHolder"
+              }
+            },
+            "id": 16325,
+            "nodeType": "InheritanceSpecifier",
+            "src": "162:12:57"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 16326,
+              "name": "IERC20Token",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16319,
+              "src": "176:11:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                "typeString": "contract IERC20Token"
+              }
+            },
+            "id": 16327,
+            "nodeType": "InheritanceSpecifier",
+            "src": "176:11:57"
+          }
+        ],
+        "contractDependencies": [
+          16319,
+          17305,
+          17321
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 16343,
+        "linearizedBaseContracts": [
+          16343,
+          16319,
+          17321,
+          17305
+        ],
+        "name": "IEtherToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16330,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "deposit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16328,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "210:2:57"
+            },
+            "payable": true,
+            "returnParameters": {
+              "id": 16329,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "227:0:57"
+            },
+            "scope": 16343,
+            "src": "194:34:57",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16335,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "withdraw",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16333,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16332,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16335,
+                  "src": "251:15:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16331,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "251:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "250:17:57"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16334,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "274:0:57"
+            },
+            "scope": 16343,
+            "src": "233:42:57",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 16342,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "withdrawTo",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16337,
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16342,
+                  "src": "300:11:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16336,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "300:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16339,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16342,
+                  "src": "313:15:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16338,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "313:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "299:30:57"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 16341,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "336:0:57"
+            },
+            "scope": 16343,
+            "src": "280:57:57",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 16344,
+        "src": "138:201:57"
+      }
+    ],
+    "src": "0:340:57"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-03-01T08:20:46.991Z"
+}

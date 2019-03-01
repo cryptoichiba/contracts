@@ -1,0 +1,791 @@
+{
+  "contractName": "TestFeatures",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "features",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_features",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_features",
+          "type": "uint256"
+        },
+        {
+          "name": "_enable",
+          "type": "bool"
+        }
+      ],
+      "name": "enableFeatures",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516020806101d9833981016040525160008054600160a060020a03909216600160a060020a0319909216919091179055610187806100526000396000f30060806040526004361061004b5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416632b52141681146100505780632c7077c01461008e575b600080fd5b34801561005c57600080fd5b506100656100ad565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b34801561009a57600080fd5b506100ab60043560243515156100c9565b005b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60008054604080517f2c7077c0000000000000000000000000000000000000000000000000000000008152600481018690528415156024820152905173ffffffffffffffffffffffffffffffffffffffff90921692632c7077c09260448084019382900301818387803b15801561013f57600080fd5b505af1158015610153573d6000803e3d6000fd5b5050505050505600a165627a7a723058206e02c64723e2507280c44da82833011a7a2266b2e88776e356eacbaececa04bb0029",
+  "deployedBytecode": "0x60806040526004361061004b5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416632b52141681146100505780632c7077c01461008e575b600080fd5b34801561005c57600080fd5b506100656100ad565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b34801561009a57600080fd5b506100ab60043560243515156100c9565b005b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60008054604080517f2c7077c0000000000000000000000000000000000000000000000000000000008152600481018690528415156024820152905173ffffffffffffffffffffffffffffffffffffffff90921692632c7077c09260448084019382900301818387803b15801561013f57600080fd5b505af1158015610153573d6000803e3d6000fd5b5050505050505600a165627a7a723058206e02c64723e2507280c44da82833011a7a2266b2e88776e356eacbaececa04bb0029",
+  "sourceMap": "142:285:49:-;;;210:85;8:9:-1;5:2;;;30:1;27;20:12;5:2;210:85:49;;;;;;;;;;;;;268:8;:20;;-1:-1:-1;;;;;268:20:49;;;-1:-1:-1;;;;;;268:20:49;;;;;;;;;142:285;;;;;;",
+  "deployedSourceMap": "142:285:49:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;170:33;;8:9:-1;5:2;;;30:1;27;20:12;5:2;170:33:49;;;;;;;;;;;;;;;;;;;;;;;301:124;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;301:124:49;;;;;;;;;;;170:33;;;;;;:::o;301:124::-;375:8;;;:43;;;;;;;;;;;;;;;;;;;;;:8;;;;;:23;;:43;;;;;;;;;;:8;;:43;;;5:2:-1;;;;30:1;27;20:12;5:2;375:43:49;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;375:43:49;;;;301:124;;:::o",
+  "source": "pragma solidity ^0.4.24;\nimport '../utility/interfaces/IContractFeatures.sol';\n\n/*\n    Test helper that uses the ContractFeatures contract\n*/\ncontract TestFeatures {\n    IContractFeatures public features;\n\n    constructor(IContractFeatures _features) public {\n        features = _features;\n    }\n\n    function enableFeatures(uint256 _features, bool _enable) public {\n        features.enableFeatures(_features, _enable);\n    }\n}\n",
+  "sourcePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/helpers/TestFeatures.sol",
+  "ast": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/helpers/TestFeatures.sol",
+    "exportedSymbols": {
+      "TestFeatures": [
+        15326
+      ]
+    },
+    "id": 15327,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15297,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:49"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IContractFeatures.sol",
+        "file": "../utility/interfaces/IContractFeatures.sol",
+        "id": 15298,
+        "nodeType": "ImportDirective",
+        "scope": 15327,
+        "sourceUnit": 17272,
+        "src": "25:53:49",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15326,
+        "linearizedBaseContracts": [
+          15326
+        ],
+        "name": "TestFeatures",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 15300,
+            "name": "features",
+            "nodeType": "VariableDeclaration",
+            "scope": 15326,
+            "src": "170:33:49",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+              "typeString": "contract IContractFeatures"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 15299,
+              "name": "IContractFeatures",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 17271,
+              "src": "170:17:49",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                "typeString": "contract IContractFeatures"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15309,
+              "nodeType": "Block",
+              "src": "258:37:49",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15307,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15305,
+                      "name": "features",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15300,
+                      "src": "268:8:49",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                        "typeString": "contract IContractFeatures"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15306,
+                      "name": "_features",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15302,
+                      "src": "279:9:49",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                        "typeString": "contract IContractFeatures"
+                      }
+                    },
+                    "src": "268:20:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                      "typeString": "contract IContractFeatures"
+                    }
+                  },
+                  "id": 15308,
+                  "nodeType": "ExpressionStatement",
+                  "src": "268:20:49"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 15310,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15303,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15302,
+                  "name": "_features",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15310,
+                  "src": "222:27:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                    "typeString": "contract IContractFeatures"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 15301,
+                    "name": "IContractFeatures",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 17271,
+                    "src": "222:17:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                      "typeString": "contract IContractFeatures"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "221:29:49"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15304,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "258:0:49"
+            },
+            "scope": 15326,
+            "src": "210:85:49",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15324,
+              "nodeType": "Block",
+              "src": "365:60:49",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 15320,
+                        "name": "_features",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15312,
+                        "src": "399:9:49",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 15321,
+                        "name": "_enable",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15314,
+                        "src": "410:7:49",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 15317,
+                        "name": "features",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15300,
+                        "src": "375:8:49",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                          "typeString": "contract IContractFeatures"
+                        }
+                      },
+                      "id": 15319,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "enableFeatures",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17270,
+                      "src": "375:23:49",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,bool) external"
+                      }
+                    },
+                    "id": 15322,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "375:43:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 15323,
+                  "nodeType": "ExpressionStatement",
+                  "src": "375:43:49"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 15325,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "enableFeatures",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15315,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15312,
+                  "name": "_features",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15325,
+                  "src": "325:17:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15311,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "325:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15314,
+                  "name": "_enable",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15325,
+                  "src": "344:12:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15313,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "344:4:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "324:33:49"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15316,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "365:0:49"
+            },
+            "scope": 15326,
+            "src": "301:124:49",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 15327,
+        "src": "142:285:49"
+      }
+    ],
+    "src": "0:428:49"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/helpers/TestFeatures.sol",
+    "exportedSymbols": {
+      "TestFeatures": [
+        15326
+      ]
+    },
+    "id": 15327,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15297,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:49"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IContractFeatures.sol",
+        "file": "../utility/interfaces/IContractFeatures.sol",
+        "id": 15298,
+        "nodeType": "ImportDirective",
+        "scope": 15327,
+        "sourceUnit": 17272,
+        "src": "25:53:49",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15326,
+        "linearizedBaseContracts": [
+          15326
+        ],
+        "name": "TestFeatures",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 15300,
+            "name": "features",
+            "nodeType": "VariableDeclaration",
+            "scope": 15326,
+            "src": "170:33:49",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+              "typeString": "contract IContractFeatures"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 15299,
+              "name": "IContractFeatures",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 17271,
+              "src": "170:17:49",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                "typeString": "contract IContractFeatures"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15309,
+              "nodeType": "Block",
+              "src": "258:37:49",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15307,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15305,
+                      "name": "features",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15300,
+                      "src": "268:8:49",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                        "typeString": "contract IContractFeatures"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15306,
+                      "name": "_features",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15302,
+                      "src": "279:9:49",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                        "typeString": "contract IContractFeatures"
+                      }
+                    },
+                    "src": "268:20:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                      "typeString": "contract IContractFeatures"
+                    }
+                  },
+                  "id": 15308,
+                  "nodeType": "ExpressionStatement",
+                  "src": "268:20:49"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 15310,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15303,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15302,
+                  "name": "_features",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15310,
+                  "src": "222:27:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                    "typeString": "contract IContractFeatures"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 15301,
+                    "name": "IContractFeatures",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 17271,
+                    "src": "222:17:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                      "typeString": "contract IContractFeatures"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "221:29:49"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15304,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "258:0:49"
+            },
+            "scope": 15326,
+            "src": "210:85:49",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15324,
+              "nodeType": "Block",
+              "src": "365:60:49",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 15320,
+                        "name": "_features",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15312,
+                        "src": "399:9:49",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 15321,
+                        "name": "_enable",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15314,
+                        "src": "410:7:49",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 15317,
+                        "name": "features",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15300,
+                        "src": "375:8:49",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IContractFeatures_$17271",
+                          "typeString": "contract IContractFeatures"
+                        }
+                      },
+                      "id": 15319,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "enableFeatures",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17270,
+                      "src": "375:23:49",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,bool) external"
+                      }
+                    },
+                    "id": 15322,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "375:43:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 15323,
+                  "nodeType": "ExpressionStatement",
+                  "src": "375:43:49"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 15325,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "enableFeatures",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15315,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15312,
+                  "name": "_features",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15325,
+                  "src": "325:17:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15311,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "325:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15314,
+                  "name": "_enable",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15325,
+                  "src": "344:12:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 15313,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "344:4:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "324:33:49"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 15316,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "365:0:49"
+            },
+            "scope": 15326,
+            "src": "301:124:49",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 15327,
+        "src": "142:285:49"
+      }
+    ],
+    "src": "0:428:49"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-03-01T08:20:46.987Z"
+}

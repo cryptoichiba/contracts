@@ -1,0 +1,4309 @@
+{
+  "contractName": "FinancieInternalWalletUpgrade",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "newOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_walletFactory",
+          "type": "address"
+        },
+        {
+          "name": "_teamwallet",
+          "type": "address"
+        },
+        {
+          "name": "_paymentCurrencyToken",
+          "type": "address"
+        },
+        {
+          "name": "_walletdata",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_oldWallet",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_newWallet",
+          "type": "address"
+        }
+      ],
+      "name": "WalletUpgrade",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_oldWallet",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "WalletOwned",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_prevOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnerUpdate",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_oldWallet",
+          "type": "address"
+        }
+      ],
+      "name": "upgrade",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060405160808061073e833981016040908152815160208301519183015160609093015160008054600160a060020a0319908116331790915560028054600160a060020a03948516908316179055600380549484169482169490941790935560048054918316918416919091179055600580549190931691161790556106a38061009b6000396000f3006080604052600436106100535763ffffffff60e060020a6000350416630900f010811461005857806379ba50971461007b5780638da5cb5b14610090578063d4ee1d90146100c1578063f2fde38b146100d6575b600080fd5b34801561006457600080fd5b50610079600160a060020a03600435166100f7565b005b34801561008757600080fd5b5061007961032b565b34801561009c57600080fd5b506100a56103b3565b60408051600160a060020a039092168252519081900360200190f35b3480156100cd57600080fd5b506100a56103c2565b3480156100e257600080fd5b50610079600160a060020a03600435166103d1565b600061010282610432565b61010a61053f565b905081600160a060020a031663d75d382e826040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b15801561016757600080fd5b505af115801561017b573d6000803e3d6000fd5b505060048054604080517f77338701000000000000000000000000000000000000000000000000000000008152600160a060020a039283169381019390935251908516935063773387019250602480830192600092919082900301818387803b1580156101e757600080fd5b505af11580156101fb573d6000803e3d6000fd5b5050604080517ff2fde38b0000000000000000000000000000000000000000000000000000000081523360048201529051600160a060020a038616935063f2fde38b9250602480830192600092919082900301818387803b15801561025f57600080fd5b505af1158015610273573d6000803e3d6000fd5b5050604080517ff2fde38b0000000000000000000000000000000000000000000000000000000081523360048201529051600160a060020a038516935063f2fde38b9250602480830192600092919082900301818387803b1580156102d757600080fd5b505af11580156102eb573d6000803e3d6000fd5b5050604051600160a060020a038085169350851691507f8a527e75e5418f51353a0598cecccefa63e2882b88ad96914a1f467fc2b0f19690600090a35050565b600154600160a060020a0316331461034257600080fd5b60015460008054604051600160a060020a0393841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a031681565b600154600160a060020a031681565b600054600160a060020a031633146103e857600080fd5b600054600160a060020a038281169116141561040357600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b80600160a060020a0316638da5cb5b6040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561047057600080fd5b505af1158015610484573d6000803e3d6000fd5b505050506040513d602081101561049a57600080fd5b5051600160a060020a031633146104b057600080fd5b80600160a060020a03166379ba50976040518163ffffffff1660e060020a028152600401600060405180830381600087803b1580156104ee57600080fd5b505af1158015610502573d6000803e3d6000fd5b5050604051309250600160a060020a03841691507f628e19de0c2346f086dfda01daf5e40bda9771c7f4d3e289b1e4636783f2d6b590600090a350565b60025460035460055460048054604080517f4e59607c000000000000000000000000000000000000000000000000000000008152600160a060020a039586169381019390935292841660248301528316604482015290516000939290921691839182918491634e59607c91606480830192602092919082900301818787803b1580156105ca57600080fd5b505af11580156105de573d6000803e3d6000fd5b505050506040513d60208110156105f457600080fd5b5051604080517f79ba50970000000000000000000000000000000000000000000000000000000081529051919350839250600160a060020a038316916379ba50979160048082019260009290919082900301818387803b15801561065757600080fd5b505af115801561066b573d6000803e3d6000fd5b509296955050505050505600a165627a7a72305820a8fd772593a4a14e99320cc5a16221b6967ec7668fd4b9ab5a0d8a1e0ca1c05c0029",
+  "deployedBytecode": "0x6080604052600436106100535763ffffffff60e060020a6000350416630900f010811461005857806379ba50971461007b5780638da5cb5b14610090578063d4ee1d90146100c1578063f2fde38b146100d6575b600080fd5b34801561006457600080fd5b50610079600160a060020a03600435166100f7565b005b34801561008757600080fd5b5061007961032b565b34801561009c57600080fd5b506100a56103b3565b60408051600160a060020a039092168252519081900360200190f35b3480156100cd57600080fd5b506100a56103c2565b3480156100e257600080fd5b50610079600160a060020a03600435166103d1565b600061010282610432565b61010a61053f565b905081600160a060020a031663d75d382e826040518263ffffffff1660e060020a0281526004018082600160a060020a0316600160a060020a03168152602001915050600060405180830381600087803b15801561016757600080fd5b505af115801561017b573d6000803e3d6000fd5b505060048054604080517f77338701000000000000000000000000000000000000000000000000000000008152600160a060020a039283169381019390935251908516935063773387019250602480830192600092919082900301818387803b1580156101e757600080fd5b505af11580156101fb573d6000803e3d6000fd5b5050604080517ff2fde38b0000000000000000000000000000000000000000000000000000000081523360048201529051600160a060020a038616935063f2fde38b9250602480830192600092919082900301818387803b15801561025f57600080fd5b505af1158015610273573d6000803e3d6000fd5b5050604080517ff2fde38b0000000000000000000000000000000000000000000000000000000081523360048201529051600160a060020a038516935063f2fde38b9250602480830192600092919082900301818387803b1580156102d757600080fd5b505af11580156102eb573d6000803e3d6000fd5b5050604051600160a060020a038085169350851691507f8a527e75e5418f51353a0598cecccefa63e2882b88ad96914a1f467fc2b0f19690600090a35050565b600154600160a060020a0316331461034257600080fd5b60015460008054604051600160a060020a0393841693909116917f343765429aea5a34b3ff6a3785a98a5abb2597aca87bfbb58632c173d585373a91a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a031681565b600154600160a060020a031681565b600054600160a060020a031633146103e857600080fd5b600054600160a060020a038281169116141561040357600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b80600160a060020a0316638da5cb5b6040518163ffffffff1660e060020a028152600401602060405180830381600087803b15801561047057600080fd5b505af1158015610484573d6000803e3d6000fd5b505050506040513d602081101561049a57600080fd5b5051600160a060020a031633146104b057600080fd5b80600160a060020a03166379ba50976040518163ffffffff1660e060020a028152600401600060405180830381600087803b1580156104ee57600080fd5b505af1158015610502573d6000803e3d6000fd5b5050604051309250600160a060020a03841691507f628e19de0c2346f086dfda01daf5e40bda9771c7f4d3e289b1e4636783f2d6b590600090a350565b60025460035460055460048054604080517f4e59607c000000000000000000000000000000000000000000000000000000008152600160a060020a039586169381019390935292841660248301528316604482015290516000939290921691839182918491634e59607c91606480830192602092919082900301818787803b1580156105ca57600080fd5b505af11580156105de573d6000803e3d6000fd5b505050506040513d60208110156105f457600080fd5b5051604080517f79ba50970000000000000000000000000000000000000000000000000000000081529051919350839250600160a060020a038316916379ba50979160048082019260009290919082900301818387803b15801561065757600080fd5b505af115801561066b573d6000803e3d6000fd5b509296955050505050505600a165627a7a72305820a8fd772593a4a14e99320cc5a16221b6967ec7668fd4b9ab5a0d8a1e0ca1c05c0029",
+  "sourceMap": "144:1664:14:-;;;452:289;8:9:-1;5:2;;;30:1;27;20:12;5:2;452:289:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;361:5:62;:18;;-1:-1:-1;;;;;;361:18:62;;;369:10;361:18;;;;596:13:14;:30;;-1:-1:-1;;;;;596:30:14;;;;;;;;;632:10;:24;;;;;;;;;;;;;;;662:10;:24;;;;;;;;;;;;;;692:20;:44;;;;;;;;;;;144:1664;;;;;;",
+  "deployedSourceMap": "144:1664:14:-;;;;;;;;;-1:-1:-1;;;144:1664:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;745:415;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;745:415:14;-1:-1:-1;;;;;745:415:14;;;;;;;963:182:62;;8:9:-1;5:2;;;30:1;27;20:12;5:2;963:182:62;;;;155:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;155:20:62;;;;;;;;-1:-1:-1;;;;;155:20:62;;;;;;;;;;;;;;181:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;181:23:62;;;;740:137;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;740:137:62;-1:-1:-1;;;;;740:137:62;;;;;745:415:14;854:33;811:36;836:10;811:24;:36::i;:::-;890:14;:12;:14::i;:::-;854:50;;911:10;-1:-1:-1;;;;;911:32:14;;944:9;911:43;;;;;-1:-1:-1;;;911:43:14;;;;;;;-1:-1:-1;;;;;911:43:14;-1:-1:-1;;;;;911:43:14;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;911:43:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;986:10:14;;;960:37;;;;;;-1:-1:-1;;;;;986:10:14;;;960:37;;;;;;;;:25;;;;-1:-1:-1;960:25:14;;-1:-1:-1;960:37:14;;;;;986:10;;960:37;;;;;;;986:10;960:25;:37;;;5:2:-1;;;;30:1;27;20:12;5:2;960:37:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;1004:40:14;;;;;;1033:10;1004:40;;;;;;-1:-1:-1;;;;;1004:28:14;;;-1:-1:-1;1004:28:14;;-1:-1:-1;1004:40:14;;;;;-1:-1:-1;;1004:40:14;;;;;;;-1:-1:-1;1004:28:14;:40;;;5:2:-1;;;;30:1;27;20:12;5:2;1004:40:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;1050:39:14;;;;;;1078:10;1050:39;;;;;;-1:-1:-1;;;;;1050:27:14;;;-1:-1:-1;1050:27:14;;-1:-1:-1;1050:39:14;;;;;-1:-1:-1;;1050:39:14;;;;;;;-1:-1:-1;1050:27:14;:39;;;5:2:-1;;;;30:1;27;20:12;5:2;1050:39:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;1101:54:14;;-1:-1:-1;;;;;1101:54:14;;;;-1:-1:-1;1101:54:14;;;-1:-1:-1;1101:54:14;;;;;745:415;;:::o;963:182:62:-;1029:8;;-1:-1:-1;;;;;1029:8:62;1015:10;:22;1007:31;;;;;;1072:8;;;1065:5;;1053:28;;-1:-1:-1;;;;;1072:8:62;;;;1065:5;;;;1053:28;;;1099:8;;;;1091:16;;-1:-1:-1;;1091:16:62;;;-1:-1:-1;;;;;1099:8:62;;1091:16;;;;1117:21;;;963:182::o;155:20::-;;;-1:-1:-1;;;;;155:20:62;;:::o;181:23::-;;;-1:-1:-1;;;;;181:23:62;;:::o;740:137::-;485:5;;-1:-1:-1;;;;;485:5:62;471:10;:19;463:28;;;;;;834:5;;-1:-1:-1;;;;;821:18:62;;;834:5;;821:18;;813:27;;;;;;850:8;:20;;-1:-1:-1;;850:20:62;-1:-1:-1;;;;;850:20:62;;;;;;;;;;740:137::o;1164:210:14:-;1272:10;-1:-1:-1;;;;;1272:16:14;;:18;;;;;-1:-1:-1;;;1272:18:14;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1272:18:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1272:18:14;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1272:18:14;-1:-1:-1;;;;;1258:32:14;:10;:32;1250:41;;;;;;1299:10;-1:-1:-1;;;;;1299:26:14;;:28;;;;;-1:-1:-1;;;1299:28:14;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1299:28:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;;1340:29:14;;1364:4;;-1:-1:-1;;;;;;1340:29:14;;;-1:-1:-1;1340:29:14;;;;;1164:210;:::o;1378:428::-;1521:13;;1606:10;;1626:20;;1656:10;;;1568:104;;;;;;-1:-1:-1;;;;;1606:10:14;;;1568:104;;;;;;;1626:20;;;1568:104;;;;1656:10;;1568:104;;;;;;1418:23;;1521:13;;;;;1418:23;;;;1521:13;;1568:28;;:104;;;;;;;;;;;;;;1418:23;1521:13;1568:104;;;5:2:-1;;;;30:1;27;20:12;5:2;1568:104:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1568:104:14;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1568:104:14;1757:24;;;;;;;;1568:104;;-1:-1:-1;1568:104:14;;-1:-1:-1;;;;;;1757:22:14;;;;;:24;;;;;;;;;;;;;;;;:22;:24;;;5:2:-1;;;;30:1;27;20:12;5:2;1757:24:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;1795:6:14;;1378:428;-1:-1:-1;;;;;;1378:428:14:o",
+  "source": "pragma solidity ^0.4.18;\nimport '../utility/Owned.sol';\nimport './IFinancieInternalWallet.sol';\nimport './IFinancieInternalWalletFactory.sol';\n\ncontract FinancieInternalWalletUpgrade is Owned {\n  address walletFactory;\n  address teamwallet;\n  address walletdata;\n  address paymentCurrencyToken;\n\n  event WalletUpgrade(address indexed _oldWallet, address indexed _newWallet);\n\n  event WalletOwned(address indexed _oldWallet, address indexed _owner);\n\n  constructor(\n    address _walletFactory,\n    address _teamwallet,\n    address _paymentCurrencyToken,\n    address _walletdata\n    ) public {\n    walletFactory = _walletFactory;\n    teamwallet = _teamwallet;\n    walletdata = _walletdata;\n    paymentCurrencyToken = _paymentCurrencyToken;\n  }\n\n  function upgrade(IFinancieInternalWallet _oldWallet) public {\n    acceptConverterOwnership(_oldWallet);\n\n    IFinancieInternalWallet newWallet = createWallet();\n\n    _oldWallet.transferBnakOwnership(newWallet);\n    newWallet.setInternalBank(walletdata);\n\n    _oldWallet.transferOwnership(msg.sender);\n    newWallet.transferOwnership(msg.sender);\n\n    emit WalletUpgrade(address(_oldWallet), address(newWallet));\n  }\n\n  function acceptConverterOwnership(IFinancieInternalWallet _oldWallet) private {\n      require(msg.sender == _oldWallet.owner());\n      _oldWallet.acceptOwnership();\n      emit WalletOwned(_oldWallet, this);\n  }\n\n  function createWallet() private returns(IFinancieInternalWallet) {\n    IFinancieInternalWalletFactory factory = IFinancieInternalWalletFactory(walletFactory);\n\n    address walletAdderess  = factory.createInternalWallet(\n        teamwallet,\n        paymentCurrencyToken,\n        walletdata\n    );\n\n    IFinancieInternalWallet wallet = IFinancieInternalWallet(walletAdderess);\n    wallet.acceptOwnership();\n\n    return wallet;\n  }\n}\n",
+  "sourcePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/FinancieInternalWalletUpgrade.sol",
+  "ast": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/FinancieInternalWalletUpgrade.sol",
+    "exportedSymbols": {
+      "FinancieInternalWalletUpgrade": [
+        6421
+      ]
+    },
+    "id": 6422,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6258,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:14"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/Owned.sol",
+        "file": "../utility/Owned.sol",
+        "id": 6259,
+        "nodeType": "ImportDirective",
+        "scope": 6422,
+        "sourceUnit": 16933,
+        "src": "25:30:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieInternalWallet.sol",
+        "file": "./IFinancieInternalWallet.sol",
+        "id": 6260,
+        "nodeType": "ImportDirective",
+        "scope": 6422,
+        "sourceUnit": 8979,
+        "src": "56:39:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieInternalWalletFactory.sol",
+        "file": "./IFinancieInternalWalletFactory.sol",
+        "id": 6261,
+        "nodeType": "ImportDirective",
+        "scope": 6422,
+        "sourceUnit": 8993,
+        "src": "96:46:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6262,
+              "name": "Owned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16932,
+              "src": "186:5:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Owned_$16932",
+                "typeString": "contract Owned"
+              }
+            },
+            "id": 6263,
+            "nodeType": "InheritanceSpecifier",
+            "src": "186:5:14"
+          }
+        ],
+        "contractDependencies": [
+          16932,
+          17305
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6421,
+        "linearizedBaseContracts": [
+          6421,
+          16932,
+          17305
+        ],
+        "name": "FinancieInternalWalletUpgrade",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6265,
+            "name": "walletFactory",
+            "nodeType": "VariableDeclaration",
+            "scope": 6421,
+            "src": "196:21:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6264,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "196:7:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 6267,
+            "name": "teamwallet",
+            "nodeType": "VariableDeclaration",
+            "scope": 6421,
+            "src": "221:18:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6266,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "221:7:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 6269,
+            "name": "walletdata",
+            "nodeType": "VariableDeclaration",
+            "scope": 6421,
+            "src": "243:18:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6268,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "243:7:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 6271,
+            "name": "paymentCurrencyToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 6421,
+            "src": "265:28:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6270,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "265:7:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6277,
+            "name": "WalletUpgrade",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6276,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6273,
+                  "indexed": true,
+                  "name": "_oldWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6277,
+                  "src": "318:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6272,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "318:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6275,
+                  "indexed": true,
+                  "name": "_newWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6277,
+                  "src": "346:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6274,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "346:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "317:56:14"
+            },
+            "src": "298:76:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6283,
+            "name": "WalletOwned",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6282,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6279,
+                  "indexed": true,
+                  "name": "_oldWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6283,
+                  "src": "396:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6278,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "396:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6281,
+                  "indexed": true,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6283,
+                  "src": "424:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6280,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "424:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "395:52:14"
+            },
+            "src": "378:70:14"
+          },
+          {
+            "body": {
+              "id": 6310,
+              "nodeType": "Block",
+              "src": "590:151:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6296,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6294,
+                      "name": "walletFactory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6265,
+                      "src": "596:13:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6295,
+                      "name": "_walletFactory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6285,
+                      "src": "612:14:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "596:30:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6297,
+                  "nodeType": "ExpressionStatement",
+                  "src": "596:30:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6300,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6298,
+                      "name": "teamwallet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6267,
+                      "src": "632:10:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6299,
+                      "name": "_teamwallet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6287,
+                      "src": "645:11:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "632:24:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6301,
+                  "nodeType": "ExpressionStatement",
+                  "src": "632:24:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6304,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6302,
+                      "name": "walletdata",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6269,
+                      "src": "662:10:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6303,
+                      "name": "_walletdata",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6291,
+                      "src": "675:11:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "662:24:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6305,
+                  "nodeType": "ExpressionStatement",
+                  "src": "662:24:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6308,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6306,
+                      "name": "paymentCurrencyToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6271,
+                      "src": "692:20:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6307,
+                      "name": "_paymentCurrencyToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6289,
+                      "src": "715:21:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "692:44:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6309,
+                  "nodeType": "ExpressionStatement",
+                  "src": "692:44:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6311,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6292,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6285,
+                  "name": "_walletFactory",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6311,
+                  "src": "469:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6284,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "469:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6287,
+                  "name": "_teamwallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6311,
+                  "src": "497:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6286,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6289,
+                  "name": "_paymentCurrencyToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6311,
+                  "src": "522:29:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6288,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "522:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6291,
+                  "name": "_walletdata",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6311,
+                  "src": "557:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6290,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "557:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "463:119:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6293,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "590:0:14"
+            },
+            "scope": 6421,
+            "src": "452:289:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6360,
+              "nodeType": "Block",
+              "src": "805:355:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6317,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6313,
+                        "src": "836:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      ],
+                      "id": 6316,
+                      "name": "acceptConverterOwnership",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6386,
+                      "src": "811:24:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IFinancieInternalWallet_$8978_$returns$__$",
+                        "typeString": "function (contract IFinancieInternalWallet)"
+                      }
+                    },
+                    "id": 6318,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "811:36:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6319,
+                  "nodeType": "ExpressionStatement",
+                  "src": "811:36:14"
+                },
+                {
+                  "assignments": [
+                    6321
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 6321,
+                      "name": "newWallet",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 6361,
+                      "src": "854:33:14",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                        "typeString": "contract IFinancieInternalWallet"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 6320,
+                        "name": "IFinancieInternalWallet",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 8978,
+                        "src": "854:23:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 6324,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 6322,
+                      "name": "createWallet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6420,
+                      "src": "890:12:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$_t_contract$_IFinancieInternalWallet_$8978_$",
+                        "typeString": "function () returns (contract IFinancieInternalWallet)"
+                      }
+                    },
+                    "id": 6323,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "890:14:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "854:50:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6328,
+                        "name": "newWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6321,
+                        "src": "944:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6325,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6313,
+                        "src": "911:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6327,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferBnakOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8816,
+                      "src": "911:32:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 6329,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "911:43:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6330,
+                  "nodeType": "ExpressionStatement",
+                  "src": "911:43:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6334,
+                        "name": "walletdata",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6269,
+                        "src": "986:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6331,
+                        "name": "newWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6321,
+                        "src": "960:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6333,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setInternalBank",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8811,
+                      "src": "960:25:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 6335,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "960:37:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6336,
+                  "nodeType": "ExpressionStatement",
+                  "src": "960:37:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6340,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 17346,
+                          "src": "1033:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 6341,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1033:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6337,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6313,
+                        "src": "1004:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6339,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17301,
+                      "src": "1004:28:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 6342,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1004:40:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6343,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1004:40:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6347,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 17346,
+                          "src": "1078:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 6348,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1078:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6344,
+                        "name": "newWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6321,
+                        "src": "1050:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6346,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17301,
+                      "src": "1050:27:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 6349,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1050:39:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6350,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1050:39:14"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 6353,
+                            "name": "_oldWallet",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6313,
+                            "src": "1123:10:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                              "typeString": "contract IFinancieInternalWallet"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                              "typeString": "contract IFinancieInternalWallet"
+                            }
+                          ],
+                          "id": 6352,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1115:7:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 6354,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1115:19:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 6356,
+                            "name": "newWallet",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6321,
+                            "src": "1144:9:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                              "typeString": "contract IFinancieInternalWallet"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                              "typeString": "contract IFinancieInternalWallet"
+                            }
+                          ],
+                          "id": 6355,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1136:7:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 6357,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1136:18:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6351,
+                      "name": "WalletUpgrade",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6277,
+                      "src": "1101:13:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 6358,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1101:54:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6359,
+                  "nodeType": "EmitStatement",
+                  "src": "1096:59:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6361,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "upgrade",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6314,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6313,
+                  "name": "_oldWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6361,
+                  "src": "762:34:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                    "typeString": "contract IFinancieInternalWallet"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6312,
+                    "name": "IFinancieInternalWallet",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 8978,
+                    "src": "762:23:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "761:36:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6315,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "805:0:14"
+            },
+            "scope": 6421,
+            "src": "745:415:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6385,
+              "nodeType": "Block",
+              "src": "1242:132:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6372,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6367,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 17346,
+                            "src": "1258:3:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6368,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1258:10:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6369,
+                              "name": "_oldWallet",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 6363,
+                              "src": "1272:10:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                                "typeString": "contract IFinancieInternalWallet"
+                              }
+                            },
+                            "id": 6370,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "owner",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 17296,
+                            "src": "1272:16:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                              "typeString": "function () view external returns (address)"
+                            }
+                          },
+                          "id": 6371,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1272:18:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1258:32:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 6366,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        17349,
+                        17350
+                      ],
+                      "referencedDeclaration": 17349,
+                      "src": "1250:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 6373,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1250:41:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6374,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1250:41:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6375,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6363,
+                        "src": "1299:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6377,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "acceptOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17304,
+                      "src": "1299:26:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 6378,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1299:28:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6379,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1299:28:14"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6381,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6363,
+                        "src": "1352:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 6382,
+                        "name": "this",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17449,
+                        "src": "1364:4:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FinancieInternalWalletUpgrade_$6421",
+                          "typeString": "contract FinancieInternalWalletUpgrade"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_FinancieInternalWalletUpgrade_$6421",
+                          "typeString": "contract FinancieInternalWalletUpgrade"
+                        }
+                      ],
+                      "id": 6380,
+                      "name": "WalletOwned",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6283,
+                      "src": "1340:11:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 6383,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1340:29:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6384,
+                  "nodeType": "EmitStatement",
+                  "src": "1335:34:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6386,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "acceptConverterOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6364,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6363,
+                  "name": "_oldWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6386,
+                  "src": "1198:34:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                    "typeString": "contract IFinancieInternalWallet"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6362,
+                    "name": "IFinancieInternalWallet",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 8978,
+                    "src": "1198:23:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1197:36:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6365,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1242:0:14"
+            },
+            "scope": 6421,
+            "src": "1164:210:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 6419,
+              "nodeType": "Block",
+              "src": "1443:363:14",
+              "statements": [
+                {
+                  "assignments": [
+                    6392
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 6392,
+                      "name": "factory",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 6420,
+                      "src": "1449:38:14",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IFinancieInternalWalletFactory_$8992",
+                        "typeString": "contract IFinancieInternalWalletFactory"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 6391,
+                        "name": "IFinancieInternalWalletFactory",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 8992,
+                        "src": "1449:30:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWalletFactory_$8992",
+                          "typeString": "contract IFinancieInternalWalletFactory"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 6396,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6394,
+                        "name": "walletFactory",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6265,
+                        "src": "1521:13:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6393,
+                      "name": "IFinancieInternalWalletFactory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8992,
+                      "src": "1490:30:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_IFinancieInternalWalletFactory_$8992_$",
+                        "typeString": "type(contract IFinancieInternalWalletFactory)"
+                      }
+                    },
+                    "id": 6395,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1490:45:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWalletFactory_$8992",
+                      "typeString": "contract IFinancieInternalWalletFactory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1449:86:14"
+                },
+                {
+                  "assignments": [
+                    6398
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 6398,
+                      "name": "walletAdderess",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 6420,
+                      "src": "1542:22:14",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 6397,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1542:7:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 6405,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6401,
+                        "name": "teamwallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6267,
+                        "src": "1606:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 6402,
+                        "name": "paymentCurrencyToken",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6271,
+                        "src": "1626:20:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 6403,
+                        "name": "walletdata",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6269,
+                        "src": "1656:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6399,
+                        "name": "factory",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6392,
+                        "src": "1568:7:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWalletFactory_$8992",
+                          "typeString": "contract IFinancieInternalWalletFactory"
+                        }
+                      },
+                      "id": 6400,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "createInternalWallet",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8991,
+                      "src": "1568:28:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_address_$returns$_t_address_$",
+                        "typeString": "function (address,address,address) external returns (address)"
+                      }
+                    },
+                    "id": 6404,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1568:104:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1542:130:14"
+                },
+                {
+                  "assignments": [
+                    6407
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 6407,
+                      "name": "wallet",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 6420,
+                      "src": "1679:30:14",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                        "typeString": "contract IFinancieInternalWallet"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 6406,
+                        "name": "IFinancieInternalWallet",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 8978,
+                        "src": "1679:23:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 6411,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6409,
+                        "name": "walletAdderess",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6398,
+                        "src": "1736:14:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6408,
+                      "name": "IFinancieInternalWallet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8978,
+                      "src": "1712:23:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_IFinancieInternalWallet_$8978_$",
+                        "typeString": "type(contract IFinancieInternalWallet)"
+                      }
+                    },
+                    "id": 6410,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1712:39:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1679:72:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6412,
+                        "name": "wallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6407,
+                        "src": "1757:6:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6414,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "acceptOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17304,
+                      "src": "1757:22:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 6415,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1757:24:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6416,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1757:24:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6417,
+                    "name": "wallet",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 6407,
+                    "src": "1795:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "functionReturnParameters": 6390,
+                  "id": 6418,
+                  "nodeType": "Return",
+                  "src": "1788:13:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6420,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createWallet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1399:2:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6390,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6389,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6420,
+                  "src": "1418:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                    "typeString": "contract IFinancieInternalWallet"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6388,
+                    "name": "IFinancieInternalWallet",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 8978,
+                    "src": "1418:23:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1417:25:14"
+            },
+            "scope": 6421,
+            "src": "1378:428:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          }
+        ],
+        "scope": 6422,
+        "src": "144:1664:14"
+      }
+    ],
+    "src": "0:1809:14"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/FinancieInternalWalletUpgrade.sol",
+    "exportedSymbols": {
+      "FinancieInternalWalletUpgrade": [
+        6421
+      ]
+    },
+    "id": 6422,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6258,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:14"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/Owned.sol",
+        "file": "../utility/Owned.sol",
+        "id": 6259,
+        "nodeType": "ImportDirective",
+        "scope": 6422,
+        "sourceUnit": 16933,
+        "src": "25:30:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieInternalWallet.sol",
+        "file": "./IFinancieInternalWallet.sol",
+        "id": 6260,
+        "nodeType": "ImportDirective",
+        "scope": 6422,
+        "sourceUnit": 8979,
+        "src": "56:39:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieInternalWalletFactory.sol",
+        "file": "./IFinancieInternalWalletFactory.sol",
+        "id": 6261,
+        "nodeType": "ImportDirective",
+        "scope": 6422,
+        "sourceUnit": 8993,
+        "src": "96:46:14",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6262,
+              "name": "Owned",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 16932,
+              "src": "186:5:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Owned_$16932",
+                "typeString": "contract Owned"
+              }
+            },
+            "id": 6263,
+            "nodeType": "InheritanceSpecifier",
+            "src": "186:5:14"
+          }
+        ],
+        "contractDependencies": [
+          16932,
+          17305
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6421,
+        "linearizedBaseContracts": [
+          6421,
+          16932,
+          17305
+        ],
+        "name": "FinancieInternalWalletUpgrade",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6265,
+            "name": "walletFactory",
+            "nodeType": "VariableDeclaration",
+            "scope": 6421,
+            "src": "196:21:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6264,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "196:7:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 6267,
+            "name": "teamwallet",
+            "nodeType": "VariableDeclaration",
+            "scope": 6421,
+            "src": "221:18:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6266,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "221:7:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 6269,
+            "name": "walletdata",
+            "nodeType": "VariableDeclaration",
+            "scope": 6421,
+            "src": "243:18:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6268,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "243:7:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 6271,
+            "name": "paymentCurrencyToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 6421,
+            "src": "265:28:14",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 6270,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "265:7:14",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6277,
+            "name": "WalletUpgrade",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6276,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6273,
+                  "indexed": true,
+                  "name": "_oldWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6277,
+                  "src": "318:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6272,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "318:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6275,
+                  "indexed": true,
+                  "name": "_newWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6277,
+                  "src": "346:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6274,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "346:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "317:56:14"
+            },
+            "src": "298:76:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6283,
+            "name": "WalletOwned",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6282,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6279,
+                  "indexed": true,
+                  "name": "_oldWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6283,
+                  "src": "396:26:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6278,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "396:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6281,
+                  "indexed": true,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6283,
+                  "src": "424:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6280,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "424:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "395:52:14"
+            },
+            "src": "378:70:14"
+          },
+          {
+            "body": {
+              "id": 6310,
+              "nodeType": "Block",
+              "src": "590:151:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6296,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6294,
+                      "name": "walletFactory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6265,
+                      "src": "596:13:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6295,
+                      "name": "_walletFactory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6285,
+                      "src": "612:14:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "596:30:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6297,
+                  "nodeType": "ExpressionStatement",
+                  "src": "596:30:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6300,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6298,
+                      "name": "teamwallet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6267,
+                      "src": "632:10:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6299,
+                      "name": "_teamwallet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6287,
+                      "src": "645:11:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "632:24:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6301,
+                  "nodeType": "ExpressionStatement",
+                  "src": "632:24:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6304,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6302,
+                      "name": "walletdata",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6269,
+                      "src": "662:10:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6303,
+                      "name": "_walletdata",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6291,
+                      "src": "675:11:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "662:24:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6305,
+                  "nodeType": "ExpressionStatement",
+                  "src": "662:24:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6308,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6306,
+                      "name": "paymentCurrencyToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6271,
+                      "src": "692:20:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 6307,
+                      "name": "_paymentCurrencyToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6289,
+                      "src": "715:21:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "692:44:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 6309,
+                  "nodeType": "ExpressionStatement",
+                  "src": "692:44:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6311,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6292,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6285,
+                  "name": "_walletFactory",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6311,
+                  "src": "469:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6284,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "469:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6287,
+                  "name": "_teamwallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6311,
+                  "src": "497:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6286,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6289,
+                  "name": "_paymentCurrencyToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6311,
+                  "src": "522:29:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6288,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "522:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6291,
+                  "name": "_walletdata",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6311,
+                  "src": "557:19:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 6290,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "557:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "463:119:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6293,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "590:0:14"
+            },
+            "scope": 6421,
+            "src": "452:289:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6360,
+              "nodeType": "Block",
+              "src": "805:355:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6317,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6313,
+                        "src": "836:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      ],
+                      "id": 6316,
+                      "name": "acceptConverterOwnership",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6386,
+                      "src": "811:24:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IFinancieInternalWallet_$8978_$returns$__$",
+                        "typeString": "function (contract IFinancieInternalWallet)"
+                      }
+                    },
+                    "id": 6318,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "811:36:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6319,
+                  "nodeType": "ExpressionStatement",
+                  "src": "811:36:14"
+                },
+                {
+                  "assignments": [
+                    6321
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 6321,
+                      "name": "newWallet",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 6361,
+                      "src": "854:33:14",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                        "typeString": "contract IFinancieInternalWallet"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 6320,
+                        "name": "IFinancieInternalWallet",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 8978,
+                        "src": "854:23:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 6324,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 6322,
+                      "name": "createWallet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6420,
+                      "src": "890:12:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$_t_contract$_IFinancieInternalWallet_$8978_$",
+                        "typeString": "function () returns (contract IFinancieInternalWallet)"
+                      }
+                    },
+                    "id": 6323,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "890:14:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "854:50:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6328,
+                        "name": "newWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6321,
+                        "src": "944:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6325,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6313,
+                        "src": "911:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6327,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferBnakOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8816,
+                      "src": "911:32:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 6329,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "911:43:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6330,
+                  "nodeType": "ExpressionStatement",
+                  "src": "911:43:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6334,
+                        "name": "walletdata",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6269,
+                        "src": "986:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6331,
+                        "name": "newWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6321,
+                        "src": "960:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6333,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setInternalBank",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8811,
+                      "src": "960:25:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 6335,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "960:37:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6336,
+                  "nodeType": "ExpressionStatement",
+                  "src": "960:37:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6340,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 17346,
+                          "src": "1033:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 6341,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1033:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6337,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6313,
+                        "src": "1004:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6339,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17301,
+                      "src": "1004:28:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 6342,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1004:40:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6343,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1004:40:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 6347,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 17346,
+                          "src": "1078:3:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 6348,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "1078:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6344,
+                        "name": "newWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6321,
+                        "src": "1050:9:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6346,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17301,
+                      "src": "1050:27:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 6349,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1050:39:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6350,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1050:39:14"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 6353,
+                            "name": "_oldWallet",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6313,
+                            "src": "1123:10:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                              "typeString": "contract IFinancieInternalWallet"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                              "typeString": "contract IFinancieInternalWallet"
+                            }
+                          ],
+                          "id": 6352,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1115:7:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 6354,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1115:19:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 6356,
+                            "name": "newWallet",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 6321,
+                            "src": "1144:9:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                              "typeString": "contract IFinancieInternalWallet"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                              "typeString": "contract IFinancieInternalWallet"
+                            }
+                          ],
+                          "id": 6355,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1136:7:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": "address"
+                        },
+                        "id": 6357,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1136:18:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6351,
+                      "name": "WalletUpgrade",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6277,
+                      "src": "1101:13:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 6358,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1101:54:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6359,
+                  "nodeType": "EmitStatement",
+                  "src": "1096:59:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6361,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "upgrade",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6314,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6313,
+                  "name": "_oldWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6361,
+                  "src": "762:34:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                    "typeString": "contract IFinancieInternalWallet"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6312,
+                    "name": "IFinancieInternalWallet",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 8978,
+                    "src": "762:23:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "761:36:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6315,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "805:0:14"
+            },
+            "scope": 6421,
+            "src": "745:415:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 6385,
+              "nodeType": "Block",
+              "src": "1242:132:14",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 6372,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 6367,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 17346,
+                            "src": "1258:3:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 6368,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1258:10:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 6369,
+                              "name": "_oldWallet",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 6363,
+                              "src": "1272:10:14",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                                "typeString": "contract IFinancieInternalWallet"
+                              }
+                            },
+                            "id": 6370,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "owner",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 17296,
+                            "src": "1272:16:14",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                              "typeString": "function () view external returns (address)"
+                            }
+                          },
+                          "id": 6371,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1272:18:14",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1258:32:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 6366,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        17349,
+                        17350
+                      ],
+                      "referencedDeclaration": 17349,
+                      "src": "1250:7:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 6373,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1250:41:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6374,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1250:41:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6375,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6363,
+                        "src": "1299:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6377,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "acceptOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17304,
+                      "src": "1299:26:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 6378,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1299:28:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6379,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1299:28:14"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6381,
+                        "name": "_oldWallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6363,
+                        "src": "1352:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 6382,
+                        "name": "this",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17449,
+                        "src": "1364:4:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FinancieInternalWalletUpgrade_$6421",
+                          "typeString": "contract FinancieInternalWalletUpgrade"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_FinancieInternalWalletUpgrade_$6421",
+                          "typeString": "contract FinancieInternalWalletUpgrade"
+                        }
+                      ],
+                      "id": 6380,
+                      "name": "WalletOwned",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6283,
+                      "src": "1340:11:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
+                        "typeString": "function (address,address)"
+                      }
+                    },
+                    "id": 6383,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1340:29:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6384,
+                  "nodeType": "EmitStatement",
+                  "src": "1335:34:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6386,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "acceptConverterOwnership",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6364,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6363,
+                  "name": "_oldWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6386,
+                  "src": "1198:34:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                    "typeString": "contract IFinancieInternalWallet"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6362,
+                    "name": "IFinancieInternalWallet",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 8978,
+                    "src": "1198:23:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1197:36:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6365,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1242:0:14"
+            },
+            "scope": 6421,
+            "src": "1164:210:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 6419,
+              "nodeType": "Block",
+              "src": "1443:363:14",
+              "statements": [
+                {
+                  "assignments": [
+                    6392
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 6392,
+                      "name": "factory",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 6420,
+                      "src": "1449:38:14",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IFinancieInternalWalletFactory_$8992",
+                        "typeString": "contract IFinancieInternalWalletFactory"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 6391,
+                        "name": "IFinancieInternalWalletFactory",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 8992,
+                        "src": "1449:30:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWalletFactory_$8992",
+                          "typeString": "contract IFinancieInternalWalletFactory"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 6396,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6394,
+                        "name": "walletFactory",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6265,
+                        "src": "1521:13:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6393,
+                      "name": "IFinancieInternalWalletFactory",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8992,
+                      "src": "1490:30:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_IFinancieInternalWalletFactory_$8992_$",
+                        "typeString": "type(contract IFinancieInternalWalletFactory)"
+                      }
+                    },
+                    "id": 6395,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1490:45:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWalletFactory_$8992",
+                      "typeString": "contract IFinancieInternalWalletFactory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1449:86:14"
+                },
+                {
+                  "assignments": [
+                    6398
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 6398,
+                      "name": "walletAdderess",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 6420,
+                      "src": "1542:22:14",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 6397,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1542:7:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 6405,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6401,
+                        "name": "teamwallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6267,
+                        "src": "1606:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 6402,
+                        "name": "paymentCurrencyToken",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6271,
+                        "src": "1626:20:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 6403,
+                        "name": "walletdata",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6269,
+                        "src": "1656:10:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6399,
+                        "name": "factory",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6392,
+                        "src": "1568:7:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWalletFactory_$8992",
+                          "typeString": "contract IFinancieInternalWalletFactory"
+                        }
+                      },
+                      "id": 6400,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "createInternalWallet",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 8991,
+                      "src": "1568:28:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_address_$returns$_t_address_$",
+                        "typeString": "function (address,address,address) external returns (address)"
+                      }
+                    },
+                    "id": 6404,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1568:104:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1542:130:14"
+                },
+                {
+                  "assignments": [
+                    6407
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 6407,
+                      "name": "wallet",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 6420,
+                      "src": "1679:30:14",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                        "typeString": "contract IFinancieInternalWallet"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 6406,
+                        "name": "IFinancieInternalWallet",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 8978,
+                        "src": "1679:23:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 6411,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6409,
+                        "name": "walletAdderess",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6398,
+                        "src": "1736:14:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 6408,
+                      "name": "IFinancieInternalWallet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8978,
+                      "src": "1712:23:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_IFinancieInternalWallet_$8978_$",
+                        "typeString": "type(contract IFinancieInternalWallet)"
+                      }
+                    },
+                    "id": 6410,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1712:39:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1679:72:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6412,
+                        "name": "wallet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6407,
+                        "src": "1757:6:14",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                          "typeString": "contract IFinancieInternalWallet"
+                        }
+                      },
+                      "id": 6414,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "acceptOwnership",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 17304,
+                      "src": "1757:22:14",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
+                        "typeString": "function () external"
+                      }
+                    },
+                    "id": 6415,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1757:24:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6416,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1757:24:14"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 6417,
+                    "name": "wallet",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 6407,
+                    "src": "1795:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "functionReturnParameters": 6390,
+                  "id": 6418,
+                  "nodeType": "Return",
+                  "src": "1788:13:14"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6420,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createWallet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1399:2:14"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 6390,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6389,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6420,
+                  "src": "1418:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                    "typeString": "contract IFinancieInternalWallet"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 6388,
+                    "name": "IFinancieInternalWallet",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 8978,
+                    "src": "1418:23:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieInternalWallet_$8978",
+                      "typeString": "contract IFinancieInternalWallet"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1417:25:14"
+            },
+            "scope": 6421,
+            "src": "1378:428:14",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          }
+        ],
+        "scope": 6422,
+        "src": "144:1664:14"
+      }
+    ],
+    "src": "0:1809:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-03-01T08:20:46.945Z"
+}

@@ -1,0 +1,397 @@
+{
+  "contractName": "IFinancieInternalWalletFactory",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_teamWallet",
+          "type": "address"
+        },
+        {
+          "name": "_paymentCurrencyToken",
+          "type": "address"
+        },
+        {
+          "name": "_walletdata",
+          "type": "address"
+        }
+      ],
+      "name": "createInternalWallet",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.18;\n\n/*\n    InternalWallet Factory interface\n*/\ncontract IFinancieInternalWalletFactory {\n  function createInternalWallet(\n    address _teamWallet,\n    address _paymentCurrencyToken,\n    address _walletdata\n    )\n    public returns (address);\n}\n",
+  "sourcePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieInternalWalletFactory.sol",
+  "ast": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieInternalWalletFactory.sol",
+    "exportedSymbols": {
+      "IFinancieInternalWalletFactory": [
+        8992
+      ]
+    },
+    "id": 8993,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8980,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:27"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 8992,
+        "linearizedBaseContracts": [
+          8992
+        ],
+        "name": "IFinancieInternalWalletFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 8991,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createInternalWallet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8987,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8982,
+                  "name": "_teamWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8991,
+                  "src": "148:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8981,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "148:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8984,
+                  "name": "_paymentCurrencyToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8991,
+                  "src": "173:29:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8983,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "173:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8986,
+                  "name": "_walletdata",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8991,
+                  "src": "208:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8985,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "208:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "142:91:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 8990,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8989,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8991,
+                  "src": "254:7:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8988,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "254:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "253:9:27"
+            },
+            "scope": 8992,
+            "src": "113:150:27",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 8993,
+        "src": "69:196:27"
+      }
+    ],
+    "src": "0:266:27"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieInternalWalletFactory.sol",
+    "exportedSymbols": {
+      "IFinancieInternalWalletFactory": [
+        8992
+      ]
+    },
+    "id": 8993,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8980,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:27"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 8992,
+        "linearizedBaseContracts": [
+          8992
+        ],
+        "name": "IFinancieInternalWalletFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 8991,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createInternalWallet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8987,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8982,
+                  "name": "_teamWallet",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8991,
+                  "src": "148:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8981,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "148:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8984,
+                  "name": "_paymentCurrencyToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8991,
+                  "src": "173:29:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8983,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "173:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8986,
+                  "name": "_walletdata",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8991,
+                  "src": "208:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8985,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "208:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "142:91:27"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 8990,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8989,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8991,
+                  "src": "254:7:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 8988,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "254:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "253:9:27"
+            },
+            "scope": 8992,
+            "src": "113:150:27",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 8993,
+        "src": "69:196:27"
+      }
+    ],
+    "src": "0:266:27"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-03-01T08:20:46.954Z"
+}

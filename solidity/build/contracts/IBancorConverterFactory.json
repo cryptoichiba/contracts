@@ -1,0 +1,587 @@
+{
+  "contractName": "IBancorConverterFactory",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_registry",
+          "type": "address"
+        },
+        {
+          "name": "_maxConversionFee",
+          "type": "uint32"
+        },
+        {
+          "name": "_connectorToken",
+          "type": "address"
+        },
+        {
+          "name": "_connectorWeight",
+          "type": "uint32"
+        }
+      ],
+      "name": "createConverter",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\nimport '../../token/interfaces/IERC20Token.sol';\nimport '../../token/interfaces/ISmartToken.sol';\nimport '../../utility/interfaces/IContractRegistry.sol';\n\n/*\n    Bancor Converter Factory interface\n*/\ncontract IBancorConverterFactory {\n    function createConverter(\n        ISmartToken _token,\n        IContractRegistry _registry,\n        uint32 _maxConversionFee,\n        IERC20Token _connectorToken,\n        uint32 _connectorWeight\n    )\n    public returns (address);\n}\n",
+  "sourcePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/interfaces/IBancorConverterFactory.sol",
+  "ast": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/interfaces/IBancorConverterFactory.sol",
+    "exportedSymbols": {
+      "IBancorConverterFactory": [
+        14599
+      ]
+    },
+    "id": 14600,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14580,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:40"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IERC20Token.sol",
+        "file": "../../token/interfaces/IERC20Token.sol",
+        "id": 14581,
+        "nodeType": "ImportDirective",
+        "scope": 14600,
+        "sourceUnit": 16320,
+        "src": "25:48:40",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/ISmartToken.sol",
+        "file": "../../token/interfaces/ISmartToken.sol",
+        "id": 14582,
+        "nodeType": "ImportDirective",
+        "scope": 14600,
+        "sourceUnit": 16372,
+        "src": "74:48:40",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IContractRegistry.sol",
+        "file": "../../utility/interfaces/IContractRegistry.sol",
+        "id": 14583,
+        "nodeType": "ImportDirective",
+        "scope": 14600,
+        "sourceUnit": 17289,
+        "src": "123:56:40",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 14599,
+        "linearizedBaseContracts": [
+          14599
+        ],
+        "name": "IBancorConverterFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14598,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createConverter",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14594,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14585,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "299:18:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISmartToken_$16371",
+                    "typeString": "contract ISmartToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14584,
+                    "name": "ISmartToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 16371,
+                    "src": "299:11:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISmartToken_$16371",
+                      "typeString": "contract ISmartToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14587,
+                  "name": "_registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "327:27:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IContractRegistry_$17288",
+                    "typeString": "contract IContractRegistry"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14586,
+                    "name": "IContractRegistry",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 17288,
+                    "src": "327:17:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractRegistry_$17288",
+                      "typeString": "contract IContractRegistry"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14589,
+                  "name": "_maxConversionFee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "364:24:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 14588,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:6:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14591,
+                  "name": "_connectorToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "398:27:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                    "typeString": "contract IERC20Token"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14590,
+                    "name": "IERC20Token",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 16319,
+                    "src": "398:11:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                      "typeString": "contract IERC20Token"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14593,
+                  "name": "_connectorWeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "435:23:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 14592,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:6:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "289:175:40"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14597,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14596,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "485:7:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14595,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "485:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "484:9:40"
+            },
+            "scope": 14599,
+            "src": "265:229:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 14600,
+        "src": "226:270:40"
+      }
+    ],
+    "src": "0:497:40"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/interfaces/IBancorConverterFactory.sol",
+    "exportedSymbols": {
+      "IBancorConverterFactory": [
+        14599
+      ]
+    },
+    "id": 14600,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14580,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:40"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IERC20Token.sol",
+        "file": "../../token/interfaces/IERC20Token.sol",
+        "id": 14581,
+        "nodeType": "ImportDirective",
+        "scope": 14600,
+        "sourceUnit": 16320,
+        "src": "25:48:40",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/ISmartToken.sol",
+        "file": "../../token/interfaces/ISmartToken.sol",
+        "id": 14582,
+        "nodeType": "ImportDirective",
+        "scope": 14600,
+        "sourceUnit": 16372,
+        "src": "74:48:40",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IContractRegistry.sol",
+        "file": "../../utility/interfaces/IContractRegistry.sol",
+        "id": 14583,
+        "nodeType": "ImportDirective",
+        "scope": 14600,
+        "sourceUnit": 17289,
+        "src": "123:56:40",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 14599,
+        "linearizedBaseContracts": [
+          14599
+        ],
+        "name": "IBancorConverterFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 14598,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createConverter",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14594,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14585,
+                  "name": "_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "299:18:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISmartToken_$16371",
+                    "typeString": "contract ISmartToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14584,
+                    "name": "ISmartToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 16371,
+                    "src": "299:11:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISmartToken_$16371",
+                      "typeString": "contract ISmartToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14587,
+                  "name": "_registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "327:27:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IContractRegistry_$17288",
+                    "typeString": "contract IContractRegistry"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14586,
+                    "name": "IContractRegistry",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 17288,
+                    "src": "327:17:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IContractRegistry_$17288",
+                      "typeString": "contract IContractRegistry"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14589,
+                  "name": "_maxConversionFee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "364:24:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 14588,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:6:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14591,
+                  "name": "_connectorToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "398:27:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                    "typeString": "contract IERC20Token"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14590,
+                    "name": "IERC20Token",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 16319,
+                    "src": "398:11:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                      "typeString": "contract IERC20Token"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14593,
+                  "name": "_connectorWeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "435:23:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 14592,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "435:6:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "289:175:40"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 14597,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14596,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14598,
+                  "src": "485:7:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14595,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "485:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "484:9:40"
+            },
+            "scope": 14599,
+            "src": "265:229:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 14600,
+        "src": "226:270:40"
+      }
+    ],
+    "src": "0:497:40"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-03-01T08:20:46.985Z"
+}

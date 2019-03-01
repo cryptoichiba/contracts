@@ -1,0 +1,557 @@
+{
+  "contractName": "IFinancieTicketStoreFactory",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_notifier_address",
+          "type": "address"
+        },
+        {
+          "name": "_managedContracts",
+          "type": "address"
+        },
+        {
+          "name": "_platformToken",
+          "type": "address"
+        },
+        {
+          "name": "_ether_token",
+          "type": "address"
+        }
+      ],
+      "name": "createTicketStore",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.18;\nimport '../token/interfaces/IERC20Token.sol';\nimport './IFinancieNotifier.sol';\nimport './IFinancieManagedContracts.sol';\nimport './IFinancieTicketStoreFactory.sol';\n\n/*\n    TicketStore Factory interface\n*/\ncontract IFinancieTicketStoreFactory {\n    function createTicketStore(\n      IFinancieNotifier _notifier_address,\n      IFinancieManagedContracts _managedContracts,\n      IERC20Token _platformToken,\n      IERC20Token _ether_token\n    )\n    public returns (address);\n}\n",
+  "sourcePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieTicketStoreFactory.sol",
+  "ast": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieTicketStoreFactory.sol",
+    "exportedSymbols": {
+      "IFinancieTicketStoreFactory": [
+        9210
+      ]
+    },
+    "id": 9211,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9192,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:32"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IERC20Token.sol",
+        "file": "../token/interfaces/IERC20Token.sol",
+        "id": 9193,
+        "nodeType": "ImportDirective",
+        "scope": 9211,
+        "sourceUnit": 16320,
+        "src": "25:45:32",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieNotifier.sol",
+        "file": "./IFinancieNotifier.sol",
+        "id": 9194,
+        "nodeType": "ImportDirective",
+        "scope": 9211,
+        "sourceUnit": 9165,
+        "src": "71:33:32",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieManagedContracts.sol",
+        "file": "./IFinancieManagedContracts.sol",
+        "id": 9195,
+        "nodeType": "ImportDirective",
+        "scope": 9211,
+        "sourceUnit": 9030,
+        "src": "105:41:32",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieTicketStoreFactory.sol",
+        "file": "./IFinancieTicketStoreFactory.sol",
+        "id": 9196,
+        "nodeType": "ImportDirective",
+        "scope": 9211,
+        "sourceUnit": 9211,
+        "src": "147:43:32",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 9210,
+        "linearizedBaseContracts": [
+          9210
+        ],
+        "name": "IFinancieTicketStoreFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 9209,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createTicketStore",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9205,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9198,
+                  "name": "_notifier_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "309:35:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieNotifier_$9164",
+                    "typeString": "contract IFinancieNotifier"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 9197,
+                    "name": "IFinancieNotifier",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "309:17:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieNotifier_$9164",
+                      "typeString": "contract IFinancieNotifier"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9200,
+                  "name": "_managedContracts",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "352:43:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieManagedContracts_$9029",
+                    "typeString": "contract IFinancieManagedContracts"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 9199,
+                    "name": "IFinancieManagedContracts",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9029,
+                    "src": "352:25:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieManagedContracts_$9029",
+                      "typeString": "contract IFinancieManagedContracts"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9202,
+                  "name": "_platformToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "403:26:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                    "typeString": "contract IERC20Token"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 9201,
+                    "name": "IERC20Token",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 16319,
+                    "src": "403:11:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                      "typeString": "contract IERC20Token"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9204,
+                  "name": "_ether_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "437:24:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                    "typeString": "contract IERC20Token"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 9203,
+                    "name": "IERC20Token",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 16319,
+                    "src": "437:11:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                      "typeString": "contract IERC20Token"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "301:166:32"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 9208,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9207,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "488:7:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9206,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "488:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "487:9:32"
+            },
+            "scope": 9210,
+            "src": "275:222:32",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 9211,
+        "src": "232:267:32"
+      }
+    ],
+    "src": "0:500:32"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieTicketStoreFactory.sol",
+    "exportedSymbols": {
+      "IFinancieTicketStoreFactory": [
+        9210
+      ]
+    },
+    "id": 9211,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9192,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".18"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:32"
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IERC20Token.sol",
+        "file": "../token/interfaces/IERC20Token.sol",
+        "id": 9193,
+        "nodeType": "ImportDirective",
+        "scope": 9211,
+        "sourceUnit": 16320,
+        "src": "25:45:32",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieNotifier.sol",
+        "file": "./IFinancieNotifier.sol",
+        "id": 9194,
+        "nodeType": "ImportDirective",
+        "scope": 9211,
+        "sourceUnit": 9165,
+        "src": "71:33:32",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieManagedContracts.sol",
+        "file": "./IFinancieManagedContracts.sol",
+        "id": 9195,
+        "nodeType": "ImportDirective",
+        "scope": 9211,
+        "sourceUnit": 9030,
+        "src": "105:41:32",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieTicketStoreFactory.sol",
+        "file": "./IFinancieTicketStoreFactory.sol",
+        "id": 9196,
+        "nodeType": "ImportDirective",
+        "scope": 9211,
+        "sourceUnit": 9211,
+        "src": "147:43:32",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 9210,
+        "linearizedBaseContracts": [
+          9210
+        ],
+        "name": "IFinancieTicketStoreFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 9209,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createTicketStore",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9205,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9198,
+                  "name": "_notifier_address",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "309:35:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieNotifier_$9164",
+                    "typeString": "contract IFinancieNotifier"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 9197,
+                    "name": "IFinancieNotifier",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9164,
+                    "src": "309:17:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieNotifier_$9164",
+                      "typeString": "contract IFinancieNotifier"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9200,
+                  "name": "_managedContracts",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "352:43:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IFinancieManagedContracts_$9029",
+                    "typeString": "contract IFinancieManagedContracts"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 9199,
+                    "name": "IFinancieManagedContracts",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 9029,
+                    "src": "352:25:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IFinancieManagedContracts_$9029",
+                      "typeString": "contract IFinancieManagedContracts"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9202,
+                  "name": "_platformToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "403:26:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                    "typeString": "contract IERC20Token"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 9201,
+                    "name": "IERC20Token",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 16319,
+                    "src": "403:11:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                      "typeString": "contract IERC20Token"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 9204,
+                  "name": "_ether_token",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "437:24:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                    "typeString": "contract IERC20Token"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 9203,
+                    "name": "IERC20Token",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 16319,
+                    "src": "437:11:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                      "typeString": "contract IERC20Token"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "301:166:32"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 9208,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9207,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9209,
+                  "src": "488:7:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9206,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "488:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "487:9:32"
+            },
+            "scope": 9210,
+            "src": "275:222:32",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 9211,
+        "src": "232:267:32"
+      }
+    ],
+    "src": "0:500:32"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2019-03-01T08:20:46.954Z"
+}
