@@ -20,7 +20,7 @@ contract IFinancieInternalWallet is IOwned {
     function withdrawTokens(uint32 _userId, uint256 _amount, address _tokenAddress);
     function withdrawCurrencyTokens(uint32 _userId, uint256 _amount);
     function withdrawPendingRevenueCurrencyTokens(uint32 _userId, uint256 _amount, uint32 _pendingRevenueType);
-    function expireWithdrawableCurrencyTokens(uint32 _userId, uint256 _amount);
+    function expireConsumableCurrencyTokens(uint32 _userId, uint256 _amount);
     function delegateBuyCards(uint32 _userId, uint256 _amount, uint256 _minReturn, address _tokenAddress, address _bancorAddress);
     function delegateSellCards(uint32 _userId, uint256 _amount, uint256 _minReturn, address _tokenAddress, address _bancorAddress);
     function delegateBidCards(uint32 _userId, uint256 _amount, address _auctionAddress);

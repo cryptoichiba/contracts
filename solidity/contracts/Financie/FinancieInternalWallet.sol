@@ -26,7 +26,7 @@ contract FinancieInternalWallet is IFinancieInternalWallet, FinancieCoreComponen
     event ConvertWithdrawableToCunsumableCurrencyTokens(uint32 indexed _user_id, uint256 _amount, uint _timestamp);
     event WithdrawCurrencyTokens(uint32 indexed _user_id, uint256 _amount, uint _timestamp);
     event WithdrawPendingRevenueCurrencyTokens(uint32 indexed _user_id, uint256 _amount, uint32 _revenueType, uint _timestamp);
-    event ExpireWithdrawableCurrencyTokens(uint32 indexed _user_id, uint256 _amount, uint _timestamp);
+    event ExpireConsumableCurrencyTokens(uint32 indexed _user_id, uint256 _amount, uint _timestamp);
 
     event BuyCards(uint32 indexed _user_id, uint256 _currency_amount, uint256 _card_amount, address indexed _token_address, address indexed _bancor_address, uint256 _trading_fee, uint256 _transaction_fee, uint _timestamp);
     event SellCards(uint32 indexed _user_id, uint256 _currency_amount, uint256 _card_amount, address indexed _token_address, address indexed _bancor_address, uint256 _trading_fee, uint256 _transaction_fee, uint _timestamp);
@@ -217,14 +217,14 @@ contract FinancieInternalWallet is IFinancieInternalWallet, FinancieCoreComponen
         emit WithdrawPendingRevenueCurrencyTokens(_userId, _amount, _revenueType, now);
     }
 
-    function expireWithdrawableCurrencyTokens(uint32 _userId, uint256 _amount)
+    function expireConsumableCurrencyTokens(uint32 _userId, uint256 _amount)
         public
         validOperator(msg.sender)
     {
-        require(bank.getBalanceOfWithdrawableCurrencyToken(_userId) >= _amount);
-        subBalanceOfWithdrawableCurrencyTokens(_userId, _amount);
+        require(bank.getBalanceOfConsumableCurrencyToken(_userId) >= _amount);
+        subBalanceOfConsumableCurrencyTokens(_userId, _amount);
 
-        emit ExpireWithdrawableCurrencyTokens(_userId, _amount, now);
+        emit ExpireConsumableCurrencyTokens(_userId, _amount, now);
     }
 
     function _buyCards(uint256 _amount, uint256 _minReturn, address _tokenAddress, address _bancorAddress)

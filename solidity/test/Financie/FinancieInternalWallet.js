@@ -440,31 +440,22 @@ contract('FinancieInternalWallet', (accounts) => {
         assert.equal(0, currencyAfterWithdrawal.toFixed());
     });
 
-    it('expireWithdrawableCurrencyTokens', async () => {
-        let balance = await internalWallet.getBalanceOfToken(cardToken.address, user_id);
-        console.log('[FinancieInternalWallet]balance of card: ' + balance);
+    it('expireConsumableCurrencyTokens', async () => {
+        let totalAmount = new web3.BigNumber(50000);
+        let issueAmount = totalAmount.add(transactionFee);
 
-        let currencyBeforeWithdrawal = await internalWallet.getBalanceOfWithdrawableCurrencyToken(user_id);
-        console.log('[FinancieInternalWallet]currencyBeforeWithdrawal(user_id) ' + currencyBeforeWithdrawal.toFixed());
-        assert.equal(0, currencyBeforeWithdrawal.toFixed());
+        await currencyToken.issue(accounts[0], issueAmount);
+        await currencyToken.approve(internalWallet.address, issueAmount);
+        await internalWallet.depositConsumableCurrencyTokens(user_id, totalAmount);
 
-        [estimationSell, fee] = await bancor.getReturn(cardToken.address, currencyToken.address, balance);
-        console.log('[FinancieInternalWallet]estimationSell ' + estimationSell + ' / ' + fee);
+        let currencyBeforeExpiration = await internalWallet.getBalanceOfConsumableCurrencyToken(user_id);
+        console.log('[FinancieInternalWallet]currencyBeforeExpiration(user_id) ' + currencyBeforeExpiration.toFixed());
+        assert.equal(totalAmount.toFixed(), currencyBeforeExpiration.toFixed());
 
-        let transactionFee = web3.toWei("0", "ether");
-        console.log('transaction fee:' + transactionFee);
-        await internalWallet.setTransactionFee(transactionFee);
+        await internalWallet.expireConsumableCurrencyTokens(user_id, currencyBeforeExpiration / 2);
 
-        await internalWallet.delegateSellCards(user_id, balance, 1, cardToken.address, bancor.address, {gasPrice: gasPrice});
-        console.log('[FinancieInternalWallet]delegateSell OK/' + balance);
-
-        let currencyAfterWithdrawal = await internalWallet.getBalanceOfWithdrawableCurrencyToken(user_id);
-        console.log('[FinancieInternalWallet]currencyAfterWithdrawal(user_id) ' + currencyAfterWithdrawal.toFixed());
-
-        await internalWallet.expireWithdrawableCurrencyTokens(user_id, currencyAfterWithdrawal / 2);
-
-        let currencyAfterExpiration = await internalWallet.getBalanceOfWithdrawableCurrencyToken(user_id);
+        let currencyAfterExpiration = await internalWallet.getBalanceOfConsumableCurrencyToken(user_id);
         console.log('[FinancieInternalWallet]currencyAfterExpiration(user_id) ' + currencyAfterExpiration.toFixed());
-        assert.equal((currencyAfterWithdrawal / 2).toFixed(), currencyAfterExpiration.toFixed());
+        assert.equal((currencyBeforeExpiration / 2).toFixed(), currencyAfterExpiration.toFixed());
     });
 });

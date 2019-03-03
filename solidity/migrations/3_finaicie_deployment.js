@@ -84,6 +84,16 @@ module.exports = function(deployer, _network, _accounts) {
             }
         })
         .then(() => {
+            if ( process.env.FINANCIE_INTERNAL_WALLET_CONTRACT_ADDRESS === undefined &&
+                process.env.ETH_WORKER_ADDRESS !== undefined &&
+                process.env.ETH_FUND_ADDRESS !== undefined ) {
+                return wallet.setOperators(
+                    process.env.ETH_WORKER_ADDRESS,
+                    process.env.ETH_FUND_ADDRESS
+                );
+            }
+        })
+        .then(() => {
             if ( process.env.FINANCIE_INTERNAL_WALLET_CONTRACT_ADDRESS === undefined ) {
                 return wallet.setTransactionFee(transactionFee);
             }
