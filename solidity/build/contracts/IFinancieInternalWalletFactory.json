@@ -47,14 +47,14 @@
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieInternalWalletFactory.sol",
     "exportedSymbols": {
       "IFinancieInternalWalletFactory": [
-        3390
+        7910
       ]
     },
-    "id": 3391,
+    "id": 7911,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3374,
+        "id": 7894,
         "literals": [
           "solidity",
           "^",
@@ -62,7 +62,7 @@
           ".18"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:10"
+        "src": "0:24:23"
       },
       {
         "baseContracts": [],
@@ -70,9 +70,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3390,
+        "id": 7910,
         "linearizedBaseContracts": [
-          3390
+          7910
         ],
         "name": "IFinancieInternalWalletFactory",
         "nodeType": "ContractDefinition",
@@ -80,7 +80,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3389,
+            "id": 7909,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -88,16 +88,16 @@
             "name": "createInternalWallet",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3385,
+              "id": 7905,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3376,
+                  "id": 7896,
                   "name": "_teamWallet",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "154:19:10",
+                  "scope": 7909,
+                  "src": "154:19:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -105,10 +105,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3375,
+                    "id": 7895,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "154:7:10",
+                    "src": "154:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -119,11 +119,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3378,
+                  "id": 7898,
                   "name": "_managedContracts",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "183:25:10",
+                  "scope": 7909,
+                  "src": "183:25:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -131,10 +131,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3377,
+                    "id": 7897,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "183:7:10",
+                    "src": "183:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -145,11 +145,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3380,
+                  "id": 7900,
                   "name": "_platformToken",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "218:22:10",
+                  "scope": 7909,
+                  "src": "218:22:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -157,10 +157,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3379,
+                    "id": 7899,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "218:7:10",
+                    "src": "218:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -171,11 +171,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3382,
+                  "id": 7902,
                   "name": "_currencyToken",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "250:22:10",
+                  "scope": 7909,
+                  "src": "250:22:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -183,10 +183,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3381,
+                    "id": 7901,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "250:7:10",
+                    "src": "250:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -197,11 +197,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3384,
+                  "id": 7904,
                   "name": "_walletdata",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "282:19:10",
+                  "scope": 7909,
+                  "src": "282:19:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -209,10 +209,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3383,
+                    "id": 7903,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "282:7:10",
+                    "src": "282:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -222,20 +222,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "144:163:10"
+              "src": "144:163:23"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3388,
+              "id": 7908,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3387,
+                  "id": 7907,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "324:7:10",
+                  "scope": 7909,
+                  "src": "324:7:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -243,10 +243,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3386,
+                    "id": 7906,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "324:7:10",
+                    "src": "324:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -256,33 +256,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "323:9:10"
+              "src": "323:9:23"
             },
-            "scope": 3390,
-            "src": "115:218:10",
+            "scope": 7910,
+            "src": "115:218:23",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3391,
-        "src": "69:266:10"
+        "scope": 7911,
+        "src": "69:266:23"
       }
     ],
-    "src": "0:336:10"
+    "src": "0:336:23"
   },
   "legacyAST": {
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieInternalWalletFactory.sol",
     "exportedSymbols": {
       "IFinancieInternalWalletFactory": [
-        3390
+        7910
       ]
     },
-    "id": 3391,
+    "id": 7911,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3374,
+        "id": 7894,
         "literals": [
           "solidity",
           "^",
@@ -290,7 +290,7 @@
           ".18"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:10"
+        "src": "0:24:23"
       },
       {
         "baseContracts": [],
@@ -298,9 +298,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3390,
+        "id": 7910,
         "linearizedBaseContracts": [
-          3390
+          7910
         ],
         "name": "IFinancieInternalWalletFactory",
         "nodeType": "ContractDefinition",
@@ -308,7 +308,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3389,
+            "id": 7909,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -316,16 +316,16 @@
             "name": "createInternalWallet",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3385,
+              "id": 7905,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3376,
+                  "id": 7896,
                   "name": "_teamWallet",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "154:19:10",
+                  "scope": 7909,
+                  "src": "154:19:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -333,10 +333,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3375,
+                    "id": 7895,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "154:7:10",
+                    "src": "154:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -347,11 +347,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3378,
+                  "id": 7898,
                   "name": "_managedContracts",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "183:25:10",
+                  "scope": 7909,
+                  "src": "183:25:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -359,10 +359,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3377,
+                    "id": 7897,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "183:7:10",
+                    "src": "183:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -373,11 +373,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3380,
+                  "id": 7900,
                   "name": "_platformToken",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "218:22:10",
+                  "scope": 7909,
+                  "src": "218:22:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -385,10 +385,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3379,
+                    "id": 7899,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "218:7:10",
+                    "src": "218:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -399,11 +399,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3382,
+                  "id": 7902,
                   "name": "_currencyToken",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "250:22:10",
+                  "scope": 7909,
+                  "src": "250:22:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -411,10 +411,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3381,
+                    "id": 7901,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "250:7:10",
+                    "src": "250:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -425,11 +425,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3384,
+                  "id": 7904,
                   "name": "_walletdata",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "282:19:10",
+                  "scope": 7909,
+                  "src": "282:19:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -437,10 +437,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3383,
+                    "id": 7903,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "282:7:10",
+                    "src": "282:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -450,20 +450,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "144:163:10"
+              "src": "144:163:23"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3388,
+              "id": 7908,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3387,
+                  "id": 7907,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3389,
-                  "src": "324:7:10",
+                  "scope": 7909,
+                  "src": "324:7:23",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -471,10 +471,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3386,
+                    "id": 7906,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "324:7:10",
+                    "src": "324:7:23",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -484,20 +484,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "323:9:10"
+              "src": "323:9:23"
             },
-            "scope": 3390,
-            "src": "115:218:10",
+            "scope": 7910,
+            "src": "115:218:23",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3391,
-        "src": "69:266:10"
+        "scope": 7911,
+        "src": "69:266:23"
       }
     ],
-    "src": "0:336:10"
+    "src": "0:336:23"
   },
   "compiler": {
     "name": "solc",
@@ -505,5 +505,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-03T07:14:05.112Z"
+  "updatedAt": "2019-03-03T08:58:01.598Z"
 }

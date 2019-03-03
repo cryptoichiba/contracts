@@ -517,14 +517,14 @@
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/helpers/TestCrowdsaleController.sol",
     "exportedSymbols": {
       "TestCrowdsaleController": [
-        14068
+        14108
       ]
     },
-    "id": 14069,
+    "id": 14109,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 14013,
+        "id": 14053,
         "literals": [
           "solidity",
           "^",
@@ -537,10 +537,10 @@
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/crowdsale/CrowdsaleController.sol",
         "file": "../crowdsale/CrowdsaleController.sol",
-        "id": 14014,
+        "id": 14054,
         "nodeType": "ImportDirective",
-        "scope": 14069,
-        "sourceUnit": 13840,
+        "scope": 14109,
+        "sourceUnit": 13880,
         "src": "25:46:41",
         "symbolAliases": [],
         "unitAlias": ""
@@ -551,53 +551,53 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 14015,
+              "id": 14055,
               "name": "CrowdsaleController",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 13839,
+              "referencedDeclaration": 13879,
               "src": "178:19:41",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CrowdsaleController_$13839",
+                "typeIdentifier": "t_contract$_CrowdsaleController_$13879",
                 "typeString": "contract CrowdsaleController"
               }
             },
-            "id": 14016,
+            "id": 14056,
             "nodeType": "InheritanceSpecifier",
             "src": "178:19:41"
           }
         ],
         "contractDependencies": [
-          13839,
-          15044,
-          15737,
-          15783,
-          15904,
-          16110,
-          16126
+          13879,
+          15084,
+          15777,
+          15823,
+          15944,
+          16150,
+          16166
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 14068,
+        "id": 14108,
         "linearizedBaseContracts": [
-          14068,
-          13839,
-          15044,
-          15783,
-          15904,
-          15737,
-          16126,
-          16110
+          14108,
+          13879,
+          15084,
+          15823,
+          15944,
+          15777,
+          16166,
+          16150
         ],
         "name": "TestCrowdsaleController",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 14019,
+            "id": 14059,
             "name": "BTCS_ETHER_CAP_SMALL",
             "nodeType": "VariableDeclaration",
-            "scope": 14068,
+            "scope": 14108,
             "src": "204:54:41",
             "stateVariable": true,
             "storageLocation": "default",
@@ -606,7 +606,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 14017,
+              "id": 14057,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "204:7:41",
@@ -618,7 +618,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "32",
-              "id": 14018,
+              "id": 14058,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -637,25 +637,25 @@
           },
           {
             "body": {
-              "id": 14051,
+              "id": 14091,
               "nodeType": "Block",
               "src": "610:87:41",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 14043,
+                    "id": 14083,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 14041,
+                      "id": 14081,
                       "name": "startTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 13498,
+                      "referencedDeclaration": 13538,
                       "src": "620:9:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -666,11 +666,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 14042,
+                      "id": 14082,
                       "name": "_startTimeOverride",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 14031,
+                      "referencedDeclaration": 14071,
                       "src": "632:18:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -683,25 +683,25 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 14044,
+                  "id": 14084,
                   "nodeType": "ExpressionStatement",
                   "src": "620:30:41"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 14049,
+                    "id": 14089,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 14045,
+                      "id": 14085,
                       "name": "endTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 13501,
+                      "referencedDeclaration": 13541,
                       "src": "660:7:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -716,18 +716,18 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 14048,
+                      "id": 14088,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
                         "argumentTypes": null,
-                        "id": 14046,
+                        "id": 14086,
                         "name": "startTime",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 13498,
+                        "referencedDeclaration": 13538,
                         "src": "670:9:41",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -738,11 +738,11 @@
                       "operator": "+",
                       "rightExpression": {
                         "argumentTypes": null,
-                        "id": 14047,
+                        "id": 14087,
                         "name": "DURATION",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 13480,
+                        "referencedDeclaration": 13520,
                         "src": "682:8:41",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -761,14 +761,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 14050,
+                  "id": 14090,
                   "nodeType": "ExpressionStatement",
                   "src": "660:30:41"
                 }
               ]
             },
             "documentation": null,
-            "id": 14052,
+            "id": 14092,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -777,24 +777,24 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 14034,
+                    "id": 14074,
                     "name": "_token",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14021,
+                    "referencedDeclaration": 14061,
                     "src": "546:6:41",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                      "typeIdentifier": "t_contract$_ISmartToken_$15216",
                       "typeString": "contract ISmartToken"
                     }
                   },
                   {
                     "argumentTypes": null,
-                    "id": 14035,
+                    "id": 14075,
                     "name": "_startTime",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14023,
+                    "referencedDeclaration": 14063,
                     "src": "554:10:41",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -803,11 +803,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 14036,
+                    "id": 14076,
                     "name": "_beneficiary",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14025,
+                    "referencedDeclaration": 14065,
                     "src": "566:12:41",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -816,11 +816,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 14037,
+                    "id": 14077,
                     "name": "_btcs",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14027,
+                    "referencedDeclaration": 14067,
                     "src": "580:5:41",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -829,11 +829,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 14038,
+                    "id": 14078,
                     "name": "_realEtherCapHash",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14029,
+                    "referencedDeclaration": 14069,
                     "src": "587:17:41",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -841,17 +841,17 @@
                     }
                   }
                 ],
-                "id": 14039,
+                "id": 14079,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 14033,
+                  "id": 14073,
                   "name": "CrowdsaleController",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 13839,
+                  "referencedDeclaration": 13879,
                   "src": "526:19:41",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_CrowdsaleController_$13839_$",
+                    "typeIdentifier": "t_type$_t_contract$_CrowdsaleController_$13879_$",
                     "typeString": "type(contract CrowdsaleController)"
                   }
                 },
@@ -862,31 +862,31 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 14032,
+              "id": 14072,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 14021,
+                  "id": 14061,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "331:18:41",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                    "typeIdentifier": "t_contract$_ISmartToken_$15216",
                     "typeString": "contract ISmartToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 14020,
+                    "id": 14060,
                     "name": "ISmartToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15176,
+                    "referencedDeclaration": 15216,
                     "src": "331:11:41",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                      "typeIdentifier": "t_contract$_ISmartToken_$15216",
                       "typeString": "contract ISmartToken"
                     }
                   },
@@ -895,10 +895,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14023,
+                  "id": 14063,
                   "name": "_startTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "359:18:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -907,7 +907,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 14022,
+                    "id": 14062,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "359:7:41",
@@ -921,10 +921,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14025,
+                  "id": 14065,
                   "name": "_beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "387:20:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -933,7 +933,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 14024,
+                    "id": 14064,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "387:7:41",
@@ -947,10 +947,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14027,
+                  "id": 14067,
                   "name": "_btcs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "417:13:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -959,7 +959,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 14026,
+                    "id": 14066,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "417:7:41",
@@ -973,10 +973,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14029,
+                  "id": 14069,
                   "name": "_realEtherCapHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "440:25:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -985,7 +985,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 14028,
+                    "id": 14068,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "440:7:41",
@@ -999,10 +999,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14031,
+                  "id": 14071,
                   "name": "_startTimeOverride",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "475:26:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1011,7 +1011,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 14030,
+                    "id": 14070,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "475:7:41",
@@ -1028,12 +1028,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 14040,
+              "id": 14080,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "610:0:41"
             },
-            "scope": 14068,
+            "scope": 14108,
             "src": "310:387:41",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1041,7 +1041,7 @@
           },
           {
             "body": {
-              "id": 14066,
+              "id": 14106,
               "nodeType": "Block",
               "src": "761:108:41",
               "statements": [
@@ -1055,7 +1055,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 14062,
+                        "id": 14102,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1065,11 +1065,11 @@
                           "arguments": [
                             {
                               "argumentTypes": null,
-                              "id": 14058,
+                              "id": 14098,
                               "name": "totalEtherContributed",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 13507,
+                              "referencedDeclaration": 13547,
                               "src": "786:21:41",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -1078,11 +1078,11 @@
                             },
                             {
                               "argumentTypes": null,
-                              "id": 14059,
+                              "id": 14099,
                               "name": "_ethContribution",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 14054,
+                              "referencedDeclaration": 14094,
                               "src": "809:16:41",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -1101,18 +1101,18 @@
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 14057,
+                            "id": 14097,
                             "name": "safeAdd",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 15853,
+                            "referencedDeclaration": 15893,
                             "src": "778:7:41",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                               "typeString": "function (uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 14060,
+                          "id": 14100,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1130,11 +1130,11 @@
                         "operator": "<=",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 14061,
+                          "id": 14101,
                           "name": "BTCS_ETHER_CAP_SMALL",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 14019,
+                          "referencedDeclaration": 14059,
                           "src": "830:20:41",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1155,18 +1155,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 14056,
+                      "id": 14096,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 16140,
+                      "referencedDeclaration": 16180,
                       "src": "771:6:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 14063,
+                    "id": 14103,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1180,31 +1180,31 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 14064,
+                  "id": 14104,
                   "nodeType": "ExpressionStatement",
                   "src": "771:80:41"
                 },
                 {
-                  "id": 14065,
+                  "id": 14105,
                   "nodeType": "PlaceholderStatement",
                   "src": "861:1:41"
                 }
               ]
             },
             "documentation": null,
-            "id": 14067,
+            "id": 14107,
             "name": "btcsEtherCapNotReached",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 14055,
+              "id": 14095,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 14054,
+                  "id": 14094,
                   "name": "_ethContribution",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14067,
+                  "scope": 14107,
                   "src": "735:24:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1213,7 +1213,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 14053,
+                    "id": 14093,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "735:7:41",
@@ -1232,7 +1232,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 14069,
+        "scope": 14109,
         "src": "142:729:41"
       }
     ],
@@ -1242,14 +1242,14 @@
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/helpers/TestCrowdsaleController.sol",
     "exportedSymbols": {
       "TestCrowdsaleController": [
-        14068
+        14108
       ]
     },
-    "id": 14069,
+    "id": 14109,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 14013,
+        "id": 14053,
         "literals": [
           "solidity",
           "^",
@@ -1262,10 +1262,10 @@
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/crowdsale/CrowdsaleController.sol",
         "file": "../crowdsale/CrowdsaleController.sol",
-        "id": 14014,
+        "id": 14054,
         "nodeType": "ImportDirective",
-        "scope": 14069,
-        "sourceUnit": 13840,
+        "scope": 14109,
+        "sourceUnit": 13880,
         "src": "25:46:41",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1276,53 +1276,53 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 14015,
+              "id": 14055,
               "name": "CrowdsaleController",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 13839,
+              "referencedDeclaration": 13879,
               "src": "178:19:41",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_CrowdsaleController_$13839",
+                "typeIdentifier": "t_contract$_CrowdsaleController_$13879",
                 "typeString": "contract CrowdsaleController"
               }
             },
-            "id": 14016,
+            "id": 14056,
             "nodeType": "InheritanceSpecifier",
             "src": "178:19:41"
           }
         ],
         "contractDependencies": [
-          13839,
-          15044,
-          15737,
-          15783,
-          15904,
-          16110,
-          16126
+          13879,
+          15084,
+          15777,
+          15823,
+          15944,
+          16150,
+          16166
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 14068,
+        "id": 14108,
         "linearizedBaseContracts": [
-          14068,
-          13839,
-          15044,
-          15783,
-          15904,
-          15737,
-          16126,
-          16110
+          14108,
+          13879,
+          15084,
+          15823,
+          15944,
+          15777,
+          16166,
+          16150
         ],
         "name": "TestCrowdsaleController",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": true,
-            "id": 14019,
+            "id": 14059,
             "name": "BTCS_ETHER_CAP_SMALL",
             "nodeType": "VariableDeclaration",
-            "scope": 14068,
+            "scope": 14108,
             "src": "204:54:41",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1331,7 +1331,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 14017,
+              "id": 14057,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "204:7:41",
@@ -1343,7 +1343,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "32",
-              "id": 14018,
+              "id": 14058,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1362,25 +1362,25 @@
           },
           {
             "body": {
-              "id": 14051,
+              "id": 14091,
               "nodeType": "Block",
               "src": "610:87:41",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 14043,
+                    "id": 14083,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 14041,
+                      "id": 14081,
                       "name": "startTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 13498,
+                      "referencedDeclaration": 13538,
                       "src": "620:9:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1391,11 +1391,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 14042,
+                      "id": 14082,
                       "name": "_startTimeOverride",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 14031,
+                      "referencedDeclaration": 14071,
                       "src": "632:18:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1408,25 +1408,25 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 14044,
+                  "id": 14084,
                   "nodeType": "ExpressionStatement",
                   "src": "620:30:41"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 14049,
+                    "id": 14089,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 14045,
+                      "id": 14085,
                       "name": "endTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 13501,
+                      "referencedDeclaration": 13541,
                       "src": "660:7:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1441,18 +1441,18 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 14048,
+                      "id": 14088,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
                         "argumentTypes": null,
-                        "id": 14046,
+                        "id": 14086,
                         "name": "startTime",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 13498,
+                        "referencedDeclaration": 13538,
                         "src": "670:9:41",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1463,11 +1463,11 @@
                       "operator": "+",
                       "rightExpression": {
                         "argumentTypes": null,
-                        "id": 14047,
+                        "id": 14087,
                         "name": "DURATION",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 13480,
+                        "referencedDeclaration": 13520,
                         "src": "682:8:41",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1486,14 +1486,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 14050,
+                  "id": 14090,
                   "nodeType": "ExpressionStatement",
                   "src": "660:30:41"
                 }
               ]
             },
             "documentation": null,
-            "id": 14052,
+            "id": 14092,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -1502,24 +1502,24 @@
                 "arguments": [
                   {
                     "argumentTypes": null,
-                    "id": 14034,
+                    "id": 14074,
                     "name": "_token",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14021,
+                    "referencedDeclaration": 14061,
                     "src": "546:6:41",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                      "typeIdentifier": "t_contract$_ISmartToken_$15216",
                       "typeString": "contract ISmartToken"
                     }
                   },
                   {
                     "argumentTypes": null,
-                    "id": 14035,
+                    "id": 14075,
                     "name": "_startTime",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14023,
+                    "referencedDeclaration": 14063,
                     "src": "554:10:41",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -1528,11 +1528,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 14036,
+                    "id": 14076,
                     "name": "_beneficiary",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14025,
+                    "referencedDeclaration": 14065,
                     "src": "566:12:41",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1541,11 +1541,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 14037,
+                    "id": 14077,
                     "name": "_btcs",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14027,
+                    "referencedDeclaration": 14067,
                     "src": "580:5:41",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1554,11 +1554,11 @@
                   },
                   {
                     "argumentTypes": null,
-                    "id": 14038,
+                    "id": 14078,
                     "name": "_realEtherCapHash",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 14029,
+                    "referencedDeclaration": 14069,
                     "src": "587:17:41",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -1566,17 +1566,17 @@
                     }
                   }
                 ],
-                "id": 14039,
+                "id": 14079,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 14033,
+                  "id": 14073,
                   "name": "CrowdsaleController",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 13839,
+                  "referencedDeclaration": 13879,
                   "src": "526:19:41",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_CrowdsaleController_$13839_$",
+                    "typeIdentifier": "t_type$_t_contract$_CrowdsaleController_$13879_$",
                     "typeString": "type(contract CrowdsaleController)"
                   }
                 },
@@ -1587,31 +1587,31 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 14032,
+              "id": 14072,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 14021,
+                  "id": 14061,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "331:18:41",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                    "typeIdentifier": "t_contract$_ISmartToken_$15216",
                     "typeString": "contract ISmartToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 14020,
+                    "id": 14060,
                     "name": "ISmartToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15176,
+                    "referencedDeclaration": 15216,
                     "src": "331:11:41",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                      "typeIdentifier": "t_contract$_ISmartToken_$15216",
                       "typeString": "contract ISmartToken"
                     }
                   },
@@ -1620,10 +1620,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14023,
+                  "id": 14063,
                   "name": "_startTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "359:18:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1632,7 +1632,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 14022,
+                    "id": 14062,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "359:7:41",
@@ -1646,10 +1646,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14025,
+                  "id": 14065,
                   "name": "_beneficiary",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "387:20:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1658,7 +1658,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 14024,
+                    "id": 14064,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "387:7:41",
@@ -1672,10 +1672,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14027,
+                  "id": 14067,
                   "name": "_btcs",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "417:13:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1684,7 +1684,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 14026,
+                    "id": 14066,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "417:7:41",
@@ -1698,10 +1698,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14029,
+                  "id": 14069,
                   "name": "_realEtherCapHash",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "440:25:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1710,7 +1710,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 14028,
+                    "id": 14068,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "440:7:41",
@@ -1724,10 +1724,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 14031,
+                  "id": 14071,
                   "name": "_startTimeOverride",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14052,
+                  "scope": 14092,
                   "src": "475:26:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1736,7 +1736,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 14030,
+                    "id": 14070,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "475:7:41",
@@ -1753,12 +1753,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 14040,
+              "id": 14080,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "610:0:41"
             },
-            "scope": 14068,
+            "scope": 14108,
             "src": "310:387:41",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1766,7 +1766,7 @@
           },
           {
             "body": {
-              "id": 14066,
+              "id": 14106,
               "nodeType": "Block",
               "src": "761:108:41",
               "statements": [
@@ -1780,7 +1780,7 @@
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
                         },
-                        "id": 14062,
+                        "id": 14102,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1790,11 +1790,11 @@
                           "arguments": [
                             {
                               "argumentTypes": null,
-                              "id": 14058,
+                              "id": 14098,
                               "name": "totalEtherContributed",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 13507,
+                              "referencedDeclaration": 13547,
                               "src": "786:21:41",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -1803,11 +1803,11 @@
                             },
                             {
                               "argumentTypes": null,
-                              "id": 14059,
+                              "id": 14099,
                               "name": "_ethContribution",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 14054,
+                              "referencedDeclaration": 14094,
                               "src": "809:16:41",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -1826,18 +1826,18 @@
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 14057,
+                            "id": 14097,
                             "name": "safeAdd",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 15853,
+                            "referencedDeclaration": 15893,
                             "src": "778:7:41",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                               "typeString": "function (uint256,uint256) pure returns (uint256)"
                             }
                           },
-                          "id": 14060,
+                          "id": 14100,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1855,11 +1855,11 @@
                         "operator": "<=",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 14061,
+                          "id": 14101,
                           "name": "BTCS_ETHER_CAP_SMALL",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 14019,
+                          "referencedDeclaration": 14059,
                           "src": "830:20:41",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -1880,18 +1880,18 @@
                           "typeString": "bool"
                         }
                       ],
-                      "id": 14056,
+                      "id": 14096,
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 16140,
+                      "referencedDeclaration": 16180,
                       "src": "771:6:41",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
                         "typeString": "function (bool) pure"
                       }
                     },
-                    "id": 14063,
+                    "id": 14103,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1905,31 +1905,31 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 14064,
+                  "id": 14104,
                   "nodeType": "ExpressionStatement",
                   "src": "771:80:41"
                 },
                 {
-                  "id": 14065,
+                  "id": 14105,
                   "nodeType": "PlaceholderStatement",
                   "src": "861:1:41"
                 }
               ]
             },
             "documentation": null,
-            "id": 14067,
+            "id": 14107,
             "name": "btcsEtherCapNotReached",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 14055,
+              "id": 14095,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 14054,
+                  "id": 14094,
                   "name": "_ethContribution",
                   "nodeType": "VariableDeclaration",
-                  "scope": 14067,
+                  "scope": 14107,
                   "src": "735:24:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1938,7 +1938,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 14053,
+                    "id": 14093,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "735:7:41",
@@ -1957,7 +1957,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 14069,
+        "scope": 14109,
         "src": "142:729:41"
       }
     ],
@@ -1969,5 +1969,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-03T06:20:07.743Z"
+  "updatedAt": "2019-03-03T08:58:01.626Z"
 }

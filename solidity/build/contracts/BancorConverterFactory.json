@@ -70,14 +70,14 @@
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/BancorConverterFactory.sol",
     "exportedSymbols": {
       "BancorConverterFactory": [
-        10117
+        10157
       ]
     },
-    "id": 10118,
+    "id": 10158,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 10046,
+        "id": 10086,
         "literals": [
           "solidity",
           "^",
@@ -90,10 +90,10 @@
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/BancorConverter.sol",
         "file": "./BancorConverter.sol",
-        "id": 10047,
+        "id": 10087,
         "nodeType": "ImportDirective",
-        "scope": 10118,
-        "sourceUnit": 10045,
+        "scope": 10158,
+        "sourceUnit": 10085,
         "src": "25:31:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -101,10 +101,10 @@
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/interfaces/IBancorConverterFactory.sol",
         "file": "./interfaces/IBancorConverterFactory.sol",
-        "id": 10048,
+        "id": 10088,
         "nodeType": "ImportDirective",
-        "scope": 10118,
-        "sourceUnit": 13405,
+        "scope": 10158,
+        "sourceUnit": 13445,
         "src": "57:50:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -112,10 +112,10 @@
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IContractRegistry.sol",
         "file": "../utility/interfaces/IContractRegistry.sol",
-        "id": 10049,
+        "id": 10089,
         "nodeType": "ImportDirective",
-        "scope": 10118,
-        "sourceUnit": 16094,
+        "scope": 10158,
+        "sourceUnit": 16134,
         "src": "108:53:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -126,32 +126,32 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 10050,
+              "id": 10090,
               "name": "IBancorConverterFactory",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 13404,
+              "referencedDeclaration": 13444,
               "src": "233:23:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IBancorConverterFactory_$13404",
+                "typeIdentifier": "t_contract$_IBancorConverterFactory_$13444",
                 "typeString": "contract IBancorConverterFactory"
               }
             },
-            "id": 10051,
+            "id": 10091,
             "nodeType": "InheritanceSpecifier",
             "src": "233:23:29"
           }
         ],
         "contractDependencies": [
-          10044,
-          13404
+          10084,
+          13444
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 10117,
+        "id": 10157,
         "linearizedBaseContracts": [
-          10117,
-          13404
+          10157,
+          13444
         ],
         "name": "BancorConverterFactory",
         "nodeType": "ContractDefinition",
@@ -159,20 +159,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 10057,
+            "id": 10097,
             "name": "NewConverter",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 10056,
+              "id": 10096,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 10053,
+                  "id": 10093,
                   "indexed": true,
                   "name": "_converter",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10057,
+                  "scope": 10097,
                   "src": "331:26:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -181,7 +181,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 10052,
+                    "id": 10092,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "331:7:29",
@@ -195,11 +195,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 10055,
+                  "id": 10095,
                   "indexed": true,
                   "name": "_owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10057,
+                  "scope": 10097,
                   "src": "359:22:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -208,7 +208,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 10054,
+                    "id": 10094,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "359:7:29",
@@ -227,13 +227,13 @@
           },
           {
             "body": {
-              "id": 10060,
+              "id": 10100,
               "nodeType": "Block",
               "src": "450:7:29",
               "statements": []
             },
             "documentation": "@dev constructor",
-            "id": 10061,
+            "id": 10101,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -241,19 +241,19 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 10058,
+              "id": 10098,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "440:2:29"
             },
             "payable": false,
             "returnParameters": {
-              "id": 10059,
+              "id": 10099,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "450:0:29"
             },
-            "scope": 10117,
+            "scope": 10157,
             "src": "429:28:29",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -261,37 +261,37 @@
           },
           {
             "body": {
-              "id": 10115,
+              "id": 10155,
               "nodeType": "Block",
               "src": "1309:456:29",
               "statements": [
                 {
                   "assignments": [
-                    10077
+                    10117
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 10077,
+                      "id": 10117,
                       "name": "converter",
                       "nodeType": "VariableDeclaration",
-                      "scope": 10116,
+                      "scope": 10156,
                       "src": "1319:25:29",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                        "typeIdentifier": "t_contract$_BancorConverter_$10084",
                         "typeString": "contract BancorConverter"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 10076,
+                        "id": 10116,
                         "name": "BancorConverter",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 10044,
+                        "referencedDeclaration": 10084,
                         "src": "1319:15:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       },
@@ -299,43 +299,43 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 10086,
+                  "id": 10126,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 10080,
+                        "id": 10120,
                         "name": "_token",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10063,
+                        "referencedDeclaration": 10103,
                         "src": "1380:6:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                          "typeIdentifier": "t_contract$_ISmartToken_$15216",
                           "typeString": "contract ISmartToken"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 10081,
+                        "id": 10121,
                         "name": "_registry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10065,
+                        "referencedDeclaration": 10105,
                         "src": "1400:9:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                          "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                           "typeString": "contract IContractRegistry"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 10082,
+                        "id": 10122,
                         "name": "_maxConversionFee",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10067,
+                        "referencedDeclaration": 10107,
                         "src": "1423:17:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint32",
@@ -344,24 +344,24 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 10083,
+                        "id": 10123,
                         "name": "_connectorToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10069,
+                        "referencedDeclaration": 10109,
                         "src": "1454:15:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 10084,
+                        "id": 10124,
                         "name": "_connectorWeight",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10071,
+                        "referencedDeclaration": 10111,
                         "src": "1483:16:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint32",
@@ -372,11 +372,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                          "typeIdentifier": "t_contract$_ISmartToken_$15216",
                           "typeString": "contract ISmartToken"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                          "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                           "typeString": "contract IContractRegistry"
                         },
                         {
@@ -384,7 +384,7 @@
                           "typeString": "uint32"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         },
                         {
@@ -392,7 +392,7 @@
                           "typeString": "uint32"
                         }
                       ],
-                      "id": 10079,
+                      "id": 10119,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -400,23 +400,23 @@
                       "nodeType": "NewExpression",
                       "src": "1347:19:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISmartToken_$15176_$_t_contract$_IContractRegistry_$16093_$_t_uint32_$_t_contract$_IERC20Token_$15124_$_t_uint32_$returns$_t_contract$_BancorConverter_$10044_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISmartToken_$15216_$_t_contract$_IContractRegistry_$16133_$_t_uint32_$_t_contract$_IERC20Token_$15164_$_t_uint32_$returns$_t_contract$_BancorConverter_$10084_$",
                         "typeString": "function (contract ISmartToken,contract IContractRegistry,uint32,contract IERC20Token,uint32) returns (contract BancorConverter)"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 10078,
+                        "id": 10118,
                         "name": "BancorConverter",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 10044,
+                        "referencedDeclaration": 10084,
                         "src": "1351:15:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       }
                     },
-                    "id": 10085,
+                    "id": 10125,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -426,7 +426,7 @@
                     "nodeType": "FunctionCall",
                     "src": "1347:162:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                      "typeIdentifier": "t_contract$_BancorConverter_$10084",
                       "typeString": "contract BancorConverter"
                     }
                   },
@@ -441,18 +441,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 10090,
+                          "id": 10130,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "1548:3:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 10091,
+                        "id": 10131,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -476,32 +476,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 10087,
+                        "id": 10127,
                         "name": "converter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10077,
+                        "referencedDeclaration": 10117,
                         "src": "1520:9:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       },
-                      "id": 10089,
+                      "id": 10129,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "transferOwnership",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 15710,
+                      "referencedDeclaration": 15750,
                       "src": "1520:27:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address) external"
                       }
                     },
-                    "id": 10092,
+                    "id": 10132,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -515,7 +515,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 10093,
+                  "id": 10133,
                   "nodeType": "ExpressionStatement",
                   "src": "1520:39:29"
                 },
@@ -527,18 +527,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 10097,
+                          "id": 10137,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "1598:3:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 10098,
+                        "id": 10138,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -562,32 +562,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 10094,
+                        "id": 10134,
                         "name": "converter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10077,
+                        "referencedDeclaration": 10117,
                         "src": "1569:9:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       },
-                      "id": 10096,
+                      "id": 10136,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "transferManagement",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 15630,
+                      "referencedDeclaration": 15670,
                       "src": "1569:28:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address) external"
                       }
                     },
-                    "id": 10099,
+                    "id": 10139,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -601,21 +601,21 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 10100,
+                  "id": 10140,
                   "nodeType": "ExpressionStatement",
                   "src": "1569:40:29"
                 },
                 {
                   "assignments": [
-                    10102
+                    10142
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 10102,
+                      "id": 10142,
                       "name": "_converterAddress",
                       "nodeType": "VariableDeclaration",
-                      "scope": 10116,
+                      "scope": 10156,
                       "src": "1620:25:29",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -624,7 +624,7 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 10101,
+                        "id": 10141,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "1620:7:29",
@@ -637,20 +637,20 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 10106,
+                  "id": 10146,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 10104,
+                        "id": 10144,
                         "name": "converter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10077,
+                        "referencedDeclaration": 10117,
                         "src": "1656:9:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       }
@@ -658,11 +658,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       ],
-                      "id": 10103,
+                      "id": 10143,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -675,7 +675,7 @@
                       },
                       "typeName": "address"
                     },
-                    "id": 10105,
+                    "id": 10145,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -698,11 +698,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 10108,
+                        "id": 10148,
                         "name": "_converterAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10102,
+                        "referencedDeclaration": 10142,
                         "src": "1694:17:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -713,18 +713,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 10109,
+                          "id": 10149,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "1713:3:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 10110,
+                        "id": 10150,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -750,18 +750,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 10107,
+                      "id": 10147,
                       "name": "NewConverter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 10057,
+                      "referencedDeclaration": 10097,
                       "src": "1681:12:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
                         "typeString": "function (address,address)"
                       }
                     },
-                    "id": 10111,
+                    "id": 10151,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -775,33 +775,33 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 10112,
+                  "id": 10152,
                   "nodeType": "EmitStatement",
                   "src": "1676:48:29"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 10113,
+                    "id": 10153,
                     "name": "_converterAddress",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 10102,
+                    "referencedDeclaration": 10142,
                     "src": "1741:17:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 10075,
-                  "id": 10114,
+                  "functionReturnParameters": 10115,
+                  "id": 10154,
                   "nodeType": "Return",
                   "src": "1734:24:29"
                 }
               ]
             },
             "documentation": "@dev creates a new converter with the given arguments and transfers\nthe ownership and management to the sender.\n@param  _token              smart token governed by the converter\n@param  _registry           address of a contract registry contract\n@param  _maxConversionFee   maximum conversion fee, represented in ppm\n@param  _connectorToken     optional, initial connector, allows defining the first connector at deployment time\n@param  _connectorWeight    optional, weight for the initial connector\n@return a new converter",
-            "id": 10116,
+            "id": 10156,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -809,31 +809,31 @@
             "name": "createConverter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 10072,
+              "id": 10112,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 10063,
+                  "id": 10103,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1102:18:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                    "typeIdentifier": "t_contract$_ISmartToken_$15216",
                     "typeString": "contract ISmartToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 10062,
+                    "id": 10102,
                     "name": "ISmartToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15176,
+                    "referencedDeclaration": 15216,
                     "src": "1102:11:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                      "typeIdentifier": "t_contract$_ISmartToken_$15216",
                       "typeString": "contract ISmartToken"
                     }
                   },
@@ -842,26 +842,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 10065,
+                  "id": 10105,
                   "name": "_registry",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1130:27:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                    "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                     "typeString": "contract IContractRegistry"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 10064,
+                    "id": 10104,
                     "name": "IContractRegistry",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 16093,
+                    "referencedDeclaration": 16133,
                     "src": "1130:17:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                      "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                       "typeString": "contract IContractRegistry"
                     }
                   },
@@ -870,10 +870,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 10067,
+                  "id": 10107,
                   "name": "_maxConversionFee",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1167:24:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -882,7 +882,7 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 10066,
+                    "id": 10106,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1167:6:29",
@@ -896,26 +896,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 10069,
+                  "id": 10109,
                   "name": "_connectorToken",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1201:27:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                    "typeIdentifier": "t_contract$_IERC20Token_$15164",
                     "typeString": "contract IERC20Token"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 10068,
+                    "id": 10108,
                     "name": "IERC20Token",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15124,
+                    "referencedDeclaration": 15164,
                     "src": "1201:11:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                      "typeIdentifier": "t_contract$_IERC20Token_$15164",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -924,10 +924,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 10071,
+                  "id": 10111,
                   "name": "_connectorWeight",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1238:23:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -936,7 +936,7 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 10070,
+                    "id": 10110,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1238:6:29",
@@ -953,15 +953,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 10075,
+              "id": 10115,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 10074,
+                  "id": 10114,
                   "name": "converterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1283:24:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -970,7 +970,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 10073,
+                    "id": 10113,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1283:7:29",
@@ -985,14 +985,14 @@
               ],
               "src": "1282:26:29"
             },
-            "scope": 10117,
+            "scope": 10157,
             "src": "1068:697:29",
             "stateMutability": "nonpayable",
-            "superFunction": 13403,
+            "superFunction": 13443,
             "visibility": "public"
           }
         ],
-        "scope": 10118,
+        "scope": 10158,
         "src": "198:1569:29"
       }
     ],
@@ -1002,14 +1002,14 @@
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/BancorConverterFactory.sol",
     "exportedSymbols": {
       "BancorConverterFactory": [
-        10117
+        10157
       ]
     },
-    "id": 10118,
+    "id": 10158,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 10046,
+        "id": 10086,
         "literals": [
           "solidity",
           "^",
@@ -1022,10 +1022,10 @@
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/BancorConverter.sol",
         "file": "./BancorConverter.sol",
-        "id": 10047,
+        "id": 10087,
         "nodeType": "ImportDirective",
-        "scope": 10118,
-        "sourceUnit": 10045,
+        "scope": 10158,
+        "sourceUnit": 10085,
         "src": "25:31:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1033,10 +1033,10 @@
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/interfaces/IBancorConverterFactory.sol",
         "file": "./interfaces/IBancorConverterFactory.sol",
-        "id": 10048,
+        "id": 10088,
         "nodeType": "ImportDirective",
-        "scope": 10118,
-        "sourceUnit": 13405,
+        "scope": 10158,
+        "sourceUnit": 13445,
         "src": "57:50:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1044,10 +1044,10 @@
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IContractRegistry.sol",
         "file": "../utility/interfaces/IContractRegistry.sol",
-        "id": 10049,
+        "id": 10089,
         "nodeType": "ImportDirective",
-        "scope": 10118,
-        "sourceUnit": 16094,
+        "scope": 10158,
+        "sourceUnit": 16134,
         "src": "108:53:29",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1058,32 +1058,32 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 10050,
+              "id": 10090,
               "name": "IBancorConverterFactory",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 13404,
+              "referencedDeclaration": 13444,
               "src": "233:23:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IBancorConverterFactory_$13404",
+                "typeIdentifier": "t_contract$_IBancorConverterFactory_$13444",
                 "typeString": "contract IBancorConverterFactory"
               }
             },
-            "id": 10051,
+            "id": 10091,
             "nodeType": "InheritanceSpecifier",
             "src": "233:23:29"
           }
         ],
         "contractDependencies": [
-          10044,
-          13404
+          10084,
+          13444
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 10117,
+        "id": 10157,
         "linearizedBaseContracts": [
-          10117,
-          13404
+          10157,
+          13444
         ],
         "name": "BancorConverterFactory",
         "nodeType": "ContractDefinition",
@@ -1091,20 +1091,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 10057,
+            "id": 10097,
             "name": "NewConverter",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 10056,
+              "id": 10096,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 10053,
+                  "id": 10093,
                   "indexed": true,
                   "name": "_converter",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10057,
+                  "scope": 10097,
                   "src": "331:26:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1113,7 +1113,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 10052,
+                    "id": 10092,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "331:7:29",
@@ -1127,11 +1127,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 10055,
+                  "id": 10095,
                   "indexed": true,
                   "name": "_owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10057,
+                  "scope": 10097,
                   "src": "359:22:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1140,7 +1140,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 10054,
+                    "id": 10094,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "359:7:29",
@@ -1159,13 +1159,13 @@
           },
           {
             "body": {
-              "id": 10060,
+              "id": 10100,
               "nodeType": "Block",
               "src": "450:7:29",
               "statements": []
             },
             "documentation": "@dev constructor",
-            "id": 10061,
+            "id": 10101,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -1173,19 +1173,19 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 10058,
+              "id": 10098,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "440:2:29"
             },
             "payable": false,
             "returnParameters": {
-              "id": 10059,
+              "id": 10099,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "450:0:29"
             },
-            "scope": 10117,
+            "scope": 10157,
             "src": "429:28:29",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1193,37 +1193,37 @@
           },
           {
             "body": {
-              "id": 10115,
+              "id": 10155,
               "nodeType": "Block",
               "src": "1309:456:29",
               "statements": [
                 {
                   "assignments": [
-                    10077
+                    10117
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 10077,
+                      "id": 10117,
                       "name": "converter",
                       "nodeType": "VariableDeclaration",
-                      "scope": 10116,
+                      "scope": 10156,
                       "src": "1319:25:29",
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                        "typeIdentifier": "t_contract$_BancorConverter_$10084",
                         "typeString": "contract BancorConverter"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 10076,
+                        "id": 10116,
                         "name": "BancorConverter",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 10044,
+                        "referencedDeclaration": 10084,
                         "src": "1319:15:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       },
@@ -1231,43 +1231,43 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 10086,
+                  "id": 10126,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 10080,
+                        "id": 10120,
                         "name": "_token",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10063,
+                        "referencedDeclaration": 10103,
                         "src": "1380:6:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                          "typeIdentifier": "t_contract$_ISmartToken_$15216",
                           "typeString": "contract ISmartToken"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 10081,
+                        "id": 10121,
                         "name": "_registry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10065,
+                        "referencedDeclaration": 10105,
                         "src": "1400:9:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                          "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                           "typeString": "contract IContractRegistry"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 10082,
+                        "id": 10122,
                         "name": "_maxConversionFee",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10067,
+                        "referencedDeclaration": 10107,
                         "src": "1423:17:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint32",
@@ -1276,24 +1276,24 @@
                       },
                       {
                         "argumentTypes": null,
-                        "id": 10083,
+                        "id": 10123,
                         "name": "_connectorToken",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10069,
+                        "referencedDeclaration": 10109,
                         "src": "1454:15:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         }
                       },
                       {
                         "argumentTypes": null,
-                        "id": 10084,
+                        "id": 10124,
                         "name": "_connectorWeight",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10071,
+                        "referencedDeclaration": 10111,
                         "src": "1483:16:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint32",
@@ -1304,11 +1304,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                          "typeIdentifier": "t_contract$_ISmartToken_$15216",
                           "typeString": "contract ISmartToken"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                          "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                           "typeString": "contract IContractRegistry"
                         },
                         {
@@ -1316,7 +1316,7 @@
                           "typeString": "uint32"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         },
                         {
@@ -1324,7 +1324,7 @@
                           "typeString": "uint32"
                         }
                       ],
-                      "id": 10079,
+                      "id": 10119,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1332,23 +1332,23 @@
                       "nodeType": "NewExpression",
                       "src": "1347:19:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISmartToken_$15176_$_t_contract$_IContractRegistry_$16093_$_t_uint32_$_t_contract$_IERC20Token_$15124_$_t_uint32_$returns$_t_contract$_BancorConverter_$10044_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISmartToken_$15216_$_t_contract$_IContractRegistry_$16133_$_t_uint32_$_t_contract$_IERC20Token_$15164_$_t_uint32_$returns$_t_contract$_BancorConverter_$10084_$",
                         "typeString": "function (contract ISmartToken,contract IContractRegistry,uint32,contract IERC20Token,uint32) returns (contract BancorConverter)"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 10078,
+                        "id": 10118,
                         "name": "BancorConverter",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 10044,
+                        "referencedDeclaration": 10084,
                         "src": "1351:15:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       }
                     },
-                    "id": 10085,
+                    "id": 10125,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1358,7 +1358,7 @@
                     "nodeType": "FunctionCall",
                     "src": "1347:162:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                      "typeIdentifier": "t_contract$_BancorConverter_$10084",
                       "typeString": "contract BancorConverter"
                     }
                   },
@@ -1373,18 +1373,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 10090,
+                          "id": 10130,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "1548:3:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 10091,
+                        "id": 10131,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1408,32 +1408,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 10087,
+                        "id": 10127,
                         "name": "converter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10077,
+                        "referencedDeclaration": 10117,
                         "src": "1520:9:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       },
-                      "id": 10089,
+                      "id": 10129,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "transferOwnership",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 15710,
+                      "referencedDeclaration": 15750,
                       "src": "1520:27:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address) external"
                       }
                     },
-                    "id": 10092,
+                    "id": 10132,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1447,7 +1447,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 10093,
+                  "id": 10133,
                   "nodeType": "ExpressionStatement",
                   "src": "1520:39:29"
                 },
@@ -1459,18 +1459,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 10097,
+                          "id": 10137,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "1598:3:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 10098,
+                        "id": 10138,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1494,32 +1494,32 @@
                       ],
                       "expression": {
                         "argumentTypes": null,
-                        "id": 10094,
+                        "id": 10134,
                         "name": "converter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10077,
+                        "referencedDeclaration": 10117,
                         "src": "1569:9:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       },
-                      "id": 10096,
+                      "id": 10136,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "memberName": "transferManagement",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 15630,
+                      "referencedDeclaration": 15670,
                       "src": "1569:28:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address) external"
                       }
                     },
-                    "id": 10099,
+                    "id": 10139,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1533,21 +1533,21 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 10100,
+                  "id": 10140,
                   "nodeType": "ExpressionStatement",
                   "src": "1569:40:29"
                 },
                 {
                   "assignments": [
-                    10102
+                    10142
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 10102,
+                      "id": 10142,
                       "name": "_converterAddress",
                       "nodeType": "VariableDeclaration",
-                      "scope": 10116,
+                      "scope": 10156,
                       "src": "1620:25:29",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1556,7 +1556,7 @@
                         "typeString": "address"
                       },
                       "typeName": {
-                        "id": 10101,
+                        "id": 10141,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
                         "src": "1620:7:29",
@@ -1569,20 +1569,20 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 10106,
+                  "id": 10146,
                   "initialValue": {
                     "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 10104,
+                        "id": 10144,
                         "name": "converter",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10077,
+                        "referencedDeclaration": 10117,
                         "src": "1656:9:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       }
@@ -1590,11 +1590,11 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_BancorConverter_$10044",
+                          "typeIdentifier": "t_contract$_BancorConverter_$10084",
                           "typeString": "contract BancorConverter"
                         }
                       ],
-                      "id": 10103,
+                      "id": 10143,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -1607,7 +1607,7 @@
                       },
                       "typeName": "address"
                     },
-                    "id": 10105,
+                    "id": 10145,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1630,11 +1630,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 10108,
+                        "id": 10148,
                         "name": "_converterAddress",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 10102,
+                        "referencedDeclaration": 10142,
                         "src": "1694:17:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1645,18 +1645,18 @@
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 10109,
+                          "id": 10149,
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "1713:3:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
                             "typeString": "msg"
                           }
                         },
-                        "id": 10110,
+                        "id": 10150,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1682,18 +1682,18 @@
                           "typeString": "address"
                         }
                       ],
-                      "id": 10107,
+                      "id": 10147,
                       "name": "NewConverter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 10057,
+                      "referencedDeclaration": 10097,
                       "src": "1681:12:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
                         "typeString": "function (address,address)"
                       }
                     },
-                    "id": 10111,
+                    "id": 10151,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1707,33 +1707,33 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 10112,
+                  "id": 10152,
                   "nodeType": "EmitStatement",
                   "src": "1676:48:29"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 10113,
+                    "id": 10153,
                     "name": "_converterAddress",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 10102,
+                    "referencedDeclaration": 10142,
                     "src": "1741:17:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "functionReturnParameters": 10075,
-                  "id": 10114,
+                  "functionReturnParameters": 10115,
+                  "id": 10154,
                   "nodeType": "Return",
                   "src": "1734:24:29"
                 }
               ]
             },
             "documentation": "@dev creates a new converter with the given arguments and transfers\nthe ownership and management to the sender.\n@param  _token              smart token governed by the converter\n@param  _registry           address of a contract registry contract\n@param  _maxConversionFee   maximum conversion fee, represented in ppm\n@param  _connectorToken     optional, initial connector, allows defining the first connector at deployment time\n@param  _connectorWeight    optional, weight for the initial connector\n@return a new converter",
-            "id": 10116,
+            "id": 10156,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1741,31 +1741,31 @@
             "name": "createConverter",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 10072,
+              "id": 10112,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 10063,
+                  "id": 10103,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1102:18:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                    "typeIdentifier": "t_contract$_ISmartToken_$15216",
                     "typeString": "contract ISmartToken"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 10062,
+                    "id": 10102,
                     "name": "ISmartToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15176,
+                    "referencedDeclaration": 15216,
                     "src": "1102:11:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                      "typeIdentifier": "t_contract$_ISmartToken_$15216",
                       "typeString": "contract ISmartToken"
                     }
                   },
@@ -1774,26 +1774,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 10065,
+                  "id": 10105,
                   "name": "_registry",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1130:27:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                    "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                     "typeString": "contract IContractRegistry"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 10064,
+                    "id": 10104,
                     "name": "IContractRegistry",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 16093,
+                    "referencedDeclaration": 16133,
                     "src": "1130:17:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                      "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                       "typeString": "contract IContractRegistry"
                     }
                   },
@@ -1802,10 +1802,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 10067,
+                  "id": 10107,
                   "name": "_maxConversionFee",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1167:24:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1814,7 +1814,7 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 10066,
+                    "id": 10106,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1167:6:29",
@@ -1828,26 +1828,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 10069,
+                  "id": 10109,
                   "name": "_connectorToken",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1201:27:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                    "typeIdentifier": "t_contract$_IERC20Token_$15164",
                     "typeString": "contract IERC20Token"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 10068,
+                    "id": 10108,
                     "name": "IERC20Token",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15124,
+                    "referencedDeclaration": 15164,
                     "src": "1201:11:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                      "typeIdentifier": "t_contract$_IERC20Token_$15164",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -1856,10 +1856,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 10071,
+                  "id": 10111,
                   "name": "_connectorWeight",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1238:23:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1868,7 +1868,7 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 10070,
+                    "id": 10110,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1238:6:29",
@@ -1885,15 +1885,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 10075,
+              "id": 10115,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 10074,
+                  "id": 10114,
                   "name": "converterAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 10116,
+                  "scope": 10156,
                   "src": "1283:24:29",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1902,7 +1902,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 10073,
+                    "id": 10113,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1283:7:29",
@@ -1917,14 +1917,14 @@
               ],
               "src": "1282:26:29"
             },
-            "scope": 10117,
+            "scope": 10157,
             "src": "1068:697:29",
             "stateMutability": "nonpayable",
-            "superFunction": 13403,
+            "superFunction": 13443,
             "visibility": "public"
           }
         ],
-        "scope": 10118,
+        "scope": 10158,
         "src": "198:1569:29"
       }
     ],
@@ -1936,5 +1936,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-03T06:20:07.718Z"
+  "updatedAt": "2019-03-03T08:58:25.291Z"
 }

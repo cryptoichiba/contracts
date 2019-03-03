@@ -231,7 +231,7 @@
         "id": 2660,
         "nodeType": "ImportDirective",
         "scope": 2785,
-        "sourceUnit": 10118,
+        "sourceUnit": 10158,
         "src": "65:49:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -245,10 +245,10 @@
               "id": 2661,
               "name": "BancorConverterFactory",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 10117,
+              "referencedDeclaration": 10157,
               "src": "383:22:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BancorConverterFactory_$10117",
+                "typeIdentifier": "t_contract$_BancorConverterFactory_$10157",
                 "typeString": "contract BancorConverterFactory"
               }
             },
@@ -259,8 +259,8 @@
         ],
         "contractDependencies": [
           2656,
-          10117,
-          13404
+          10157,
+          13444
         ],
         "contractKind": "contract",
         "documentation": "Financie Bancor Converter Factory\n*  Based on BancorConverterFactory, extended and overriden for...\n   - allow conversion only from ETH/Card to Card/ETH\n   - ignore base fee model and use Financie fee model\n",
@@ -268,8 +268,8 @@
         "id": 2784,
         "linearizedBaseContracts": [
           2784,
-          10117,
-          13404
+          10157,
+          13444
         ],
         "name": "FinancieBancorConverterFactory",
         "nodeType": "ContractDefinition",
@@ -414,7 +414,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IERC20Token_$15124",
+              "typeIdentifier": "t_contract$_IERC20Token_$15164",
               "typeString": "contract IERC20Token"
             },
             "typeName": {
@@ -422,10 +422,10 @@
               "id": 2673,
               "name": "IERC20Token",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 15124,
+              "referencedDeclaration": 15164,
               "src": "777:11:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                "typeIdentifier": "t_contract$_IERC20Token_$15164",
                 "typeString": "contract IERC20Token"
               }
             },
@@ -711,7 +711,7 @@
                       "referencedDeclaration": 2674,
                       "src": "1347:13:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                        "typeIdentifier": "t_contract$_IERC20Token_$15164",
                         "typeString": "contract IERC20Token"
                       }
                     },
@@ -726,13 +726,13 @@
                       "referencedDeclaration": 2688,
                       "src": "1363:14:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                        "typeIdentifier": "t_contract$_IERC20Token_$15164",
                         "typeString": "contract IERC20Token"
                       }
                     },
                     "src": "1347:30:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                      "typeIdentifier": "t_contract$_IERC20Token_$15164",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -940,7 +940,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                    "typeIdentifier": "t_contract$_IERC20Token_$15164",
                     "typeString": "contract IERC20Token"
                   },
                   "typeName": {
@@ -948,10 +948,10 @@
                     "id": 2687,
                     "name": "IERC20Token",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15124,
+                    "referencedDeclaration": 15164,
                     "src": "1086:11:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                      "typeIdentifier": "t_contract$_IERC20Token_$15164",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -1053,7 +1053,7 @@
                         "referencedDeclaration": 2724,
                         "src": "2365:6:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                          "typeIdentifier": "t_contract$_ISmartToken_$15216",
                           "typeString": "contract ISmartToken"
                         }
                       },
@@ -1066,7 +1066,7 @@
                         "referencedDeclaration": 2674,
                         "src": "2385:13:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         }
                       },
@@ -1079,7 +1079,7 @@
                         "referencedDeclaration": 2730,
                         "src": "2412:15:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         }
                       },
@@ -1118,7 +1118,7 @@
                         "referencedDeclaration": 2726,
                         "src": "2487:9:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                          "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                           "typeString": "contract IContractRegistry"
                         }
                       },
@@ -1191,15 +1191,15 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                          "typeIdentifier": "t_contract$_ISmartToken_$15216",
                           "typeString": "contract ISmartToken"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         },
                         {
@@ -1211,7 +1211,7 @@
                           "typeString": "address"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                          "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                           "typeString": "contract IContractRegistry"
                         },
                         {
@@ -1243,7 +1243,7 @@
                       "nodeType": "NewExpression",
                       "src": "2324:27:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISmartToken_$15176_$_t_contract$_IERC20Token_$15124_$_t_contract$_IERC20Token_$15124_$_t_uint32_$_t_address_$_t_contract$_IContractRegistry_$16093_$_t_address_$_t_uint32_$_t_uint32_$_t_uint32_$_t_address_$returns$_t_contract$_FinancieBancorConverter_$2656_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISmartToken_$15216_$_t_contract$_IERC20Token_$15164_$_t_contract$_IERC20Token_$15164_$_t_uint32_$_t_address_$_t_contract$_IContractRegistry_$16133_$_t_address_$_t_uint32_$_t_uint32_$_t_uint32_$_t_address_$returns$_t_contract$_FinancieBancorConverter_$2656_$",
                         "typeString": "function (contract ISmartToken,contract IERC20Token,contract IERC20Token,uint32,address,contract IContractRegistry,address,uint32,uint32,uint32,address) returns (contract FinancieBancorConverter)"
                       },
                       "typeName": {
@@ -1288,7 +1288,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "2675:3:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1337,7 +1337,7 @@
                       "lValueRequested": false,
                       "memberName": "transferOwnership",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 15710,
+                      "referencedDeclaration": 15750,
                       "src": "2647:27:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -1374,7 +1374,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "2725:3:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1423,7 +1423,7 @@
                       "lValueRequested": false,
                       "memberName": "transferManagement",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 15630,
+                      "referencedDeclaration": 15670,
                       "src": "2696:28:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -1560,7 +1560,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "2840:3:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1597,7 +1597,7 @@
                       "name": "NewConverter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 10057,
+                      "referencedDeclaration": 10097,
                       "src": "2808:12:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
@@ -1665,7 +1665,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                    "typeIdentifier": "t_contract$_ISmartToken_$15216",
                     "typeString": "contract ISmartToken"
                   },
                   "typeName": {
@@ -1673,10 +1673,10 @@
                     "id": 2723,
                     "name": "ISmartToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15176,
+                    "referencedDeclaration": 15216,
                     "src": "2071:11:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                      "typeIdentifier": "t_contract$_ISmartToken_$15216",
                       "typeString": "contract ISmartToken"
                     }
                   },
@@ -1693,7 +1693,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                    "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                     "typeString": "contract IContractRegistry"
                   },
                   "typeName": {
@@ -1701,10 +1701,10 @@
                     "id": 2725,
                     "name": "IContractRegistry",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 16093,
+                    "referencedDeclaration": 16133,
                     "src": "2099:17:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                      "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                       "typeString": "contract IContractRegistry"
                     }
                   },
@@ -1747,7 +1747,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                    "typeIdentifier": "t_contract$_IERC20Token_$15164",
                     "typeString": "contract IERC20Token"
                   },
                   "typeName": {
@@ -1755,10 +1755,10 @@
                     "id": 2729,
                     "name": "IERC20Token",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15124,
+                    "referencedDeclaration": 15164,
                     "src": "2170:11:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                      "typeIdentifier": "t_contract$_IERC20Token_$15164",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -1831,7 +1831,7 @@
             "scope": 2784,
             "src": "2037:855:6",
             "stateMutability": "nonpayable",
-            "superFunction": 10116,
+            "superFunction": 10156,
             "visibility": "public"
           }
         ],
@@ -1879,7 +1879,7 @@
         "id": 2660,
         "nodeType": "ImportDirective",
         "scope": 2785,
-        "sourceUnit": 10118,
+        "sourceUnit": 10158,
         "src": "65:49:6",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1893,10 +1893,10 @@
               "id": 2661,
               "name": "BancorConverterFactory",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 10117,
+              "referencedDeclaration": 10157,
               "src": "383:22:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_BancorConverterFactory_$10117",
+                "typeIdentifier": "t_contract$_BancorConverterFactory_$10157",
                 "typeString": "contract BancorConverterFactory"
               }
             },
@@ -1907,8 +1907,8 @@
         ],
         "contractDependencies": [
           2656,
-          10117,
-          13404
+          10157,
+          13444
         ],
         "contractKind": "contract",
         "documentation": "Financie Bancor Converter Factory\n*  Based on BancorConverterFactory, extended and overriden for...\n   - allow conversion only from ETH/Card to Card/ETH\n   - ignore base fee model and use Financie fee model\n",
@@ -1916,8 +1916,8 @@
         "id": 2784,
         "linearizedBaseContracts": [
           2784,
-          10117,
-          13404
+          10157,
+          13444
         ],
         "name": "FinancieBancorConverterFactory",
         "nodeType": "ContractDefinition",
@@ -2062,7 +2062,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IERC20Token_$15124",
+              "typeIdentifier": "t_contract$_IERC20Token_$15164",
               "typeString": "contract IERC20Token"
             },
             "typeName": {
@@ -2070,10 +2070,10 @@
               "id": 2673,
               "name": "IERC20Token",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 15124,
+              "referencedDeclaration": 15164,
               "src": "777:11:6",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                "typeIdentifier": "t_contract$_IERC20Token_$15164",
                 "typeString": "contract IERC20Token"
               }
             },
@@ -2359,7 +2359,7 @@
                       "referencedDeclaration": 2674,
                       "src": "1347:13:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                        "typeIdentifier": "t_contract$_IERC20Token_$15164",
                         "typeString": "contract IERC20Token"
                       }
                     },
@@ -2374,13 +2374,13 @@
                       "referencedDeclaration": 2688,
                       "src": "1363:14:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                        "typeIdentifier": "t_contract$_IERC20Token_$15164",
                         "typeString": "contract IERC20Token"
                       }
                     },
                     "src": "1347:30:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                      "typeIdentifier": "t_contract$_IERC20Token_$15164",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -2588,7 +2588,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                    "typeIdentifier": "t_contract$_IERC20Token_$15164",
                     "typeString": "contract IERC20Token"
                   },
                   "typeName": {
@@ -2596,10 +2596,10 @@
                     "id": 2687,
                     "name": "IERC20Token",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15124,
+                    "referencedDeclaration": 15164,
                     "src": "1086:11:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                      "typeIdentifier": "t_contract$_IERC20Token_$15164",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -2701,7 +2701,7 @@
                         "referencedDeclaration": 2724,
                         "src": "2365:6:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                          "typeIdentifier": "t_contract$_ISmartToken_$15216",
                           "typeString": "contract ISmartToken"
                         }
                       },
@@ -2714,7 +2714,7 @@
                         "referencedDeclaration": 2674,
                         "src": "2385:13:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         }
                       },
@@ -2727,7 +2727,7 @@
                         "referencedDeclaration": 2730,
                         "src": "2412:15:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         }
                       },
@@ -2766,7 +2766,7 @@
                         "referencedDeclaration": 2726,
                         "src": "2487:9:6",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                          "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                           "typeString": "contract IContractRegistry"
                         }
                       },
@@ -2839,15 +2839,15 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                          "typeIdentifier": "t_contract$_ISmartToken_$15216",
                           "typeString": "contract ISmartToken"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                          "typeIdentifier": "t_contract$_IERC20Token_$15164",
                           "typeString": "contract IERC20Token"
                         },
                         {
@@ -2859,7 +2859,7 @@
                           "typeString": "address"
                         },
                         {
-                          "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                          "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                           "typeString": "contract IContractRegistry"
                         },
                         {
@@ -2891,7 +2891,7 @@
                       "nodeType": "NewExpression",
                       "src": "2324:27:6",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISmartToken_$15176_$_t_contract$_IERC20Token_$15124_$_t_contract$_IERC20Token_$15124_$_t_uint32_$_t_address_$_t_contract$_IContractRegistry_$16093_$_t_address_$_t_uint32_$_t_uint32_$_t_uint32_$_t_address_$returns$_t_contract$_FinancieBancorConverter_$2656_$",
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISmartToken_$15216_$_t_contract$_IERC20Token_$15164_$_t_contract$_IERC20Token_$15164_$_t_uint32_$_t_address_$_t_contract$_IContractRegistry_$16133_$_t_address_$_t_uint32_$_t_uint32_$_t_uint32_$_t_address_$returns$_t_contract$_FinancieBancorConverter_$2656_$",
                         "typeString": "function (contract ISmartToken,contract IERC20Token,contract IERC20Token,uint32,address,contract IContractRegistry,address,uint32,uint32,uint32,address) returns (contract FinancieBancorConverter)"
                       },
                       "typeName": {
@@ -2936,7 +2936,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "2675:3:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2985,7 +2985,7 @@
                       "lValueRequested": false,
                       "memberName": "transferOwnership",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 15710,
+                      "referencedDeclaration": 15750,
                       "src": "2647:27:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -3022,7 +3022,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "2725:3:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -3071,7 +3071,7 @@
                       "lValueRequested": false,
                       "memberName": "transferManagement",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 15630,
+                      "referencedDeclaration": 15670,
                       "src": "2696:28:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -3208,7 +3208,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16151,
+                          "referencedDeclaration": 16191,
                           "src": "2840:3:6",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -3245,7 +3245,7 @@
                       "name": "NewConverter",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 10057,
+                      "referencedDeclaration": 10097,
                       "src": "2808:12:6",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$returns$__$",
@@ -3313,7 +3313,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                    "typeIdentifier": "t_contract$_ISmartToken_$15216",
                     "typeString": "contract ISmartToken"
                   },
                   "typeName": {
@@ -3321,10 +3321,10 @@
                     "id": 2723,
                     "name": "ISmartToken",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15176,
+                    "referencedDeclaration": 15216,
                     "src": "2071:11:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ISmartToken_$15176",
+                      "typeIdentifier": "t_contract$_ISmartToken_$15216",
                       "typeString": "contract ISmartToken"
                     }
                   },
@@ -3341,7 +3341,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                    "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                     "typeString": "contract IContractRegistry"
                   },
                   "typeName": {
@@ -3349,10 +3349,10 @@
                     "id": 2725,
                     "name": "IContractRegistry",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 16093,
+                    "referencedDeclaration": 16133,
                     "src": "2099:17:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IContractRegistry_$16093",
+                      "typeIdentifier": "t_contract$_IContractRegistry_$16133",
                       "typeString": "contract IContractRegistry"
                     }
                   },
@@ -3395,7 +3395,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                    "typeIdentifier": "t_contract$_IERC20Token_$15164",
                     "typeString": "contract IERC20Token"
                   },
                   "typeName": {
@@ -3403,10 +3403,10 @@
                     "id": 2729,
                     "name": "IERC20Token",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 15124,
+                    "referencedDeclaration": 15164,
                     "src": "2170:11:6",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$15124",
+                      "typeIdentifier": "t_contract$_IERC20Token_$15164",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -3479,7 +3479,7 @@
             "scope": 2784,
             "src": "2037:855:6",
             "stateMutability": "nonpayable",
-            "superFunction": 10116,
+            "superFunction": 10156,
             "visibility": "public"
           }
         ],
@@ -3495,5 +3495,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-03T06:20:07.688Z"
+  "updatedAt": "2019-03-03T08:58:01.567Z"
 }
