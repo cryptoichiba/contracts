@@ -381,7 +381,7 @@ contract('FinancieInternalWallet', (accounts) => {
         console.log('[FinancieInternalWallet]balance of card token after buying:' + afterBuy.toFixed());
         assert.equal(estimationBuy.toFixed(), afterBuy.toFixed());
 
-        let balance = await internalWallet.getBalanceOfToken(cardToken.address, user_id);
+        let balance = await internalWallet.getBalanceOfToken(cardToken.address, user_id) / 2;
 
         let currencyAfterBuy = await currencyToken.balanceOf(internalBank.address);
         console.log('[FinancieInternalWallet]total currencyAfterBuy ' + currencyAfterBuy.toFixed());
@@ -438,5 +438,33 @@ contract('FinancieInternalWallet', (accounts) => {
         currencyAfterWithdrawal = await internalWallet.getBalanceOfWithdrawableCurrencyToken(hero_id);
         console.log('[FinancieInternalWallet]currencyAfterWithdrawal(hero_id) ' + currencyAfterWithdrawal.toFixed());
         assert.equal(0, currencyAfterWithdrawal.toFixed());
+    });
+
+    it('expireWithdrawableCurrencyTokens', async () => {
+        let balance = await internalWallet.getBalanceOfToken(cardToken.address, user_id);
+        console.log('[FinancieInternalWallet]balance of card: ' + balance);
+
+        let currencyBeforeWithdrawal = await internalWallet.getBalanceOfWithdrawableCurrencyToken(user_id);
+        console.log('[FinancieInternalWallet]currencyBeforeWithdrawal(user_id) ' + currencyBeforeWithdrawal.toFixed());
+        assert.equal(0, currencyBeforeWithdrawal.toFixed());
+
+        [estimationSell, fee] = await bancor.getReturn(cardToken.address, currencyToken.address, balance);
+        console.log('[FinancieInternalWallet]estimationSell ' + estimationSell + ' / ' + fee);
+
+        let transactionFee = web3.toWei("0", "ether");
+        console.log('transaction fee:' + transactionFee);
+        await internalWallet.setTransactionFee(transactionFee);
+
+        await internalWallet.delegateSellCards(user_id, balance, 1, cardToken.address, bancor.address, {gasPrice: gasPrice});
+        console.log('[FinancieInternalWallet]delegateSell OK/' + balance);
+
+        let currencyAfterWithdrawal = await internalWallet.getBalanceOfWithdrawableCurrencyToken(user_id);
+        console.log('[FinancieInternalWallet]currencyAfterWithdrawal(user_id) ' + currencyAfterWithdrawal.toFixed());
+
+        await internalWallet.expireWithdrawableCurrencyTokens(user_id, currencyAfterWithdrawal / 2);
+
+        let currencyAfterExpiration = await internalWallet.getBalanceOfWithdrawableCurrencyToken(user_id);
+        console.log('[FinancieInternalWallet]currencyAfterExpiration(user_id) ' + currencyAfterExpiration.toFixed());
+        assert.equal((currencyAfterWithdrawal / 2).toFixed(), currencyAfterExpiration.toFixed());
     });
 });
