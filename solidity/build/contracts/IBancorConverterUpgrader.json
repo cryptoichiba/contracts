@@ -26,14 +26,14 @@
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/interfaces/IBancorConverterUpgrader.sol",
     "exportedSymbols": {
       "IBancorConverterUpgrader": [
-        13453
+        5019
       ]
     },
-    "id": 13454,
+    "id": 5020,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 13446,
+        "id": 5012,
         "literals": [
           "solidity",
           "^",
@@ -41,16 +41,16 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:35"
+        "src": "0:24:14"
       },
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/interfaces/IBancorConverter.sol",
         "file": "./IBancorConverter.sol",
-        "id": 13447,
+        "id": 5013,
         "nodeType": "ImportDirective",
-        "scope": 13454,
-        "sourceUnit": 13424,
-        "src": "25:32:35",
+        "scope": 5020,
+        "sourceUnit": 5011,
+        "src": "25:32:14",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -60,9 +60,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 13453,
+        "id": 5019,
         "linearizedBaseContracts": [
-          13453
+          5019
         ],
         "name": "IBancorConverterUpgrader",
         "nodeType": "ContractDefinition",
@@ -70,7 +70,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 13452,
+            "id": 5018,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -78,16 +78,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 13450,
+              "id": 5016,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 13449,
+                  "id": 5015,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 13452,
-                  "src": "162:16:35",
+                  "scope": 5018,
+                  "src": "162:16:14",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -95,10 +95,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 13448,
+                    "id": 5014,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "162:7:35",
+                    "src": "162:7:14",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -108,40 +108,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "161:18:35"
+              "src": "161:18:14"
             },
             "payable": false,
             "returnParameters": {
-              "id": 13451,
+              "id": 5017,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "186:0:35"
+              "src": "186:0:14"
             },
-            "scope": 13453,
-            "src": "145:42:35",
+            "scope": 5019,
+            "src": "145:42:14",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 13454,
-        "src": "105:84:35"
+        "scope": 5020,
+        "src": "105:84:14"
       }
     ],
-    "src": "0:190:35"
+    "src": "0:190:14"
   },
   "legacyAST": {
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/interfaces/IBancorConverterUpgrader.sol",
     "exportedSymbols": {
       "IBancorConverterUpgrader": [
-        13453
+        5019
       ]
     },
-    "id": 13454,
+    "id": 5020,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 13446,
+        "id": 5012,
         "literals": [
           "solidity",
           "^",
@@ -149,16 +149,16 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:35"
+        "src": "0:24:14"
       },
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/converter/interfaces/IBancorConverter.sol",
         "file": "./IBancorConverter.sol",
-        "id": 13447,
+        "id": 5013,
         "nodeType": "ImportDirective",
-        "scope": 13454,
-        "sourceUnit": 13424,
-        "src": "25:32:35",
+        "scope": 5020,
+        "sourceUnit": 5011,
+        "src": "25:32:14",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -168,9 +168,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 13453,
+        "id": 5019,
         "linearizedBaseContracts": [
-          13453
+          5019
         ],
         "name": "IBancorConverterUpgrader",
         "nodeType": "ContractDefinition",
@@ -178,7 +178,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 13452,
+            "id": 5018,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -186,16 +186,16 @@
             "name": "upgrade",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 13450,
+              "id": 5016,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 13449,
+                  "id": 5015,
                   "name": "_version",
                   "nodeType": "VariableDeclaration",
-                  "scope": 13452,
-                  "src": "162:16:35",
+                  "scope": 5018,
+                  "src": "162:16:14",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -203,10 +203,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 13448,
+                    "id": 5014,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "162:7:35",
+                    "src": "162:7:14",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -216,27 +216,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "161:18:35"
+              "src": "161:18:14"
             },
             "payable": false,
             "returnParameters": {
-              "id": 13451,
+              "id": 5017,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "186:0:35"
+              "src": "186:0:14"
             },
-            "scope": 13453,
-            "src": "145:42:35",
+            "scope": 5019,
+            "src": "145:42:14",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 13454,
-        "src": "105:84:35"
+        "scope": 5020,
+        "src": "105:84:14"
       }
     ],
-    "src": "0:190:35"
+    "src": "0:190:14"
   },
   "compiler": {
     "name": "solc",
@@ -244,5 +244,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-03T08:58:01.621Z"
+  "updatedAt": "2019-03-03T10:38:53.230Z"
 }

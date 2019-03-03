@@ -31,14 +31,14 @@
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IWhitelist.sol",
     "exportedSymbols": {
       "IWhitelist": [
-        16176
+        5727
       ]
     },
-    "id": 16177,
+    "id": 5728,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 16168,
+        "id": 5719,
         "literals": [
           "solidity",
           "^",
@@ -46,7 +46,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:64"
+        "src": "0:24:28"
       },
       {
         "baseContracts": [],
@@ -54,9 +54,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 16176,
+        "id": 5727,
         "linearizedBaseContracts": [
-          16176
+          5727
         ],
         "name": "IWhitelist",
         "nodeType": "ContractDefinition",
@@ -64,7 +64,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 16175,
+            "id": 5726,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -72,16 +72,16 @@
             "name": "isWhitelisted",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 16171,
+              "id": 5722,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 16170,
+                  "id": 5721,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 16175,
-                  "src": "105:16:64",
+                  "scope": 5726,
+                  "src": "105:16:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -89,10 +89,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 16169,
+                    "id": 5720,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "105:7:64",
+                    "src": "105:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -102,20 +102,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "104:18:64"
+              "src": "104:18:28"
             },
             "payable": false,
             "returnParameters": {
-              "id": 16174,
+              "id": 5725,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 16173,
+                  "id": 5724,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 16175,
-                  "src": "144:4:64",
+                  "scope": 5726,
+                  "src": "144:4:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -123,10 +123,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 16172,
+                    "id": 5723,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "144:4:64",
+                    "src": "144:4:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -136,33 +136,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "143:6:64"
+              "src": "143:6:28"
             },
-            "scope": 16176,
-            "src": "82:68:64",
+            "scope": 5727,
+            "src": "82:68:28",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 16177,
-        "src": "56:96:64"
+        "scope": 5728,
+        "src": "56:96:28"
       }
     ],
-    "src": "0:153:64"
+    "src": "0:153:28"
   },
   "legacyAST": {
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IWhitelist.sol",
     "exportedSymbols": {
       "IWhitelist": [
-        16176
+        5727
       ]
     },
-    "id": 16177,
+    "id": 5728,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 16168,
+        "id": 5719,
         "literals": [
           "solidity",
           "^",
@@ -170,7 +170,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:64"
+        "src": "0:24:28"
       },
       {
         "baseContracts": [],
@@ -178,9 +178,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 16176,
+        "id": 5727,
         "linearizedBaseContracts": [
-          16176
+          5727
         ],
         "name": "IWhitelist",
         "nodeType": "ContractDefinition",
@@ -188,7 +188,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 16175,
+            "id": 5726,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -196,16 +196,16 @@
             "name": "isWhitelisted",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 16171,
+              "id": 5722,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 16170,
+                  "id": 5721,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 16175,
-                  "src": "105:16:64",
+                  "scope": 5726,
+                  "src": "105:16:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -213,10 +213,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 16169,
+                    "id": 5720,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "105:7:64",
+                    "src": "105:7:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -226,20 +226,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "104:18:64"
+              "src": "104:18:28"
             },
             "payable": false,
             "returnParameters": {
-              "id": 16174,
+              "id": 5725,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 16173,
+                  "id": 5724,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 16175,
-                  "src": "144:4:64",
+                  "scope": 5726,
+                  "src": "144:4:28",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -247,10 +247,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 16172,
+                    "id": 5723,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "144:4:64",
+                    "src": "144:4:28",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -260,20 +260,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "143:6:64"
+              "src": "143:6:28"
             },
-            "scope": 16176,
-            "src": "82:68:64",
+            "scope": 5727,
+            "src": "82:68:28",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 16177,
-        "src": "56:96:64"
+        "scope": 5728,
+        "src": "56:96:28"
       }
     ],
-    "src": "0:153:64"
+    "src": "0:153:28"
   },
   "compiler": {
     "name": "solc",
@@ -281,5 +281,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-03T08:58:01.634Z"
+  "updatedAt": "2019-03-03T10:38:53.232Z"
 }
