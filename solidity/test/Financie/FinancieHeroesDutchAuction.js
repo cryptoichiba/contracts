@@ -44,6 +44,8 @@ contract('FinancieHeroesDutchAuction', (accounts) => {
         );
         let internalWallet = await FinancieInternalWallet.new(
             "0xA0d6B46ab1e40BEfc073E510e92AdB88C0A70c5C",
+            managedContracts.address,
+            platformToken.address,
             currencyToken.address
         );
         await internalBank.transferOwnership(internalWallet.address);
@@ -74,11 +76,11 @@ contract('FinancieHeroesDutchAuction', (accounts) => {
         await auction.setup(cardToken.address);
         console.log('[FinancieHeroesDutchAuction]setup OK');
 
-        await auction.startAuction();
-        console.log('[FinancieHeroesDutchAuction]start OK');
-
         await managedContracts.activateTargetContract(auction.address, true);
         console.log('[FinancieHeroesDutchAuction]activateTargetContract auction OK');
+
+        await auction.startAuction();
+        console.log('[FinancieHeroesDutchAuction]start OK');
 
         let stage = await auction.stage();
         console.log('[FinancieHeroesDutchAuction]stage:' + stage);

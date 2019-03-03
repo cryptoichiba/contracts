@@ -49,14 +49,14 @@
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieManagedContracts.sol",
     "exportedSymbols": {
       "IFinancieManagedContracts": [
-        9029
+        3407
       ]
     },
-    "id": 9030,
+    "id": 3408,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9014,
+        "id": 3392,
         "literals": [
           "solidity",
           "^",
@@ -64,7 +64,7 @@
           ".18"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:29"
+        "src": "0:24:11"
       },
       {
         "baseContracts": [],
@@ -72,9 +72,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 9029,
+        "id": 3407,
         "linearizedBaseContracts": [
-          9029
+          3407
         ],
         "name": "IFinancieManagedContracts",
         "nodeType": "ContractDefinition",
@@ -82,7 +82,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 9021,
+            "id": 3399,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -90,16 +90,16 @@
             "name": "validTargetContract",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9017,
+              "id": 3395,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9016,
+                  "id": 3394,
                   "name": "_contract",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9021,
-                  "src": "167:17:29",
+                  "scope": 3399,
+                  "src": "167:17:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -107,10 +107,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9015,
+                    "id": 3393,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "167:7:29",
+                    "src": "167:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -120,20 +120,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "166:19:29"
+              "src": "166:19:11"
             },
             "payable": false,
             "returnParameters": {
-              "id": 9020,
+              "id": 3398,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9019,
+                  "id": 3397,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9021,
-                  "src": "206:4:29",
+                  "scope": 3399,
+                  "src": "206:4:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -141,10 +141,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 9018,
+                    "id": 3396,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "206:4:29",
+                    "src": "206:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -154,10 +154,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "205:6:29"
+              "src": "205:6:11"
             },
-            "scope": 9029,
-            "src": "138:74:29",
+            "scope": 3407,
+            "src": "138:74:11",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
@@ -165,7 +165,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 9028,
+            "id": 3406,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -173,16 +173,16 @@
             "name": "activateTargetContract",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9026,
+              "id": 3404,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9023,
+                  "id": 3401,
                   "name": "_contract",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9028,
-                  "src": "249:17:29",
+                  "scope": 3406,
+                  "src": "249:17:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -190,10 +190,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9022,
+                    "id": 3400,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "249:7:29",
+                    "src": "249:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -204,11 +204,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 9025,
+                  "id": 3403,
                   "name": "_enabled",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9028,
-                  "src": "268:13:29",
+                  "scope": 3406,
+                  "src": "268:13:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -216,10 +216,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 9024,
+                    "id": 3402,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "268:4:29",
+                    "src": "268:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -229,40 +229,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "248:34:29"
+              "src": "248:34:11"
             },
             "payable": false,
             "returnParameters": {
-              "id": 9027,
+              "id": 3405,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "289:0:29"
+              "src": "289:0:11"
             },
-            "scope": 9029,
-            "src": "217:73:29",
+            "scope": 3407,
+            "src": "217:73:11",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 9030,
-        "src": "97:195:29"
+        "scope": 3408,
+        "src": "97:195:11"
       }
     ],
-    "src": "0:293:29"
+    "src": "0:293:11"
   },
   "legacyAST": {
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/Financie/IFinancieManagedContracts.sol",
     "exportedSymbols": {
       "IFinancieManagedContracts": [
-        9029
+        3407
       ]
     },
-    "id": 9030,
+    "id": 3408,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9014,
+        "id": 3392,
         "literals": [
           "solidity",
           "^",
@@ -270,7 +270,7 @@
           ".18"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:29"
+        "src": "0:24:11"
       },
       {
         "baseContracts": [],
@@ -278,9 +278,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 9029,
+        "id": 3407,
         "linearizedBaseContracts": [
-          9029
+          3407
         ],
         "name": "IFinancieManagedContracts",
         "nodeType": "ContractDefinition",
@@ -288,7 +288,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 9021,
+            "id": 3399,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -296,16 +296,16 @@
             "name": "validTargetContract",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9017,
+              "id": 3395,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9016,
+                  "id": 3394,
                   "name": "_contract",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9021,
-                  "src": "167:17:29",
+                  "scope": 3399,
+                  "src": "167:17:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -313,10 +313,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9015,
+                    "id": 3393,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "167:7:29",
+                    "src": "167:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -326,20 +326,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "166:19:29"
+              "src": "166:19:11"
             },
             "payable": false,
             "returnParameters": {
-              "id": 9020,
+              "id": 3398,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9019,
+                  "id": 3397,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9021,
-                  "src": "206:4:29",
+                  "scope": 3399,
+                  "src": "206:4:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -347,10 +347,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 9018,
+                    "id": 3396,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "206:4:29",
+                    "src": "206:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -360,10 +360,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "205:6:29"
+              "src": "205:6:11"
             },
-            "scope": 9029,
-            "src": "138:74:29",
+            "scope": 3407,
+            "src": "138:74:11",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
@@ -371,7 +371,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 9028,
+            "id": 3406,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -379,16 +379,16 @@
             "name": "activateTargetContract",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 9026,
+              "id": 3404,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9023,
+                  "id": 3401,
                   "name": "_contract",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9028,
-                  "src": "249:17:29",
+                  "scope": 3406,
+                  "src": "249:17:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -396,10 +396,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9022,
+                    "id": 3400,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "249:7:29",
+                    "src": "249:7:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -410,11 +410,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 9025,
+                  "id": 3403,
                   "name": "_enabled",
                   "nodeType": "VariableDeclaration",
-                  "scope": 9028,
-                  "src": "268:13:29",
+                  "scope": 3406,
+                  "src": "268:13:11",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -422,10 +422,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 9024,
+                    "id": 3402,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "268:4:29",
+                    "src": "268:4:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -435,27 +435,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "248:34:29"
+              "src": "248:34:11"
             },
             "payable": false,
             "returnParameters": {
-              "id": 9027,
+              "id": 3405,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "289:0:29"
+              "src": "289:0:11"
             },
-            "scope": 9029,
-            "src": "217:73:29",
+            "scope": 3407,
+            "src": "217:73:11",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 9030,
-        "src": "97:195:29"
+        "scope": 3408,
+        "src": "97:195:11"
       }
     ],
-    "src": "0:293:29"
+    "src": "0:293:11"
   },
   "compiler": {
     "name": "solc",
@@ -463,5 +463,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-01T08:20:46.954Z"
+  "updatedAt": "2019-03-03T07:14:05.111Z"
 }

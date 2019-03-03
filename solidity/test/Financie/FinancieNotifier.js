@@ -11,7 +11,6 @@ const FinancieCardToken = artifacts.require('FinancieCardToken.sol');
 const FinancieHeroesDutchAuction = artifacts.require('FinancieHeroesDutchAuction.sol');
 const FinancieNotifier = artifacts.require('FinancieNotifier.sol');
 const IFinancieNotifier = artifacts.require('IFinancieNotifier.sol');
-const FinancieTicketStore = artifacts.require('FinancieTicketStore.sol');
 const FinancieManagedContracts = artifacts.require('FinancieManagedContracts.sol');
 
 const weight10Percent = 100000;

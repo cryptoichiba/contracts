@@ -11,13 +11,6 @@ contract FinancieNotifierDelegate is Owned {
         notifier = IFinancieNotifier(_notifier);
     }
 
-    function activateUser(uint32 _userId)
-        internal
-    {
-        notifier = IFinancieNotifier(notifier.latestNotifier());
-        notifier.activateUser(_userId);
-    }
-
     function notifyApproveNewCards(address _card)
         internal
     {
@@ -37,20 +30,6 @@ contract FinancieNotifierDelegate is Owned {
     {
         notifier = IFinancieNotifier(notifier.latestNotifier());
         notifier.notifyApproveNewBancor(_card, _bancor);
-    }
-
-    function notifyPurchaseTickets(address _sender, address _card, address _ticket, uint256 _price, uint256 _amount)
-        internal
-    {
-        notifier = IFinancieNotifier(notifier.latestNotifier());
-        notifier.notifyPurchaseTickets(_sender, _card, _ticket, _price, _amount);
-    }
-
-    function notifyBurnTickets(address _sender, uint256 _amount)
-        internal
-    {
-        notifier = IFinancieNotifier(notifier.latestNotifier());
-        notifier.notifyBurnTickets(_sender, _amount);
     }
 
     function notifyConvertCards(

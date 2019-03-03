@@ -39,11 +39,10 @@ contract('FinancieBancorConverter', (accounts) => {
     before(async () => {
         console.log('[FinancieBancorConverter]initialize');
 
-        contracts = await FinancieManagedContracts.new();
+        managedContracts = await FinancieManagedContracts.new();
         platformToken = await FinanciePlatformToken.new('PF Token', 'ERC PF', 10000000000 * (10 ** 18));
         currencyToken = await SmartToken.new('Test', 'TST', 18);
-        financieNotifier = await FinancieNotifier.new(contracts.address, platformToken.address, currencyToken.address);
-        managedContracts = await FinancieManagedContracts.new();
+        financieNotifier = await FinancieNotifier.new(managedContracts.address, platformToken.address, currencyToken.address);
 
         cardToken = await FinancieCardToken.new(
             'Financie Card Token',
@@ -78,6 +77,8 @@ contract('FinancieBancorConverter', (accounts) => {
         );
         let internalWallet = await FinancieInternalWallet.new(
             "0xA0d6B46ab1e40BEfc073E510e92AdB88C0A70c5C",
+            managedContracts.address,
+            platformToken.address,
             currencyToken.address
         );
         await internalBank.transferOwnership(internalWallet.address);
@@ -96,8 +97,10 @@ contract('FinancieBancorConverter', (accounts) => {
             10000,
             internalWallet.address
         );
-
         console.log('[FinancieBancorConverter]begin setup');
+
+        await managedContracts.activateTargetContract(bancor.address, true);
+        console.log('[FinancieBancorConverter]activateTargetContract card OK');
 
         await currencyToken.issue(accounts[0], 2 * (10 ** 5));
 

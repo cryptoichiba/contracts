@@ -71,14 +71,14 @@
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/ITokenHolder.sol",
     "exportedSymbols": {
       "ITokenHolder": [
-        17321
+        6339
       ]
     },
-    "id": 17322,
+    "id": 6340,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 17307,
+        "id": 6325,
         "literals": [
           "solidity",
           "^",
@@ -86,27 +86,27 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:69"
+        "src": "0:24:29"
       },
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IOwned.sol",
         "file": "./IOwned.sol",
-        "id": 17308,
+        "id": 6326,
         "nodeType": "ImportDirective",
-        "scope": 17322,
-        "sourceUnit": 17306,
-        "src": "25:22:69",
+        "scope": 6340,
+        "sourceUnit": 6324,
+        "src": "25:22:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IERC20Token.sol",
         "file": "../../token/interfaces/IERC20Token.sol",
-        "id": 17309,
+        "id": 6327,
         "nodeType": "ImportDirective",
-        "scope": 17322,
-        "sourceUnit": 16320,
-        "src": "48:48:69",
+        "scope": 6340,
+        "sourceUnit": 5876,
+        "src": "48:48:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -116,31 +116,31 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 17310,
+              "id": 6328,
               "name": "IOwned",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 17305,
-              "src": "156:6:69",
+              "referencedDeclaration": 6323,
+              "src": "156:6:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IOwned_$17305",
+                "typeIdentifier": "t_contract$_IOwned_$6323",
                 "typeString": "contract IOwned"
               }
             },
-            "id": 17311,
+            "id": 6329,
             "nodeType": "InheritanceSpecifier",
-            "src": "156:6:69"
+            "src": "156:6:29"
           }
         ],
         "contractDependencies": [
-          17305
+          6323
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 17321,
+        "id": 6339,
         "linearizedBaseContracts": [
-          17321,
-          17305
+          6339,
+          6323
         ],
         "name": "ITokenHolder",
         "nodeType": "ContractDefinition",
@@ -148,7 +148,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 17320,
+            "id": 6338,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -156,31 +156,31 @@
             "name": "withdrawTokens",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17318,
+              "id": 6336,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17313,
+                  "id": 6331,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17320,
-                  "src": "193:18:69",
+                  "scope": 6338,
+                  "src": "193:18:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                    "typeIdentifier": "t_contract$_IERC20Token_$5875",
                     "typeString": "contract IERC20Token"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 17312,
+                    "id": 6330,
                     "name": "IERC20Token",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 16319,
-                    "src": "193:11:69",
+                    "referencedDeclaration": 5875,
+                    "src": "193:11:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                      "typeIdentifier": "t_contract$_IERC20Token_$5875",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -189,11 +189,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 17315,
+                  "id": 6333,
                   "name": "_to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17320,
-                  "src": "213:11:69",
+                  "scope": 6338,
+                  "src": "213:11:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -201,10 +201,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 17314,
+                    "id": 6332,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "213:7:69",
+                    "src": "213:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -215,11 +215,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 17317,
+                  "id": 6335,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17320,
-                  "src": "226:15:69",
+                  "scope": 6338,
+                  "src": "226:15:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -227,10 +227,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 17316,
+                    "id": 6334,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "226:7:69",
+                    "src": "226:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -240,40 +240,40 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "192:50:69"
+              "src": "192:50:29"
             },
             "payable": false,
             "returnParameters": {
-              "id": 17319,
+              "id": 6337,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "249:0:69"
+              "src": "249:0:29"
             },
-            "scope": 17321,
-            "src": "169:81:69",
+            "scope": 6339,
+            "src": "169:81:29",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 17322,
-        "src": "131:121:69"
+        "scope": 6340,
+        "src": "131:121:29"
       }
     ],
-    "src": "0:253:69"
+    "src": "0:253:29"
   },
   "legacyAST": {
     "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/ITokenHolder.sol",
     "exportedSymbols": {
       "ITokenHolder": [
-        17321
+        6339
       ]
     },
-    "id": 17322,
+    "id": 6340,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 17307,
+        "id": 6325,
         "literals": [
           "solidity",
           "^",
@@ -281,27 +281,27 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:69"
+        "src": "0:24:29"
       },
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/utility/interfaces/IOwned.sol",
         "file": "./IOwned.sol",
-        "id": 17308,
+        "id": 6326,
         "nodeType": "ImportDirective",
-        "scope": 17322,
-        "sourceUnit": 17306,
-        "src": "25:22:69",
+        "scope": 6340,
+        "sourceUnit": 6324,
+        "src": "25:22:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
         "absolutePath": "/Users/rudo/Documents/ichiba/submodules/contracts/solidity/contracts/token/interfaces/IERC20Token.sol",
         "file": "../../token/interfaces/IERC20Token.sol",
-        "id": 17309,
+        "id": 6327,
         "nodeType": "ImportDirective",
-        "scope": 17322,
-        "sourceUnit": 16320,
-        "src": "48:48:69",
+        "scope": 6340,
+        "sourceUnit": 5876,
+        "src": "48:48:29",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -311,31 +311,31 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 17310,
+              "id": 6328,
               "name": "IOwned",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 17305,
-              "src": "156:6:69",
+              "referencedDeclaration": 6323,
+              "src": "156:6:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IOwned_$17305",
+                "typeIdentifier": "t_contract$_IOwned_$6323",
                 "typeString": "contract IOwned"
               }
             },
-            "id": 17311,
+            "id": 6329,
             "nodeType": "InheritanceSpecifier",
-            "src": "156:6:69"
+            "src": "156:6:29"
           }
         ],
         "contractDependencies": [
-          17305
+          6323
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 17321,
+        "id": 6339,
         "linearizedBaseContracts": [
-          17321,
-          17305
+          6339,
+          6323
         ],
         "name": "ITokenHolder",
         "nodeType": "ContractDefinition",
@@ -343,7 +343,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 17320,
+            "id": 6338,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -351,31 +351,31 @@
             "name": "withdrawTokens",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17318,
+              "id": 6336,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17313,
+                  "id": 6331,
                   "name": "_token",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17320,
-                  "src": "193:18:69",
+                  "scope": 6338,
+                  "src": "193:18:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                    "typeIdentifier": "t_contract$_IERC20Token_$5875",
                     "typeString": "contract IERC20Token"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 17312,
+                    "id": 6330,
                     "name": "IERC20Token",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 16319,
-                    "src": "193:11:69",
+                    "referencedDeclaration": 5875,
+                    "src": "193:11:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IERC20Token_$16319",
+                      "typeIdentifier": "t_contract$_IERC20Token_$5875",
                       "typeString": "contract IERC20Token"
                     }
                   },
@@ -384,11 +384,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 17315,
+                  "id": 6333,
                   "name": "_to",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17320,
-                  "src": "213:11:69",
+                  "scope": 6338,
+                  "src": "213:11:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -396,10 +396,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 17314,
+                    "id": 6332,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "213:7:69",
+                    "src": "213:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -410,11 +410,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 17317,
+                  "id": 6335,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17320,
-                  "src": "226:15:69",
+                  "scope": 6338,
+                  "src": "226:15:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -422,10 +422,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 17316,
+                    "id": 6334,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "226:7:69",
+                    "src": "226:7:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -435,27 +435,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "192:50:69"
+              "src": "192:50:29"
             },
             "payable": false,
             "returnParameters": {
-              "id": 17319,
+              "id": 6337,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "249:0:69"
+              "src": "249:0:29"
             },
-            "scope": 17321,
-            "src": "169:81:69",
+            "scope": 6339,
+            "src": "169:81:29",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 17322,
-        "src": "131:121:69"
+        "scope": 6340,
+        "src": "131:121:29"
       }
     ],
-    "src": "0:253:69"
+    "src": "0:253:29"
   },
   "compiler": {
     "name": "solc",
@@ -463,5 +463,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-03-01T08:20:46.994Z"
+  "updatedAt": "2019-03-03T07:14:05.112Z"
 }
