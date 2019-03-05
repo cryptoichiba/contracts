@@ -19,7 +19,7 @@ const BancorGasPriceLimit = artifacts.require('BancorGasPriceLimit.sol');
 const BancorNetwork = artifacts.require('BancorNetwork.sol');
 const BancorConverterUpgrade = artifacts.require('BancorConverterUpgrader.sol');
 
-const gasPrice = 22000000000;
+const gasPrice = 100000000000;
 const transactionFee = 50 * (10 ** 18);
 
 module.exports = function(deployer, _network, _accounts) {
