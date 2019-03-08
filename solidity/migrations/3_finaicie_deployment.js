@@ -1,13 +1,15 @@
 /* global artifacts */
 /* eslint-disable prefer-reflect */
 
-const FinancieTicketStore = artifacts.require('FinancieTicketStore.sol');
+const FinancieInternalWallet = artifacts.require('FinancieInternalWallet.sol');
+const FinancieInternalBank = artifacts.require('FinancieInternalBank.sol');
+
 const FinanciePlatformToken = artifacts.require('FinanciePlatformToken.sol');
 const FinancieManagedContracts = artifacts.require('FinancieManagedContracts.sol');
 const FinancieNotifier = artifacts.require('FinancieNotifier.sol');
 const FinancieBancorConverterFactory = artifacts.require('FinancieBancorConverterFactory.sol');
 
-const EtherToken = artifacts.require('EtherToken.sol');
+const SmartToken = artifacts.require('SmartToken.sol');
 
 const ContractRegistry = artifacts.require('ContractRegistry.sol');
 const ContractIds = artifacts.require('ContractIds.sol');
@@ -17,17 +19,21 @@ const BancorGasPriceLimit = artifacts.require('BancorGasPriceLimit.sol');
 const BancorNetwork = artifacts.require('BancorNetwork.sol');
 const BancorConverterUpgrade = artifacts.require('BancorConverterUpgrader.sol');
 
-const gasPrice = 22000000000;
+const gasPrice = 100000000000;
+const transactionFee = 50 * (10 ** 18);
 
 module.exports = function(deployer, _network, _accounts) {
     let managedContracts;
     let contractRegistry;
     let contractIds;
     let bancorNetwork;
+    let bank;
+    let wallet;
+    let currencyToken;
     return deployer
         .then(() => {
-            if ( process.env.FINANCIE_ETHER_TOKEN_CONTRACT_ADDRESS === undefined ) {
-                return deployer.deploy(EtherToken);
+            if ( process.env.FINANCIE_CURRENCY_TOKEN_CONTRACT_ADDRESS === undefined ) {
+                return deployer.deploy(SmartToken, "Fiat Token(JPY)", "JPYT", 18)
             }
         })
         .then(() => {
@@ -47,8 +53,49 @@ module.exports = function(deployer, _network, _accounts) {
             }
         })
         .then(() => {
-            if ( process.env.FINANCIE_MANAGED_CONTRACTS_CONTRACT_ADDRESS === undefined ) {
-                return managedContracts.activateTargetContract(process.env.FINANCIE_ETHER_TOKEN_CONTRACT_ADDRESS === undefined ? EtherToken.address : process.env.FINANCIE_ETHER_TOKEN_CONTRACT_ADDRESS, true);
+            if ( process.env.FINANCIE_INTERNAL_BANK_CONTRACT_ADDRESS === undefined ) {
+                return deployer.deploy(
+                    FinancieInternalBank,
+                    process.env.FINANCIE_CURRENCY_TOKEN_CONTRACT_ADDRESS === undefined ? SmartToken.address : process.env.FINANCIE_CURRENCY_TOKEN_CONTRACT_ADDRESS
+                );
+            }
+        })
+        .then((instance) => {
+            if ( process.env.FINANCIE_INTERNAL_WALLET_CONTRACT_ADDRESS === undefined ) {
+                bank = instance;
+                return deployer.deploy(
+                    FinancieInternalWallet,
+                    process.env.FINANCIE_TEAM_WALLET_ADDRESS,
+                    process.env.FINANCIE_MANAGED_CONTRACTS_CONTRACT_ADDRESS === undefined ? FinancieManagedContracts.address : process.env.FINANCIE_MANAGED_CONTRACTS_CONTRACT_ADDRESS,
+                    process.env.FINANCIE_PLATFORM_TOKEN_CONTRACT_ADDRESS === undefined ? FinanciePlatformToken.address : process.env.FINANCIE_PLATFORM_TOKEN_CONTRACT_ADDRESS,
+                    process.env.FINANCIE_CURRENCY_TOKEN_CONTRACT_ADDRESS === undefined ? SmartToken.address : process.env.FINANCIE_CURRENCY_TOKEN_CONTRACT_ADDRESS
+                );
+            }
+        })
+        .then((instance) => {
+            if ( process.env.FINANCIE_INTERNAL_WALLET_CONTRACT_ADDRESS === undefined ) {
+                wallet = instance;
+                return bank.transferOwnership(FinancieInternalWallet.address);
+            }
+        }).then(() => {
+            if ( process.env.FINANCIE_INTERNAL_WALLET_CONTRACT_ADDRESS === undefined &&
+                process.env.FINANCIE_INTERNAL_BANK_CONTRACT_ADDRESS === undefined ) {
+                return wallet.setInternalBank(FinancieInternalBank.address);
+            }
+        })
+        .then(() => {
+            if ( process.env.FINANCIE_INTERNAL_WALLET_CONTRACT_ADDRESS === undefined &&
+                process.env.ETH_WORKER_ADDRESS !== undefined &&
+                process.env.ETH_FUND_ADDRESS !== undefined ) {
+                return wallet.setOperators(
+                    process.env.ETH_WORKER_ADDRESS,
+                    process.env.ETH_FUND_ADDRESS
+                );
+            }
+        })
+        .then(() => {
+            if ( process.env.FINANCIE_INTERNAL_WALLET_CONTRACT_ADDRESS === undefined ) {
+                return wallet.setTransactionFee(transactionFee);
             }
         })
         .then(() => {
@@ -56,7 +103,7 @@ module.exports = function(deployer, _network, _accounts) {
                 return deployer.deploy(FinancieNotifier,
                     process.env.FINANCIE_MANAGED_CONTRACTS_CONTRACT_ADDRESS === undefined ? FinancieManagedContracts.address : process.env.FINANCIE_MANAGED_CONTRACTS_CONTRACT_ADDRESS,
                     process.env.FINANCIE_PLATFORM_TOKEN_CONTRACT_ADDRESS === undefined ? FinanciePlatformToken.address : process.env.FINANCIE_PLATFORM_TOKEN_CONTRACT_ADDRESS,
-                    process.env.FINANCIE_ETHER_TOKEN_CONTRACT_ADDRESS === undefined ? EtherToken.address : process.env.FINANCIE_ETHER_TOKEN_CONTRACT_ADDRESS
+                    process.env.FINANCIE_CURRENCY_TOKEN_CONTRACT_ADDRESS === undefined ? SmartToken.address : process.env.FINANCIE_CURRENCY_TOKEN_CONTRACT_ADDRESS
                 );
             }
         })
@@ -100,11 +147,6 @@ module.exports = function(deployer, _network, _accounts) {
         })
         .then((instance) => {
             if ( process.env.CONTRACT_REGISTRY_CONTRACT_ADDRESS === undefined ) {
-                return bancorNetwork.registerEtherToken(process.env.FINANCIE_ETHER_TOKEN_CONTRACT_ADDRESS === undefined ? EtherToken.address : process.env.FINANCIE_ETHER_TOKEN_CONTRACT_ADDRESS, true);
-            }
-        })
-        .then((instance) => {
-            if ( process.env.CONTRACT_REGISTRY_CONTRACT_ADDRESS === undefined ) {
                 return contractIds.CONTRACT_FEATURES.call();
             }
         })
@@ -141,16 +183,6 @@ module.exports = function(deployer, _network, _accounts) {
         .then((bancorNetworkId) => {
             if ( process.env.CONTRACT_REGISTRY_CONTRACT_ADDRESS === undefined ) {
                 return contractRegistry.registerAddress(bancorNetworkId, BancorNetwork.address);
-            }
-        })
-        .then(() => {
-            if ( process.env.FINANCIE_TICKET_STORE_CONTRACT_ADDRESS === undefined ) {
-                return deployer.deploy(FinancieTicketStore,
-                    process.env.FINANCIE_NOTIFIER_CONTRACT_ADDRESS === undefined ? FinancieNotifier.address : process.env.FINANCIE_NOTIFIER_CONTRACT_ADDRESS,
-                    process.env.FINANCIE_MANAGED_CONTRACTS_CONTRACT_ADDRESS === undefined ? FinancieManagedContracts.address : process.env.FINANCIE_MANAGED_CONTRACTS_CONTRACT_ADDRESS,
-                    process.env.FINANCIE_PLATFORM_TOKEN_CONTRACT_ADDRESS === undefined ? FinanciePlatformToken.address : process.env.FINANCIE_PLATFORM_TOKEN_CONTRACT_ADDRESS,
-                    process.env.FINANCIE_ETHER_TOKEN_CONTRACT_ADDRESS === undefined ? EtherToken.address : process.env.FINANCIE_ETHER_TOKEN_CONTRACT_ADDRESS
-                );
             }
         })
 };

@@ -1,42 +1,46 @@
-var ethwallet = require('ethereumjs-wallet');
-var ProviderEngine = require("web3-provider-engine");
-var WalletSubprovider = require('web3-provider-engine/subproviders/wallet.js');
-var RpcSubprovider = require('web3-provider-engine/subproviders/rpc.js')
-var Web3 = require("web3");
+const ethwallet = require('ethereumjs-wallet');
+const WalletProvider = require("truffle-hdwallet-provider-privkey");
 
 if ( process.argv[2] == 'migrate' ) {
-  // Insert raw hex private key here, e.g. using MyEtherWallet
   var wallet = ethwallet.fromPrivateKey(Buffer.from(process.env.ETH_DEPLOYER_KEY, 'hex'));
   var address = "0x" + wallet.getAddress().toString("hex");
-  var engine = new ProviderEngine();
-  engine.addProvider(new WalletSubprovider(wallet, {}));
-  engine.addProvider(new RpcSubprovider({rpcUrl: "https://vicious-spider-50320.getho.io/jsonrpc"}));
-  engine.start(); // Required by the provider engine.
 
   module.exports = {
     networks: {
       development: {
-        network_id: 1010,
-        gas: 4712388,
-        provider: engine,
+        network_id: process.env.ETH_NETWORK_ID,
+        gas: process.env.ETH_GAS_LIMIT,
+        gasPrice: process.env.ETH_GAS_PRICE,
+        provider: function() {
+          return new WalletProvider([process.env.ETH_DEPLOYER_KEY], process.env.ETH_NODE_URL);
+        },
         from: address
       },
       staging: {
-        network_id: 1010,
-        gas: 4712388,
-        provider: engine,
-        from: address
-      },
-      beta: {
-        network_id: 1010,
-        gas: 4712388,
-        provider: engine,
+        network_id: process.env.ETH_NETWORK_ID,
+        gas: process.env.ETH_GAS_LIMIT,
+        gasPrice: process.env.ETH_GAS_PRICE,
+        provider: function() {
+          return new WalletProvider([process.env.ETH_DEPLOYER_KEY], process.env.ETH_NODE_URL);
+        },
         from: address
       },
       beta2: {
-        network_id: 1010,
-        gas: 4712388,
-        provider: engine,
+        network_id: process.env.ETH_NETWORK_ID,
+        gas: process.env.ETH_GAS_LIMIT,
+        gasPrice: process.env.ETH_GAS_PRICE,
+        provider: function() {
+          return new WalletProvider([process.env.ETH_DEPLOYER_KEY], process.env.ETH_NODE_URL);
+        },
+        from: address
+      },
+      production: {
+        network_id: process.env.ETH_NETWORK_ID,
+        gas: process.env.ETH_GAS_LIMIT,
+        gasPrice: process.env.ETH_GAS_PRICE,
+        provider: function() {
+          return new WalletProvider([process.env.ETH_DEPLOYER_KEY], process.env.ETH_NODE_URL);
+        },
         from: address
       }
     },
@@ -49,6 +53,15 @@ if ( process.argv[2] == 'migrate' ) {
   };
 } else {
   module.exports = {
+    /*networks: {
+      test: {
+        gas: 7000000,
+        gasPrice: 1000000000,
+        network_id: 1010,
+        host: "localhost",
+        port: 8545
+      }
+    },*/
     solc: {
       optimizer: {
         enabled: true,

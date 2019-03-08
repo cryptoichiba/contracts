@@ -1,11 +1,19 @@
 pragma solidity ^0.4.17;
 
 import '../DutchAuction/DutchAuction.sol';
+import './IFinancieAuction.sol';
 import './FinancieFee.sol';
 import './FinancieNotifierDelegate.sol';
+import './IFinancieInternalWallet.sol';
+import '../utility/Owned.sol';
+import '../token/interfaces/IERC20Token.sol';
 
 /// @title overrided from DutchAuction.
-contract FinancieHeroesDutchAuction is DutchAuction, FinancieNotifierDelegate, FinancieFee {
+contract FinancieHeroesDutchAuction is IFinancieAuction, DutchAuction, Owned, FinancieNotifierDelegate, FinancieFee {
+
+    IERC20Token paymentCurrentyToken;
+    IFinancieInternalWallet internalWallet;
+    uint32 hero_id;
 
     /*
      * Public functions
@@ -15,32 +23,46 @@ contract FinancieHeroesDutchAuction is DutchAuction, FinancieNotifierDelegate, F
     *   @dev Contract constructor function sets the starting price, divisor constant and
     *        divisor exponent for calculating the Dutch Auction price.
     *
-    *   @param   _wallet_address    Wallet address to which all contributed ETH will be forwarded.
+    *   @param   _hero_id           Issuer id.
     *   @param   _price_start       High price in WEI at which the auction starts.
     *   @param   _price_constant    Auction price divisor constant.
     *   @param   _price_exponent    Auction price divisor exponent.
     *   @param   _notifier_address  Financie Notifier address.
     */
     constructor(
-        address _wallet_address,
+        uint32  _hero_id,
         address _team_wallet,
         address _whitelister_address,
         uint32 _teamFee,
         uint _price_start,
         uint _price_constant,
         uint32 _price_exponent,
-        address _notifier_address)
+        address _notifier_address,
+        address _payment_currency_token_address,
+        address _internal_wallet_address)
         public
         DutchAuction(
-          _wallet_address,
+          _internal_wallet_address,
           _whitelister_address,
           _price_start,
           _price_constant,
           _price_exponent
         )
-        FinancieFee(0, _teamFee, _wallet_address, _team_wallet)
         FinancieNotifierDelegate(_notifier_address)
     {
+        require(_teamFee <= 1000000);
+        paymentCurrentyToken = IERC20Token(_payment_currency_token_address);
+        internalWallet = IFinancieInternalWallet(_internal_wallet_address);
+        hero_id = _hero_id;
+        setFee(
+            1000000 - _teamFee,
+            _teamFee,
+            _hero_id,
+            _team_wallet,
+            _payment_currency_token_address,
+            _internal_wallet_address,
+            FinancieFee.RevenueType.Auction
+        );
     }
 
     /**
@@ -62,42 +84,53 @@ contract FinancieHeroesDutchAuction is DutchAuction, FinancieNotifierDelegate, F
     /// --------------------------------- Auction Functions ------------------
 
     /**
-    *   @notice  overrided from DutchAuction.
+    *   @notice  overrided from DutchAuction to prevent default bidding.
     */
     function bid()
         public
         payable
+    {
+        revert();
+    }
+
+    function bidToken(address _bidder, uint256 _amount)
+        public
         atStage(Stages.AuctionStarted)
+        returns (uint256, uint256, uint256)
     {
         // Missing funds without the current bid value
         uint missing_funds = missingFundsToEndAuction();
 
-        uint256 amount = msg.value;
-        if ( msg.value > missing_funds ) {
+        uint256 amount = _amount;
+        if ( amount > missing_funds ) {
             amount = missing_funds;
-            msg.sender.transfer(safeSub(msg.value, amount));
         }
 
         require(amount > 0);
-        require(bids[msg.sender] + amount <= bid_threshold || whitelist[msg.sender]);
-        assert(bids[msg.sender] + amount >= amount);
+        assert(bids[_bidder] + amount >= amount);
 
-        bids[msg.sender] += amount;
+        paymentCurrentyToken.transferFrom(msg.sender, this, amount);
+
+        bids[_bidder] += amount;
         received_wei += amount;
 
         // Send bid amount to wallet
         uint256 feeAmount = distributeFees(amount);
+        uint256 heroFee = getHeroFee(amount);
+        uint256 teamFee = getTeamFee(amount);
         uint256 net = safeSub(amount, feeAmount);
-        wallet_address.transfer(net);
+        assert(net == 0);
 
-        BidSubmission(msg.sender, amount, missing_funds);
+        BidSubmission(_bidder, amount, missing_funds);
 
         assert(received_wei >= amount);
 
-        notifyBidCards(msg.sender, address(token), amount);
+        notifyBidCards(_bidder, address(token), amount);
 
         // Notify logs of revenue
-        notifyAuctionRevenue(msg.sender, address(this), address(token), hero_wallet, net, team_wallet, feeAmount);
+        notifyAuctionRevenue(_bidder, address(this), address(token), hero_id, heroFee, teamFee);
+
+        return (amount, heroFee, teamFee);
     }
 
     /**
@@ -116,6 +149,11 @@ contract FinancieHeroesDutchAuction is DutchAuction, FinancieNotifierDelegate, F
             return true;
         }
         return false;
+    }
+
+    function bidsAmount(address _bidder) public constant returns (uint)
+    {
+        return bids[_bidder];
     }
 
     function estimateClaimTokens(address receiver_address)
@@ -143,4 +181,34 @@ contract FinancieHeroesDutchAuction is DutchAuction, FinancieNotifierDelegate, F
         return false;
     }
 
+    function auctionFinished() public
+        view
+        returns (bool)
+    {
+        if ( stage == Stages.TokensDistributed ) {
+            return true;
+        }
+        if ( stage == Stages.AuctionEnded ) {
+            return (now > end_time + token_claim_waiting_period);
+        }
+        return false;
+    }
+
+    function targetToken()
+        public
+        view
+        returns (address)
+    {
+        return token;
+    }
+
+    function tokenMultiplier() public constant returns (uint)
+    {
+        return token_multiplier;
+    }
+
+    function finalPrice() public constant returns (uint)
+    {
+        return token_multiplier * received_wei / num_tokens_auctioned;
+    }
 }

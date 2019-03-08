@@ -12,15 +12,11 @@ contract IFinancieNotifier {
         WithdrawCards,
         SellCards,
         BuyCards,
-        BurnCards,
-        BuyTicket,
-        BurnTicket
+        BurnCards
     }
 
     function latestNotifier() public returns (address);
     function setLatestNotifier(address _latest) public;
-
-    function activateUser(uint32 _userId) public;
 
     function notifyApproveNewCards(address _card) public;
     function notifyCardAuctionFinalized(address _card, address _auction) public;
@@ -30,10 +26,8 @@ contract IFinancieNotifier {
     function notifyBidCards(address _sender, address _to, uint256 _amount) public;
     function notifyWithdrawalCards(address _sender, address _to, uint256 _bids, uint256 _amount) public;
     function notifyBurnCards(address _sender, uint256 _amount) public;
-    function notifyPurchaseTickets(address _sender, address _card, address _ticket, uint256 _price, uint256 _amount) public;
-    function notifyBurnTickets(address _sender, uint256 _amount) public;
 
-    function notifyAuctionRevenue(address _sender, address _target, address _card, address _hero, uint256 _hero_amount, address _team, uint256 _team_amount) public;
-    function notifyExchangeRevenue(address _sender, address _target, address _card, address _hero, uint256 _hero_amount, address _team, uint256 _team_amount) public;
+    function notifyAuctionRevenue(address _sender, address _target, address _card, uint32 _hero, uint256 _hero_amount, uint256 _team_amount) public;
+    function notifyExchangeRevenue(address _sender, address _target, address _card, uint32 _hero, uint256 _hero_amount, uint256 _team_amount) public;
 
 }
