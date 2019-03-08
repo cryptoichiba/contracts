@@ -4,25 +4,31 @@ import './IFinancieInternalWalletFactory.sol';
 
 contract FinancieInternalWalletFactory is IFinancieInternalWalletFactory {
 
-  event NewWallet(address indexed _walletAddress, address indexed _owner);
-  /**
-      @dev constructor
-  */
-  constructor() public{}
+    event NewWallet(address indexed _walletAddress, address indexed _owner);
+    /**
+        @dev constructor
+    */
+    constructor() public{}
 
-  function createInternalWallet(
-    address _teamWallet,
-    address _paymentCurrencyToken,
-    address _walletdata
+    function createInternalWallet(
+        address _teamWallet,
+        address _managedContracts,
+        address _platformToken,
+        address _currencyToken,
+        address _walletdata
     ) public returns(address) {
-    FinancieInternalWallet intwallet = new FinancieInternalWallet(
-      _teamWallet, _paymentCurrencyToken);
+        FinancieInternalWallet intwallet = new FinancieInternalWallet(
+            _teamWallet,
+            _managedContracts,
+            _platformToken,
+            _currencyToken
+        );
 
-    intwallet.transferOwnership(msg.sender);
+        intwallet.transferOwnership(msg.sender);
 
-    address _walletAddress = address(intwallet);
-    emit NewWallet(_walletAddress, msg.sender);
+        address _walletAddress = address(intwallet);
+        emit NewWallet(_walletAddress, msg.sender);
 
-    return _walletAddress;
-  }
+        return _walletAddress;
+    }
 }

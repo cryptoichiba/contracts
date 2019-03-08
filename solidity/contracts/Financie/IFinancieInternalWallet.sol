@@ -4,7 +4,7 @@ import '../utility/interfaces/IOwned.sol';
 /**
 * Financie Internal Wallet interface
 */
-contract IFinancieInternalWallet is IOwned{
+contract IFinancieInternalWallet is IOwned {
     function setInternalBank(address _bank) public;
     function transferBnakOwnership(address _newOwner);
     function setTransactionFee(uint256 _amount) public;
@@ -20,6 +20,7 @@ contract IFinancieInternalWallet is IOwned{
     function withdrawTokens(uint32 _userId, uint256 _amount, address _tokenAddress);
     function withdrawCurrencyTokens(uint32 _userId, uint256 _amount);
     function withdrawPendingRevenueCurrencyTokens(uint32 _userId, uint256 _amount, uint32 _pendingRevenueType);
+    function expireConsumableCurrencyTokens(uint32 _userId, uint256 _amount);
     function delegateBuyCards(uint32 _userId, uint256 _amount, uint256 _minReturn, address _tokenAddress, address _bancorAddress);
     function delegateSellCards(uint32 _userId, uint256 _amount, uint256 _minReturn, address _tokenAddress, address _bancorAddress);
     function delegateBidCards(uint32 _userId, uint256 _amount, address _auctionAddress);

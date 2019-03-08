@@ -16,7 +16,6 @@ const FinanciePlatformToken = artifacts.require('FinanciePlatformToken.sol');
 const FinancieCardToken = artifacts.require('FinancieCardToken.sol');
 const FinancieHeroesDutchAuction = artifacts.require('FinancieHeroesDutchAuction.sol');
 const FinancieNotifier = artifacts.require('FinancieNotifier.sol');
-const FinancieTicketStore = artifacts.require('FinancieTicketStore.sol');
 const FinancieManagedContracts = artifacts.require('FinancieManagedContracts.sol');
 
 const FinancieInternalWallet = artifacts.require('FinancieInternalWallet.sol');
@@ -57,7 +56,12 @@ contract('FinancieInternalBank', (accounts) => {
         console.log(internalBank.address);
 
         console.log('[FinancieInternalWallet]initialize');
-        internalWallet = await FinancieInternalWallet.new("0xA0d6B46ab1e40BEfc073E510e92AdB88C0A70c5C", currencyToken.address);
+        internalWallet = await FinancieInternalWallet.new(
+            "0xA0d6B46ab1e40BEfc073E510e92AdB88C0A70c5C",
+            managedContracts.address,
+            platformToken.address,
+            currencyToken.addres
+        );
         // await internalBank.transferOwnership(internalWallet.address);
         // internalWallet.setInternalBank(internalBank.address);
 
@@ -95,11 +99,11 @@ contract('FinancieInternalBank', (accounts) => {
         auction.setup(cardToken.address);
         console.log('[FinancieHeroesDutchAuction]setup OK');
 
-        await auction.startAuction();
-        console.log('[FinancieHeroesDutchAuction]start OK');
-
         await managedContracts.activateTargetContract(auction.address, true);
         console.log('[FinancieHeroesDutchAuction]activateTargetContract auction OK');
+
+        await auction.startAuction();
+        console.log('[FinancieHeroesDutchAuction]start OK');
 
         let stage = await auction.stage();
         console.log('[FinancieHeroesDutchAuction]stage:' + stage);
@@ -144,9 +148,11 @@ contract('FinancieInternalBank', (accounts) => {
             10000,
             internalWallet.address
           );
-        await managedContracts.activateTargetContract(bancor.address, true);
 
         console.log('[FinancieBancorConverter]begin setup');
+
+        await managedContracts.activateTargetContract(bancor.address, true);
+        console.log('[FinancieBancorConverter]activateTargetContract card OK');
 
         currencyToken.issue(accounts[0], 2 * (10 ** 5));
 

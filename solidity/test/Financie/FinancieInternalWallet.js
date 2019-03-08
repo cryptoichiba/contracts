@@ -16,7 +16,6 @@ const FinanciePlatformToken = artifacts.require('FinanciePlatformToken.sol');
 const FinancieCardToken = artifacts.require('FinancieCardToken.sol');
 const FinancieHeroesDutchAuction = artifacts.require('FinancieHeroesDutchAuction.sol');
 const FinancieNotifier = artifacts.require('FinancieNotifier.sol');
-const FinancieTicketStore = artifacts.require('FinancieTicketStore.sol');
 const FinancieManagedContracts = artifacts.require('FinancieManagedContracts.sol');
 
 const FinancieInternalBank = artifacts.require('FinancieInternalBank.sol');
@@ -51,14 +50,22 @@ contract('FinancieInternalWallet', (accounts) => {
 
     before(async () => {
         console.log('[FinancieInternalWallet]initialize');
+
+        managedContracts = await FinancieManagedContracts.new();
+        platformToken = await FinanciePlatformToken.new('PF Token', 'ERC PF', web3.toWei("10000000000", "ether"));
         currencyToken = await SmartToken.new('Test', 'TST', 18);
+        financieNotifier = await FinancieNotifier.new(managedContracts.address, platformToken.address, currencyToken.address);
+
         internalBank = await FinancieInternalBank.new(
             currencyToken.address
         );
         internalWallet = await FinancieInternalWallet.new(
             "0xA0d6B46ab1e40BEfc073E510e92AdB88C0A70c5C",
+            managedContracts.address,
+            platformToken.address,
             currencyToken.address
         );
+
         await internalBank.transferOwnership(internalWallet.address);
         await internalWallet.setInternalBank(internalBank.address);
         transactionFee = web3.toWei("50", "ether");
@@ -66,10 +73,6 @@ contract('FinancieInternalWallet', (accounts) => {
         await internalWallet.setTransactionFee(transactionFee);
 
         console.log('[FinancieHeroesDutchAuction]initialize');
-
-        managedContracts = await FinancieManagedContracts.new();
-        platformToken = await FinanciePlatformToken.new('PF Token', 'ERC PF', web3.toWei("10000000000", "ether"));
-        financieNotifier = await FinancieNotifier.new(managedContracts.address, platformToken.address, currencyToken.address);
 
         cardToken = await FinancieCardToken.new(
             'Financie Card Token',
@@ -106,11 +109,11 @@ contract('FinancieInternalWallet', (accounts) => {
         await auction.setup(cardToken.address);
         console.log('[FinancieHeroesDutchAuction]setup OK');
 
-        await auction.startAuction();
-        console.log('[FinancieHeroesDutchAuction]start OK');
-
         await managedContracts.activateTargetContract(auction.address, true);
         console.log('[FinancieHeroesDutchAuction]activateTargetContract auction OK');
+
+        await auction.startAuction();
+        console.log('[FinancieHeroesDutchAuction]start OK');
 
         let stage = await auction.stage();
         console.log('[FinancieHeroesDutchAuction]stage:' + stage);
@@ -155,9 +158,11 @@ contract('FinancieInternalWallet', (accounts) => {
             10000,
             internalWallet.address
         );
-        await managedContracts.activateTargetContract(bancor.address, true);
 
         console.log('[FinancieBancorConverter]begin setup');
+
+        await managedContracts.activateTargetContract(bancor.address, true);
+        console.log('[FinancieBancorConverter]activateTargetContract card OK');
 
         await currencyToken.issue(accounts[0], 2 * (10 ** 5));
 
@@ -376,7 +381,7 @@ contract('FinancieInternalWallet', (accounts) => {
         console.log('[FinancieInternalWallet]balance of card token after buying:' + afterBuy.toFixed());
         assert.equal(estimationBuy.toFixed(), afterBuy.toFixed());
 
-        let balance = await internalWallet.getBalanceOfToken(cardToken.address, user_id);
+        let balance = await internalWallet.getBalanceOfToken(cardToken.address, user_id) / 2;
 
         let currencyAfterBuy = await currencyToken.balanceOf(internalBank.address);
         console.log('[FinancieInternalWallet]total currencyAfterBuy ' + currencyAfterBuy.toFixed());
@@ -433,5 +438,24 @@ contract('FinancieInternalWallet', (accounts) => {
         currencyAfterWithdrawal = await internalWallet.getBalanceOfWithdrawableCurrencyToken(hero_id);
         console.log('[FinancieInternalWallet]currencyAfterWithdrawal(hero_id) ' + currencyAfterWithdrawal.toFixed());
         assert.equal(0, currencyAfterWithdrawal.toFixed());
+    });
+
+    it('expireConsumableCurrencyTokens', async () => {
+        let totalAmount = new web3.BigNumber(50000);
+        let issueAmount = totalAmount.add(transactionFee);
+
+        await currencyToken.issue(accounts[0], issueAmount);
+        await currencyToken.approve(internalWallet.address, issueAmount);
+        await internalWallet.depositConsumableCurrencyTokens(user_id, totalAmount);
+
+        let currencyBeforeExpiration = await internalWallet.getBalanceOfConsumableCurrencyToken(user_id);
+        console.log('[FinancieInternalWallet]currencyBeforeExpiration(user_id) ' + currencyBeforeExpiration.toFixed());
+        assert.equal(totalAmount.toFixed(), currencyBeforeExpiration.toFixed());
+
+        await internalWallet.expireConsumableCurrencyTokens(user_id, currencyBeforeExpiration / 2);
+
+        let currencyAfterExpiration = await internalWallet.getBalanceOfConsumableCurrencyToken(user_id);
+        console.log('[FinancieInternalWallet]currencyAfterExpiration(user_id) ' + currencyAfterExpiration.toFixed());
+        assert.equal((currencyBeforeExpiration / 2).toFixed(), currencyAfterExpiration.toFixed());
     });
 });
