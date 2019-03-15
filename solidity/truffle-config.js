@@ -25,7 +25,7 @@ if ( process.argv[2] == 'migrate' ) {
         },
         from: address
       },
-      beta2: {
+      sandbox: {
         network_id: process.env.ETH_NETWORK_ID,
         gas: process.env.ETH_GAS_LIMIT,
         gasPrice: process.env.ETH_GAS_PRICE,
